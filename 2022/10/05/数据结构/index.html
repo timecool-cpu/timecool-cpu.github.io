@@ -1,0 +1,402 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta name="description" content="算法的基本特征       有效性、确定性、有穷性、有零个或多个输入、有一个或多个输出  算法是一个有穷规则的集合，这些规则确定了解决某类问题的一个运算序列。对于该类问题的任何初始输入值，它都能机械地一步一步地执行计算，经过有限步骤后终止计算并产生输出结果。归纳起来，算法具有以下基本特征： (1)有穷性：一个算法必须在执行有限个操作步骤后终止； (2)确定性">
+<meta property="og:type" content="article">
+<meta property="og:title" content="保研复习之数据结构">
+<meta property="og:url" content="http://example.com/2022/10/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.html">
+<meta property="og:site_name" content="时光cool的博客仓库">
+<meta property="og:description" content="算法的基本特征       有效性、确定性、有穷性、有零个或多个输入、有一个或多个输出  算法是一个有穷规则的集合，这些规则确定了解决某类问题的一个运算序列。对于该类问题的任何初始输入值，它都能机械地一步一步地执行计算，经过有限步骤后终止计算并产生输出结果。归纳起来，算法具有以下基本特征： (1)有穷性：一个算法必须在执行有限个操作步骤后终止； (2)确定性">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS9iY2Y1ZjhlNi02ODhmLTRhZmUtOTQxYS03NjQzMjhkNDNjNjAucG5n?x-oss-process=image/format,png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS83ZDQzNDA3NC1hOGRiLTQwYTYtOWI0Yy04NGFjYWNjYzQ5YTcucG5n?x-oss-process=image/format,png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS83OTU0NmU3Zi0wZDdiLTRmYmQtOGQyMi00ZDg1ZDUwMzFiY2IucG5n?x-oss-process=image/format,png">
+<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS80MWVkYTg1NS01ZjkyLTQxODEtODdmYi0zZjUyN2ExYThlMDQucG5n?x-oss-process=image/format,png">
+<meta property="article:published_time" content="2022-10-05T12:52:25.215Z">
+<meta property="article:modified_time" content="2022-10-05T12:59:49.003Z">
+<meta property="article:author" content="水水水">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS9iY2Y1ZjhlNi02ODhmLTRhZmUtOTQxYS03NjQzMjhkNDNjNjAucG5n?x-oss-process=image/format,png"><title>保研复习之数据结构 | 时光cool的博客仓库</title><link ref="canonical" href="http://example.com/2022/10/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":true},
+  reward: false,
+  fancybox: true,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="时光cool的博客仓库" type="application/atom+xml">
+</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">时光cool的博客仓库</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">保研复习之数据结构</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-10-05</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-10-05</span></span></div></header><div class="post-body">
+        <h3 id="算法的基本特征"   >
+          <a href="#算法的基本特征" class="heading-link"><i class="fas fa-link"></i></a><a href="#算法的基本特征" class="headerlink" title="算法的基本特征"></a>算法的基本特征</h3>
+      <p>有效性、确定性、有穷性、有零个或多个输入、有一个或多个输出 </p>
+<p>算法是一个有穷规则的集合，这些规则确定了解决某类问题的一个运算序列。对于该类问题的任何初始输入值，它都能机械地一步一步地执行计算，经过有限步骤后终止计算并产生输出结果。归纳起来，算法具有以下基本特征： (1)有穷性：一个算法必须在执行有限个操作步骤后终止； (2)确定性：算法中每一步的含义必须是确切的，不可出现任何二义性； (3)有效性：算法中的每一步操作都应该能有效执行，一个不可执行的操作是无效的。例如，一个数被0除的操作就是无效的，应当避免这种操作。 (4)有零个或多个输入：这里的输入是指在算法开始之前所需要的初始数据。这些输入的多少取决于特定的问题。 (5)有一个或多个输出：所谓输出是指与输入有某种特定关系的量，在一个完整的算法中至少会有一个输出。</p>
+
+        <h3 id="什么是数据结构？"   >
+          <a href="#什么是数据结构？" class="heading-link"><i class="fas fa-link"></i></a><a href="#什么是数据结构？" class="headerlink" title="什么是数据结构？"></a>什么是数据结构？</h3>
+      <p>数据结构是计算机存储、组织数据的方式。数据结构是指相互之间存在一种或多种特定关系的数据元素的<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E9%9B%86%E5%90%88&spm=1001.2101.3001.7020" >集合</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>。结构包括逻辑结构和物理结构。</p>
+<p><strong>数据的逻辑结构包括4种</strong></p>
+<p>(1)集合：数据元素之间除了有相同的数据类型再没有其他的关系</p>
+<p>(2)线性结构：数据元素之间是一对一的关系 ——线性表、栈、<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E9%98%9F%E5%88%97&spm=1001.2101.3001.7020" >队列</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+<p>(3)<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E6%A0%91%E5%BD%A2%E7%BB%93%E6%9E%84&spm=1001.2101.3001.7020" >树形结构</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>：数据元素之间是一对多的关系</p>
+<p>(4)图状结构：数据元素之间是多对多的关系。</p>
+<p><strong>物理结构包括顺序存储结构和链式存储结构。</strong></p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">常见的存储结构有：顺序、链接、索引等存储结构</span><br></pre></td></tr></table></div></figure>
+
+
+
+
+
+
+        <h3 id="解释一下顺序存储与链式存储"   >
+          <a href="#解释一下顺序存储与链式存储" class="heading-link"><i class="fas fa-link"></i></a><a href="#解释一下顺序存储与链式存储" class="headerlink" title="解释一下顺序存储与链式存储"></a>解释一下顺序存储与链式存储</h3>
+      <p><span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84&spm=1001.2101.3001.7020" >顺序存储结构</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>是用一段连续的存储空间来存储数据元素，可以进行随机访问，访问效率较高。链式存储结构是用任意的存储空间来存储数据元素，不可以进行随机访问，访问效率较低。 </p>
+
+        <h3 id="头指针和头结点的区别？"   >
+          <a href="#头指针和头结点的区别？" class="heading-link"><i class="fas fa-link"></i></a><a href="#头指针和头结点的区别？" class="headerlink" title="头指针和头结点的区别？"></a>头指针和头结点的区别？</h3>
+      <p>头指针：是指向第一个节点存储位置的指针，具有标识作用，头指针是链表的必要元素，无论链表是否为空，头指针都存在。</p>
+<p>头结点：是放在第一个元素节点之前，便于在第一个元素节点之前进行插入和删除的操作，头结点不是链表的必须元素，可有可无，头结点的数据域也可以不存储任何信息。</p>
+
+        <h3 id="数组和链表的区别？"   >
+          <a href="#数组和链表的区别？" class="heading-link"><i class="fas fa-link"></i></a><a href="#数组和链表的区别？" class="headerlink" title="数组和链表的区别？"></a>数组和链表的区别？</h3>
+      <p>从逻辑结构来看：数组的存储长度是固定的，它不能适应数据动态增减的情况。链表能够动态分配存储空间以适应数据动态增减的情况，并且易于进行插入和删除操作。</p>
+<p>从访问方式来看：数组在内存中是一片连续的存储空间，可以通过数组下标对数组进行随机访问，访问效率较高。链表是链式<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84&spm=1001.2101.3001.7020" >存储结构</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>，存储空间不是必须连续的，可以是任意的，访问必须从前往后依次进行，访问效率较数组来说比较低。</p>
+<p>如果从第i个位置插入多个元素，对于数组来说每一次插入都需要往后移动元素，每一次的时间复杂度都是O(n)，而单链表来说只需要在第一次寻找i的位置时时间复杂度为O(n)，其余的插入和删除操作时间复杂度均为O(1)，提高了插入和删除的效率。</p>
+
+        <h3 id="栈和队列的区别"   >
+          <a href="#栈和队列的区别" class="heading-link"><i class="fas fa-link"></i></a><a href="#栈和队列的区别" class="headerlink" title="栈和队列的区别"></a>栈和队列的区别</h3>
+      <p>队列是允许在一段进行插入另一端进行删除的线性表，对于进入队列的元素按“先进先出”的规则处理，在表头进行删除在表尾进行插入。</p>
+<p>栈是只能在表尾进行插入和删除操作的线性表。对于插入到栈的元素按“后进先出”的规则处理，插入和删除操作都在栈顶进行。由于进栈和出栈都是在栈顶进行，所以要有一个size变量来记录当前栈的大小，当进栈时size不能超过数组长度，size+1，出栈时栈不为空，size-1。</p>
+
+        <h3 id="栈和堆的区别，以及为什么栈要快"   >
+          <a href="#栈和堆的区别，以及为什么栈要快" class="heading-link"><i class="fas fa-link"></i></a><a href="#栈和堆的区别，以及为什么栈要快" class="headerlink" title="栈和堆的区别，以及为什么栈要快"></a>栈和堆的区别，以及为什么栈要快</h3>
+      <ul>
+<li><strong>堆和栈的区别</strong>：1、堆是由低地址向高地址扩展；栈是由高地址向低地址扩展 2、堆中的内存需要手动申请和手动释放；栈中内存是由OS自动申请和自动释放，存放着参数、局部变量等内存 3、堆中频繁调用malloc和free,会产生内存碎片，降低程序效率；而栈由于其先进后出的特性，不会产生内存碎片 4、堆的分配效率较低，而栈的分配效率较高</li>
+<li><strong>栈的效率高的原因：</strong> 栈是操作系统提供的数据结构，计算机底层对栈提供了一系列支持：分配专门的寄存器存储栈的地址，压栈和入栈有专门的指令执行；而堆是由C&#x2F;C++函数库提供的，机制复杂，需要一些列分配内存、合并内存和释放内存的算法，因此效率较低。</li>
+</ul>
+
+        <h3 id="介绍一下字符串匹配算法KMP算法"   >
+          <a href="#介绍一下字符串匹配算法KMP算法" class="heading-link"><i class="fas fa-link"></i></a><a href="#介绍一下字符串匹配算法KMP算法" class="headerlink" title="介绍一下字符串匹配算法KMP算法"></a>介绍一下字符串匹配算法KMP算法</h3>
+      <p>首先计算nextval</p>
+<p>①上下子串前缀匹配</p>
+<p>②找到公共前后缀（取最长且小于比较的上下字串长度）</p>
+<p>③将下面的p子串前缀移动到后缀位置</p>
+
+        <h3 id="介绍下prim算法和Kruskal算法"   >
+          <a href="#介绍下prim算法和Kruskal算法" class="heading-link"><i class="fas fa-link"></i></a><a href="#介绍下prim算法和Kruskal算法" class="headerlink" title="介绍下prim算法和Kruskal算法"></a>介绍下prim算法和Kruskal算法</h3>
+      <p>目的是得到最小生成树</p>
+<p><strong>普里姆(prim)算法的基本思想为：顶点集到其他点权值最小边，加入新的顶点集，再找边…直到遍历所有点</strong> </p>
+<p><code>Prim</code>算法从任意一个顶点开始，每次选择一个与当前顶点集最近的一个顶点，并将两顶点之间的边加入到树中。<code>Prim</code>算法在找当前最近顶点时使用到了贪婪算法。 </p>
+<p>1.在一个加权连通图中，顶点集合<code>V</code>，边集合为<code>E</code> </p>
+<p>2.任意选出一个点作为初始顶点,标记为<code>visit</code>,计算所有与之相连接的点的距离，选择距离最短的，标记<code>visit</code>. </p>
+<p>3.重复以下操作，直到所有点都被标记为<code>visit</code>： </p>
+<p><strong>克鲁斯卡尔(kruskal)算法的基本思想为：依次选择最小边，使得无环且所有点遍历结束</strong> </p>
+<p>Kruskal是另一个计算最小生成树的算法，其算法原理如下。首先，将每个顶点放入其自身的数据集合中。然后，按照权值的升序来选择边。当选择每条边时，判断定义边的顶点是否在不同的数据集中。如果是，将此边插入最小生成树的集合中，同时，将集合中包含每个顶点的联合体取出，如果不是，就移动到下一条边。重复这个过程直到所有的边都探查过。 </p>
+
+        <h3 id="介绍下拓扑排序算法"   >
+          <a href="#介绍下拓扑排序算法" class="heading-link"><i class="fas fa-link"></i></a><a href="#介绍下拓扑排序算法" class="headerlink" title="介绍下拓扑排序算法"></a>介绍下拓扑排序算法</h3>
+      <p>每次都应当从入度为0的结点开始遍历。因为只有入度为0的结点才能够成为拓扑排序的起点。否则根据拓扑排序的定义，只要一个结点<code>v</code>的入度不为0，则至少有一条边起始于其他结点而指向<code>v</code>，那么这条边的起点在拓扑排序的顺序中应当位于<code>v</code>之前，则<code>v</code>不能成为当前遍历的起点。 </p>
+<p> 拓扑排序可以用深度优先遍历或广度优先遍历算法来实现。 </p>
+
+        <h3 id="关键路径如何确定？"   >
+          <a href="#关键路径如何确定？" class="heading-link"><i class="fas fa-link"></i></a><a href="#关键路径如何确定？" class="headerlink" title="关键路径如何确定？"></a>关键路径如何确定？</h3>
+      <p>关键路径的特征是：从起点 (起点是唯一的，入度为0) 到终点 (终点是唯一的，出度为0) 的一个有向图中，该路径上的弧 (有向图的边称之为“弧”) 的权重的和最大。 </p>
+<p>1.我们需要计算每个节点的earlyTime (最早开始时间)。终点的earlyTime 就是从起点到终点的最大权重和。 </p>
+<p>2.如果我们从终点到起点，进行反向的计算lastTime (最晚开始时间)，如果某一条路径的每一个结点的earlyTime 与lastTime都相等，那么这条路径就是关键路径。 </p>
+
+        <h3 id="介绍散列表处理冲突的几种方法"   >
+          <a href="#介绍散列表处理冲突的几种方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#介绍散列表处理冲突的几种方法" class="headerlink" title="介绍散列表处理冲突的几种方法"></a>介绍散列表处理冲突的几种方法</h3>
+      <p><strong>开放地址法：</strong>所谓的开放定址法就是一旦发生了冲突，就去寻找下一个空的<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E6%95%A3%E5%88%97&spm=1001.2101.3001.7020" >散列</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>地址，只要散列表足够大，空的散列地址总能找到，并将记录存入。   包括线性探测法、二次探测法、随机探测法</p>
+<p><strong>再散列函数法：</strong></p>
+<blockquote>
+<p><strong>fi ( key ) &#x3D; RHi ( key ) (i&#x3D;1,2,…,k)</strong></p>
+</blockquote>
+<p>RHi 就是不同的散列函数，可以将前面说<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://editor.csdn.net/md/?articleId=104356727" >散列表查找及其函数</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>的除留余数、折叠、平方取中全部用上。每当出现散列地址冲突，就换一个散列函数计算。这种方法能够使得关键字不产生聚集，但是相应地会增加计算的时间。</p>
+<p><strong>链地址法</strong>：将所有关键字为同义词的记录存储在一个单链表中，我们称之为同义词子表，在<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E6%95%A3%E5%88%97%E8%A1%A8&spm=1001.2101.3001.7020" >散列表</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>中只存储所有同义词子表的头指针。 </p>
+<p><strong>公共溢出区法</strong>：当发生冲突的时候，凡是冲突的跟我走，给这些冲突找个地儿呆着。我们为所有冲突的关键字建立一个公共的溢出区来存放。 </p>
+
+        <h3 id="排序算法知道哪些，哪个是最快的，为什么？"   >
+          <a href="#排序算法知道哪些，哪个是最快的，为什么？" class="heading-link"><i class="fas fa-link"></i></a><a href="#排序算法知道哪些，哪个是最快的，为什么？" class="headerlink" title="排序算法知道哪些，哪个是最快的，为什么？"></a><strong>排序算法知道哪些，哪个是最快的，为什么？</strong></h3>
+      <p>插入排序：简单插入、折半插入排序、希尔排序</p>
+<p>交换排序：冒泡排序、快速排序</p>
+<p>选择排序：</p>
+<p>归并排序：</p>
+<p>外部排序：</p>
+
+        <h3 id="介绍一下B-树"   >
+          <a href="#介绍一下B-树" class="heading-link"><i class="fas fa-link"></i></a><a href="#介绍一下B-树" class="headerlink" title="介绍一下B+树"></a>介绍一下B+树</h3>
+      <p>b+树是一种树状数据结构，一般用在数据库和操作系统的文件管理中。</p>
+<p>特点是支持顺序存储，能够保证数据稳定有序，是b树的一种变体。</p>
+<p>1）B+树只在叶节点存放记录，其他结点只起到索引作用；B树在所有结点中保存记录</p>
+<p>2）B+树的叶节点支持顺序查找，B树不支持</p>
+<p>3）B+树n个结点对应n个分叉；B树n个结点对应n+1个分叉</p>
+
+        <h3 id="AVL树和红黑树的区别？"   >
+          <a href="#AVL树和红黑树的区别？" class="heading-link"><i class="fas fa-link"></i></a><a href="#AVL树和红黑树的区别？" class="headerlink" title="AVL树和红黑树的区别？"></a>AVL树和红黑树的区别？</h3>
+      <p>红黑树平衡性不如 AVL 树，它维持的只是一种大致的平衡，不严格保证左右子树的高度差不超过 1。这导致节点数相同的情况下，红黑树的高度可能更高，也就是说平均查找次数会高于相同情况的 AVL 树。</p>
+<p>在插入时，红黑树和 AVL 树都能在至多两次旋转内恢复平衡，在删除时由于红黑树只追求大致平衡，因此红黑树至多三次旋转可以恢复平衡，而 AVL 树最多需要 O(logn) 次。AVL 树在插入和删除时，将向上回溯确定是否需要旋转，这个回溯的时间成本最差为 O(logn)，而红黑树每次向上回溯的步长为 2，回溯成本低。因此面对频繁地插入与删除红黑树更加合适。</p>
+
+        <h3 id="如何在无序数组中查找第k小的值"   >
+          <a href="#如何在无序数组中查找第k小的值" class="heading-link"><i class="fas fa-link"></i></a><a href="#如何在无序数组中查找第k小的值" class="headerlink" title="如何在无序数组中查找第k小的值"></a>如何在无序数组中查找第k小的值</h3>
+      <p>1.首先进行排序  然后找出下标为k-1的数，时间复杂度为O(n*logn)</p>
+<p>2.建立大小为k的大顶堆，遍历数据如果大于大顶堆的顶那么先pop然后push该值，时间复杂度为O(n*logk)</p>
+<p>3.基于快排找基准的方法，首先建立一个类似快排的函数，然后返回值为基准对应的下标，调用该函数，如果返回值刚好等于k-1则返回答案，如果大于k-1则递归左半部分数组，否则递归右半部分数组，时间复杂度为O(n)</p>
+<p><strong>追问一下，当有相同元素时，还可以使用什么不同的方法求第k大的元素</strong></p>
+<p>当有相同元素的时候， 首先利用哈希表统计数组中个元素出现的次数，然后利用计数排序的思想，线性从大到小扫描过程中，前面有k-1个数则为第k大的数，平均情况下时间复杂度为O(n)。 </p>
+
+        <h3 id="海量数据如何去取最大的k个"   >
+          <a href="#海量数据如何去取最大的k个" class="heading-link"><i class="fas fa-link"></i></a><a href="#海量数据如何去取最大的k个" class="headerlink" title="海量数据如何去取最大的k个"></a>海量数据如何去取最大的k个</h3>
+      <p><strong>1.直接全部排序（只适用于内存够的情况）</strong> 当数据量较小的情况下，内存中可以容纳所有数据。则最简单也是最容易想到的方法是将数据全部排序，然后取排序后的数据中的前K个。 这种方法对数据量比较敏感，当数据量较大的情况下，内存不能完全容纳全部数据，这种方法便不适应了。即使内存能够满足要求，该方法将全部数据都排序了，而题目只要求找出topK个数据，所以该方法并不十分高效，不建议使用。</p>
+<p><strong>2.快速排序的变形 （只使用于内存够的情况）</strong> 这是一个基于快速排序的变形，因为第一种方法中说到将所有元素都排序并不十分高效，只需要找出前K个最大的就行。 这种方法类似于快速排序，首先选择一个划分元，将比这个划分元大的元素放到它的前面，比划分元小的元素放到它的后面，此时完成了一趟排序。如果此时这个划分元的序号index刚好等于K，那么这个划分元以及它左边的数，刚好就是前K个最大的元素；如果index&gt;K，那么前K大的数据在index的左边，那么就继续递归的从index-1个数中进行一趟排序；如果index &lt; K，那么再从划分元的右边继续进行排序，直到找到序号index刚好等于K为止。再将前K个数进行排序后，返回TopK个元素。这种方法就避免了对除了Top K个元素以外的数据进行排序所带来的不必要的开销。</p>
+<p><strong>3.最小堆法 这是一种局部淘汰法。</strong> 先读取前K个数，建立一个最小堆。然后将剩余的所有数字依次与最小堆的堆顶进行比较，如果小于或等于堆顶数据，则继续比较下一个；否则，删除堆顶元素，并将新数据插入堆中，重新调整最小堆。当遍历完全部数据后，最小堆中的数据即为最大的K个数。</p>
+<p><strong>4.分治法</strong> 将全部数据分成N份，前提是每份的数据都可以读到内存中进行处理，找到每份数据中最大的K个数。此时剩下N<em>K个数据，如果内存不能容纳N</em>K个数据，则再继续分治处理，分成M份，找出每份数据中最大的K个数，如果M*K个数仍然不能读到内存中，则继续分治处理。直到剩余的数可以读入内存中，那么可以对这些数使用快速排序的变形或者归并排序进行处理。</p>
+<p><strong>5.Hash法</strong> 如果这些数据中有很多重复的数据，可以先通过hash法，把重复的数去掉。这样如果重复率很高的话，会减少很大的内存用量，从而缩小运算空间。处理后的数据如果能够读入内存，则可以直接排序；否则可以使用分治法或者最小堆法来处理数据。</p>
+
+        <h3 id="哪些图算法用到了动态规划思想"   >
+          <a href="#哪些图算法用到了动态规划思想" class="heading-link"><i class="fas fa-link"></i></a><a href="#哪些图算法用到了动态规划思想" class="headerlink" title="哪些图算法用到了动态规划思想"></a>哪些图算法用到了动态规划思想</h3>
+      <p>floyd算法</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for(int k = 1; k &lt;= n; k ++)</span><br><span class="line">    for(int i = 1; i &lt;= n; i ++)</span><br><span class="line">        for(int j = 1; j &lt;= n; j ++)</span><br><span class="line">             d[i][j] = min(d[i][j], d[i][k] + d[k][j])</span><br></pre></td></tr></table></div></figure>
+
+
+
+
+        <h3 id="判断链表是否有环"   >
+          <a href="#判断链表是否有环" class="heading-link"><i class="fas fa-link"></i></a><a href="#判断链表是否有环" class="headerlink" title="判断链表是否有环"></a>判断链表是否有环</h3>
+      <p>使用双指针法，一个慢指针每次往后走一个单位，一个快指针每次往后走两个长度，如果在慢指针遍历完成之前没有相遇，则没有环，如果相遇了那么证明有环。</p>
+<p>如果要找到成环的开头，可以让一个指针从开头开始走，每次往后一个单位，当它与慢指针相遇时得到便是那个开头。</p>
+
+        <h3 id="介绍一下深度优先搜索和广度优先搜索是如何实现的？"   >
+          <a href="#介绍一下深度优先搜索和广度优先搜索是如何实现的？" class="heading-link"><i class="fas fa-link"></i></a><a href="#介绍一下深度优先搜索和广度优先搜索是如何实现的？" class="headerlink" title="介绍一下深度优先搜索和广度优先搜索是如何实现的？"></a>介绍一下深度优先搜索和广度优先搜索是如何实现的？</h3>
+      <p>深度优先搜索：(1)访问起始点v0(2)若v0的第一个邻接点没有被访问过，则深度遍历该邻接点；(3)若v0的第一个邻接点已经被访问，则访问其第二个邻接点，进行深度遍历；重复以上步骤直到所有节点都被访问过为止</p>
+<p>广度优先搜索：(1)访问起始点v0(2)依次遍历v0的所有未访问过得邻接点 (3)再依次访问下一层中未被访问过得邻接点；重复以上步骤，直到所有的顶点都被访问过为止</p>
+
+        <h3 id="哈希表的概念、构造方法、冲突的解决办法？"   >
+          <a href="#哈希表的概念、构造方法、冲突的解决办法？" class="heading-link"><i class="fas fa-link"></i></a><a href="#哈希表的概念、构造方法、冲突的解决办法？" class="headerlink" title="哈希表的概念、构造方法、冲突的解决办法？"></a>哈希表的概念、构造方法、冲突的解决办法？</h3>
+      <p>哈希表又称为散列表，是根据关键字码的值直接进行访问的数据结构，即它通过把关键码的值映射到表中的一个位置以加快查找速度，其中映射函数叫做散列函数，存放记录的数组叫做散列表。</p>
+<p>哈希函数的构造方法包括：直接定址法，除留余数法，数字分析法，平方取中法，折叠法，随机数法</p>
+<p>(1)直接定址法：取关键字的某个线性函数值作为散列地址，H(key)&#x3D;a*key+b。</p>
+<p>(2)除留余数法：取关键字对p取余的值作为散列地址，其中p</p>
+<p>(3)数字分析法：当关键字的位数大于地址的位数，对关键字的各位分布进行分析，选出分布均匀的任意几位作为散列的地址，适用于所有关键字都已知的情况。</p>
+<p>(4)平方取中法：对关键字求平方，再取结果中的中间几位作为散列地址。</p>
+<p>(5)折叠法：将关键字分为位数相同的几部分，然后取这几部分的叠加和作为散列地址。适用于关键字位数较多，且关键字中每一位上数字分布大致均匀。</p>
+<p>(6)随机数法：选择一个随机函数，把关键字的随机函数值作为散列地址。适合于关键字的长度不相同时。</p>
+<p>哈希冲突的解决方法包括：开放定址法和拉链法，当冲突发生时，使用某种探测技术形成一个探测序列，然后沿此序列逐个单单元查找，直到找到该关键字或者碰到一个开放的地址为止，探测到开放的地址表明该表中没有此关键字，若要插入，则探测到开放地址时可将新节点插入该地址单元。其中开放定址法包括：线性探查法，二次探查法，双重散列法</p>
+<p>(1)线性探查法：基本思想，探查时从地址d开始，首先探查T[d],在探查T[d+1]…直到查到T[m-1]，此后循环到T[0],T[1]…直到探测到T[d-1]为止。</p>
+<p>(2)二次探查法：基本思想，探查时从地址d开始，首先探查T[d],再探查T[d+12],T[d+22]…等，直到探查到有空余地址或者探查到T[d-1]为止，缺点是无法探查到整个散列空间。</p>
+<p>(3)双重散列法：基本思想，使用两个散列函数来确定地址，探查时从地址d开始，首先探查T[d],再探查T[d+h1(d)],T[d+2*h1(d)]…</p>
+<p>链接法：将所有关键字为同义词的节点链接在同一个单链表中，若选定的散列表长度为m，则可将散列表定义为一个由m个头指针组成的指针数组，凡是散列地址为i的节点均插入到头指针为i的单链表中。</p>
+
+        <h3 id="各种排序算法"   >
+          <a href="#各种排序算法" class="heading-link"><i class="fas fa-link"></i></a><a href="#各种排序算法" class="headerlink" title="各种排序算法"></a>各种排序算法</h3>
+      <p>内部排序包括：插入排序、选择排序、交换排序、归并排序、基数排序。其中插入排序包括：直接插入排序、折半插入排序、希尔排序；选择排序包括：简单选择排序，堆排序；交换排序包括：冒泡排序、快速排序。</p>
+<p>(1)直接插入排序(稳定)：基本思想为：将序列分为有序部分和无序部分，从无序部分依次选择元素与有序部分比较找到合适的位置，将原来的元素往后移，将元素插入到相应位置上。时间复杂度为：O(n^2),空间复杂度为O(1)</p>
+<p>(2)折半插入排序(稳定)：基本思想为：设置三个变量low high mid，令mid&#x3D;(low+high)&#x2F;2,若a[mid]&gt;key,则令high&#x3D;mid-1,否则令low&#x3D;mid+1,直到low&gt;high时停止循环，对序列中的每个元素做以上处理，找到合适位置将其他元素后移进行插入。比较次数为O(nlog2n),但是因为要后移，因此时间复杂度为O(n^2),空间复杂度为O(1)。 优点是：比较次数大大减少。</p>
+<p>(3)希尔排序(不稳定)：基本思想为：先将序列分为若干个子序列，对各子序列进行直接插入排序，等到序列基本有序时再对整个序列进行一次直接插入排序。优点是：让关键字值小的元素能够很快移动到前面，且序列基本有序时进行直接插入排序时间效率会提升很多，空间复杂度为O(1)。</p>
+<p>(4)简单选择排序(不稳定)：基本思想为：将序列分为2部分，每经过一趟就在无序部分找到一个最小值然后与无序部分的第一个元素交换位置。优点是：实现简单，缺点是：每一趟只能确定一个元素的位置，时间效率低。时间复杂度为O(n^2)，空间复杂度为O(1)。</p>
+<p>(5)堆排序(不稳定)：设有一个任意序列，k1,k2,…,kn，当满足下面特点时称之为堆：让此序列排列成完全二叉树，该树具有以下特点，该树中任意节点均大于或小于其左右孩子，此树的根节点为最大值或者最小值。优点是：对大文件效率明显提高，但对小文件效率不明显。时间复杂度为O(nlog2n),空间复杂度为O(1)。</p>
+<p>(6)冒泡排序(稳定)：基本思路为：每一趟都将元素进行两两比较，并且按照“前小后大”的规则进行交换。优点是：每一趟不仅能找到一个最大的元素放到序列后面，而且还把其他元素理顺，如果下一趟排序没有发生交换则可以提前结束排序。时间复杂度为O(n^2),空间复杂度为O(1)。</p>
+<p>(7)快速排序(不稳定)：基本思路为：在序列中任意选择一个元素作为中心，比它大的元素一律向后移动，比它小的元素一律向前移动，形成左右两个子序列，再把子序列按上述操作进行调整，直到所有的子序列中都只有一个元素时序列即为有序。优点是：每一趟不仅能确定一个元素，时间效率较高。时间复杂度为O(nlog2n),空间复杂度为O(log2n).</p>
+<p>(8)归并排序(稳定)：基本思想为：把两个或者两个以上的有序表合并成一个新的有序表。时间复杂度为O(nlogn),空间复杂度和待排序的元素个数相同。</p>
+<p>(9)基数排序：时间复杂度为：对于n个记录进行链式基数排序的时间复杂度为O(d(n+rd)),其中每一趟分配的时间复杂度为O(n),回收的时间复杂度为O(rd)。</p>
+<p>“前小后大”的规则进行交换。优点是：每一趟不仅能找到一个最大的元素放到序列后面，而且还把其他元素理顺，如果下一趟排序没有发生交换则可以提前结束排序。时间复杂度为O(n^2),空间复杂度为O(1)。</p>
+<p>(7)快速排序(不稳定)：基本思路为：在序列中任意选择一个元素作为中心，比它大的元素一律向后移动，比它小的元素一律向前移动，形成左右两个子序列，再把子序列按上述操作进行调整，直到所有的子序列中都只有一个元素时序列即为有序。优点是：每一趟不仅能确定一个元素，时间效率较高。时间复杂度为O(nlog2n),空间复杂度为O(log2n).</p>
+<p>(8)归并排序(稳定)：基本思想为：把两个或者两个以上的有序表合并成一个新的有序表。时间复杂度为O(nlogn),空间复杂度和待排序的元素个数相同。</p>
+<p>(9)基数排序：时间复杂度为：对于n个记录进行链式基数排序的时间复杂度为O(d(n+rd)),其中每一趟分配的时间复杂度为O(n),回收的时间复杂度为O(rd)。</p>
+
+        <h3 id="贪心算法和动态规划以及分治法的区别"   >
+          <a href="#贪心算法和动态规划以及分治法的区别" class="heading-link"><i class="fas fa-link"></i></a><a href="#贪心算法和动态规划以及分治法的区别" class="headerlink" title="贪心算法和动态规划以及分治法的区别"></a>贪心算法和动态规划以及分治法的区别</h3>
+      <p>贪心算法：局部最优，划分的每个子问题都最优，得到全局最优，但是不能保证是全局最优解，所以对于贪心算法来说，解是从上到下的，一步一步最优，直到最后。</p>
+<p>动态规划：将问题分解成重复的子问题，每次都寻找左右子问题解中最优的解，一步步得到全局的最优解.重复的子问题可以通过记录的方式，避免多次计算。所以对于动态规划来说，解是从小到上，从底层所有可能性中找到最优解，再一步步向上。</p>
+<p>分治法：和动态规划类似，将大问题分解成小问题，但是这些小问题是独立的，没有重复的问题。独立问题取得解，再合并成大问题的解。</p>
+
+        <h3 id="用循环比递归的效率高吗？"   >
+          <a href="#用循环比递归的效率高吗？" class="heading-link"><i class="fas fa-link"></i></a><a href="#用循环比递归的效率高吗？" class="headerlink" title="用循环比递归的效率高吗？"></a><strong>用循环比递归的效率高吗？</strong></h3>
+      <p>循环和递归两者是可以互换的，不能决定性的说循环的效率比递归高。</p>
+<p><strong>递归</strong></p>
+<p>【优点】：代码简洁清晰，容易检查正确性；</p>
+<p>【缺点】：当递归调用的次数较多时，要增加额外的堆栈处理，有可能产生堆栈溢出的情况，对执行效率有一定的影响。</p>
+<p><strong>循环</strong></p>
+<p>【优点】：结构简单，速度快；</p>
+<p>【缺点】：它并不能解决全部问题，有的问题适合于用递归来解决不适合用循环。</p>
+
+        <h3 id="如何区分循环队列是队空还是队满？"   >
+          <a href="#如何区分循环队列是队空还是队满？" class="heading-link"><i class="fas fa-link"></i></a><a href="#如何区分循环队列是队空还是队满？" class="headerlink" title="如何区分循环队列是队空还是队满？"></a><strong>如何区分循环队列是队空还是队满？</strong></h3>
+      <p><strong>普通情况</strong>下，</p>
+<p><strong>循环队列</strong>队空和队满的判定条件是一样的，都是<strong>Q.front &#x3D;&#x3D; Q.rear。</strong></p>
+<p><em>ps:队头指针指向第一个数；队尾指针指向最后一个数的下一个位置，即将要入队的位置。</em></p>
+<blockquote>
+<p>方法一：<strong>牺牲一个单元</strong>来区分队空和队满，这个时候**(Q.rear+1)%MaxSize &#x3D;&#x3D; Q.front**才是队满标志 。</p>
+</blockquote>
+<blockquote>
+<p>方法二：类型中<strong>增设表示元素个数的数据成员</strong>。这样，队空的条件为Q.size &#x3D;&#x3D; 0;队满的条件为Q.size &#x3D;&#x3D; MaxSize。</p>
+</blockquote>
+
+        <h3 id="快排存在的问题，如何优化"   >
+          <a href="#快排存在的问题，如何优化" class="heading-link"><i class="fas fa-link"></i></a><a href="#快排存在的问题，如何优化" class="headerlink" title="快排存在的问题，如何优化"></a>快排存在的问题，如何优化</h3>
+      <p>时间复杂度最快平均是O（nlogn）,最慢的时候是O(n2); </p>
+<p>优化1：当待排序序列的长度分割到一定大小后，使用插入排序 原因：对于很小和部分有序的数组，快排不如插排好。当待排序序列的长度分割到一定大小后，继续分割的效率比插入排序要差，此时可以使用插排而不是快排 </p>
+<p>优化2：随机选取分割位置； 当分割位置不理想时，考虑是否重新选取分割位置； </p>
+<p>优化3：优化递归操作 快排函数在函数尾部有两次递归操作，我们可以对其使用尾递归优化</p>
+
+        <h3 id="队列在计算机系统中的应用？"   >
+          <a href="#队列在计算机系统中的应用？" class="heading-link"><i class="fas fa-link"></i></a><a href="#队列在计算机系统中的应用？" class="headerlink" title="队列在计算机系统中的应用？"></a><strong>队列在计算机系统中的应用？</strong></h3>
+      <p>队列在计算机系统中的应用非常广泛，以下仅从两个方面来简述队列在计算机系统中的作用：</p>
+<p>第一个方面是解决<strong>主机与外部设备之间速度不匹配</strong>的问题</p>
+<p>第二个方面是解决由<strong>多用户引起的资源竞争</strong>问题。</p>
+<blockquote>
+<p>（对于第一个方面，仅以主机和打印机之间速度不匹配的问题为例做简要说明。主机输出数据给打印机打印，输出数据的速度比打印数据的速度要快得多，由于速度不匹配，若直接把输出的 数据送给打印机打印显然是不行的。解决的方法是设置一个打印数据缓冲区，主机把要打印输出的数据依次写入这个缓冲区，写满后就暂停输出，转去做其他的事情。打印机就从缓冲区中按照先进先出的原则依次取出数据并打印，打印完后再向主机发出请求。主机接到请求后再向缓冲区写入打印数据。这样做既保证了打印数据的正确，又使主机提高了效率。由此可见，打印数据缓冲区中所存储的数据就是一个队列。</p>
+<p>对于第二个方面， CPU (即中央处理器，它包括运算器和控制器）资源的竞争就是一个典型 的例子。在一个带有多终端的计算机系统上，有多个用户需要CPU 各自运行自己的程序，它们分别通过各自的终端向操作系统提出占用CPU 的请求。操作系统通常按照每个请求在时间上的先后顺序，把它们排成一个队列，每次把CPU 分配给队首请求的用户使用。当相应的程序运行结束或用完规定的时间间隔后，令其出队，再把CPU 分配给新的队首请求的用户使用。这样既能满足每个用户的请求，又使CPU 能够正常运行。）</p>
+</blockquote>
+
+        <h3 id="矩阵的压缩存储"   >
+          <a href="#矩阵的压缩存储" class="heading-link"><i class="fas fa-link"></i></a><a href="#矩阵的压缩存储" class="headerlink" title="矩阵的压缩存储"></a><strong>矩阵的压缩存储</strong></h3>
+      <p>数据结构中，提供针对某些<strong>特殊矩阵</strong>的压缩存储结构。这里所说的特殊矩阵，主要分为以下两类：</p>
+<ul>
+<li>含有大量<strong>相同数据元素</strong>的矩阵，比如对称矩阵；</li>
+<li>含有<strong>大量 0 元素的矩阵</strong>，比如稀疏矩阵、上（下）三角矩阵；</li>
+</ul>
+<p>针对以上两类矩阵，数据结构的<strong>压缩存储思想</strong>是：矩阵中的<strong>相同数据元素（包括元素 0）只存储一个</strong>。</p>
+
+        <h3 id="线索二叉树的概念？"   >
+          <a href="#线索二叉树的概念？" class="heading-link"><i class="fas fa-link"></i></a><a href="#线索二叉树的概念？" class="headerlink" title="线索二叉树的概念？"></a><strong>线索二叉树的概念？</strong></h3>
+      <p>对于<strong>n个结点</strong>的二叉树，在二叉链存储结构中有<strong>n+1个空链域</strong>，利用这些空链域存放在某种遍历次序下该结点的<strong>前驱结点和后继结点</strong>的指针，这些指针称为<strong>线索</strong>，加上线索的二叉树称为<strong>线索二叉树</strong>。</p>
+<p>这种加上了线索的二叉链表称为<strong>线索链表</strong>，相应的二叉树称为<strong>线索二叉树</strong>(Threaded BinaryTree)。根据线索性质的不同，线索二叉树可分为<strong>前序</strong>线索二叉树、<strong>中序</strong>线索二叉树和<strong>后序</strong>线索二叉树三种。</p>
+<p><strong>注意：</strong>线索链表解决了<strong>无法直接找到该结点在某种遍历序列中的前驱和后继结点</strong>的问题，解决了二叉链表找左、右孩子困难的问题。</p>
+
+        <h3 id="树的存储结构？"   >
+          <a href="#树的存储结构？" class="heading-link"><i class="fas fa-link"></i></a><a href="#树的存储结构？" class="headerlink" title="树的存储结构？"></a><strong>树的存储结构？</strong></h3>
+      <p><strong>双亲表示法</strong></p>
+<p>这种存储方式采用<strong>一组连续空间</strong>来存储每个结点，同时在每个结点中增设一个<strong>伪指针</strong>，指示其<strong>双亲结点在数组中的位置</strong>。</p>
+<p><img   src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS9iY2Y1ZjhlNi02ODhmLTRhZmUtOTQxYS03NjQzMjhkNDNjNjAucG5n?x-oss-process=image/format,png" style=""  alt="img"></p>
+<p>该存储结构利用了每个结点（根结点除外）只有唯一双亲的性质，可以很快得到每个结点的双亲结点，但求结点的孩子时需要遍历整个结构。</p>
+<p><strong>孩子表示法</strong></p>
+<p>孩子表示法是将<strong>每个结点</strong>的<strong>孩子结点</strong>都用<strong>单链表</strong>链接起来形成一个线性结构，此时n 个结点就有n 个孩子链表（叶子结点的孩子链表为空表）</p>
+<p><img   src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS83ZDQzNDA3NC1hOGRiLTQwYTYtOWI0Yy04NGFjYWNjYzQ5YTcucG5n?x-oss-process=image/format,png" style=""  alt="img"></p>
+<p>这种存储方式寻找子女的操作非常直接，而寻找双亲的操作需要遍历n个结点中孩子链表指针域所指向的n个孩子链表。</p>
+<p><strong>孩子兄弟表示法</strong></p>
+<p>孩子兄弟表示法又称<strong>二叉树表示法</strong>，即以<strong>二叉链表</strong>作为树的存储结构。孩子兄弟表示法使<strong>每个结点</strong>包括三部分内容：<strong>结点值、指向结点第一个孩子结点的指针，及指向结点下一个兄弟结点的指针</strong>（沿此域可以找到结点的所有兄弟结点）</p>
+<p><img   src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS83OTU0NmU3Zi0wZDdiLTRmYmQtOGQyMi00ZDg1ZDUwMzFiY2IucG5n?x-oss-process=image/format,png" style=""  alt="img"></p>
+<p>这种存储表示法比较灵活，其最大的优点是可以方便地实现<strong>树转换为二叉树</strong>的操作，易于查找结点的孩子等，但缺点是从当前结点查找其双亲结点比较麻烦。若为每个结点增设一个parent域指向其父结点，则查找结点的父结点也很方便。</p>
+
+        <h3 id="什么是哈夫曼编码"   >
+          <a href="#什么是哈夫曼编码" class="heading-link"><i class="fas fa-link"></i></a><a href="#什么是哈夫曼编码" class="headerlink" title="什么是哈夫曼编码"></a>什么是<strong>哈夫曼编码</strong></h3>
+      <p>在数据通信中，若对每个字符用<strong>相等长度的二进制位</strong>表示，称这种编码方式为<strong>固定长度编码</strong>。 若允许对不同字符用<strong>不等长的二进制位</strong>表示，则这种编码方式称为<strong>可变长度编码</strong>。</p>
+<p><strong>可变长度编码</strong>比固定长度编码要好得多，其<strong>特点</strong>是对<strong>频率高</strong>的字符赋以<strong>短编码</strong>，而对<strong>频率较低</strong>的字符则赋以<strong>较长一些的编码</strong>，从而可以使字符的平均编码长度减短，起到<strong>压缩数据</strong>的效果。</p>
+<p>哈夫曼编码是一种被广泛应用而且非常有效的数据压缩编码。若<strong>没有一个编码是另一个编码的前缀</strong>，则称这样的编码为<strong>前缀编码</strong>。</p>
+<p>由哈夫曼树得到哈夫曼编码是很自然的过程。首先，将每个出现的字符当作一个独立的结点，其权值为它出现的频度（或次数），构造出对应的哈夫曼树。显然，所有字符结点都出现在叶结点中。我们可将字符的编码解释为<strong>从根至该字符的路径上边标记的序列</strong>，其中<strong>边标记****为0</strong> 表示“转向<strong>左孩子</strong>”，<strong>标记为1</strong> 表示“转向<strong>右孩子</strong>“ </p>
+
+        <h3 id="图的存储结构"   >
+          <a href="#图的存储结构" class="heading-link"><i class="fas fa-link"></i></a><a href="#图的存储结构" class="headerlink" title="图的存储结构"></a><strong>图的存储结构</strong></h3>
+      <p><strong>邻接矩阵法</strong></p>
+<p>所谓邻接矩阵存储，是指用一个<strong>一维数组</strong>存储图中<strong>顶点的信息</strong>用一个<strong>二维数组</strong>存储图中<strong>边的信息</strong>（即各顶点之间的邻接关系），存储<strong>顶点之间邻接关系</strong>的二维数组称为<strong>邻接矩阵</strong>。</p>
+<p>适合<strong>稠密图</strong>。</p>
+<p><strong>邻接表法</strong></p>
+<p>当一个图为<strong>稀疏图</strong>时，使用邻接矩阵法显然要浪费大量的存储空间，而图的邻接表法结合了<strong>顺序存储</strong>和<strong>链式存储</strong>方法，大大减少了这种不必要的浪费。</p>
+<p>所谓<strong>邻接表</strong>，是指对图G 中的每个<strong>顶点V建立一个单链表</strong>，第i个单链表中的结点表示依附于顶点v, 的边（对于有向图则是以顶点v, 为尾的弧），这个单链表就称为顶点vi 的边表（对于有向图则称为出边表）。边表的头指针和顶点的数据信息采用顺序存储（称为顶点表），所以在邻接表中存在两种结点：<strong>顶点表结点</strong>和<strong>边表结点</strong>。 </p>
+<p><strong>十字链表法</strong></p>
+<p>十字链表法是<strong>有向图</strong>的一种<strong>链式存储结构</strong>。在十字链表中，对应于有向图中的每条弧有一个结点，对应于每个顶点也有一个结点。</p>
+<p><strong>邻接多重表</strong></p>
+<p>邻接多重表是<strong>无向图</strong>的另一种<strong>链式</strong>存储结构。 在邻接表中，容易求得顶点和边的各种信息，但在邻接表中求两个顶点之间是否存在边而对边执行删除等操作时，需要分别在两个顶点的边表中遍历，效率较低。与十字链表类似，在邻接多重表中，每条边用一个结点表示，每个顶点也用一个结点表示。</p>
+<p><img   src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS80MWVkYTg1NS01ZjkyLTQxODEtODdmYi0zZjUyN2ExYThlMDQucG5n?x-oss-process=image/format,png" style=""  alt="img"></p>
+
+        <h3 id="海量数据问题"   >
+          <a href="#海量数据问题" class="heading-link"><i class="fas fa-link"></i></a><a href="#海量数据问题" class="headerlink" title="海量数据问题"></a>海量数据问题</h3>
+      <p>目前关于海量数据想到的解决办法： 1.bitmap 2.桶排序，外部排序，将需要排序的放到外存上，不用全部放到内存上 </p>
+
+        <h3 id="反转链表"   >
+          <a href="#反转链表" class="heading-link"><i class="fas fa-link"></i></a><a href="#反转链表" class="headerlink" title="反转链表"></a>反转链表</h3>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">void translateLinklist(Linklist&amp; L) //三指针法实现链表的反转</span><br><span class="line">&#123;</span><br><span class="line">	Linklist pre;	// 记录之前的结点</span><br><span class="line">	Linklist cur;	// 记录当前的结点</span><br><span class="line">	Linklist r;		// 记录剩下的结点</span><br><span class="line"></span><br><span class="line">	pre = NULL;		 //要先pre指针置为空</span><br><span class="line">	cur = L-&gt;next;   //指向第一个结点</span><br><span class="line">	while (cur)</span><br><span class="line">	&#123;</span><br><span class="line">		r = cur-&gt;next;  //这样r不会成为野指针,且这一步一定要在最前面。即当cur不为空的时候才指向下一个</span><br><span class="line">		cur-&gt;next = pre; //转方向</span><br><span class="line">		pre = cur;      //往后移</span><br><span class="line">		cur = r;</span><br><span class="line">	&#125;</span><br><span class="line">	//结束后cur为空，所以L-&gt;next要指向pre;</span><br><span class="line">	L-&gt;next = pre;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+
+
+
+
+        <h3 id="两个栈实现队列"   >
+          <a href="#两个栈实现队列" class="heading-link"><i class="fas fa-link"></i></a><a href="#两个栈实现队列" class="headerlink" title="两个栈实现队列"></a>两个栈实现队列</h3>
+      <p>①输入的时候先让B都进A，然后输入到A中</p>
+<p>②输出的时候A都进到B，然后B输出栈顶</p>
+
+        <h3 id="两个队列实现栈"   >
+          <a href="#两个队列实现栈" class="heading-link"><i class="fas fa-link"></i></a><a href="#两个队列实现栈" class="headerlink" title="两个队列实现栈"></a>两个队列实现栈</h3>
+      <p>①输入的时候直接输入到队列中</p>
+<p>②输出的时候A往B走，当A只有一个时输出，然后B再进回A</p>
+<ul>
+<li>寻找数组中第二小的元素</li>
+<li>找到数组中第一个不重复出现的整数</li>
+<li>合并两个有序数组</li>
+<li>重新排列数组中的正值和负值</li>
+<li>使用栈计算后缀表达式</li>
+<li>对栈的元素进行排序</li>
+<li>判断表达式是否括号平衡</li>
+<li>使用队列表示栈</li>
+<li>对队列的前k个元素倒序</li>
+<li>使用队列生成从1到n的二进制数</li>
+<li>反转链表</li>
+<li>检测链表中的循环</li>
+<li>返回链表倒数第N个节点</li>
+<li>删除链表中的重复项</li>
+<li>实现广度和深度优先搜索</li>
+<li>检查图是否为树</li>
+<li>计算图的边数</li>
+<li>找到两个顶点之间的最短路径</li>
+<li>求二叉树的高度</li>
+<li>在二叉搜索树中查找第k个最大值</li>
+<li>查找与根节点距离k的节点</li>
+<li>在二叉树中查找给定节点的祖先节点</li>
+<li>计算字典树中的总单词数</li>
+<li>打印存储在字典树中的所有单词</li>
+<li>使用字典树对数组的元素进行排序</li>
+<li>使用字典树从字典中形成单词</li>
+<li>在数组中查找对称键值对</li>
+<li>追踪遍历的完整路径</li>
+<li>查找数组是否是另一个数组的子集</li>
+<li>检查给定的数组是否不相交</li>
+</ul>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://example.com">水水水</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://example.com/2022/10/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">http://example.com/2022/10/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/10/05/%E6%95%B0%E6%8D%AE%E5%BA%93/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">保研复习之数据库</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/10/05/%E6%97%A5%E5%B8%B8/"><span class="paginator-prev__text">保研复习之日常提问</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%89%B9%E5%BE%81"><span class="toc-number">1.</span> <span class="toc-text">
+          算法的基本特征</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">
+          什么是数据结构？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A%E4%B8%80%E4%B8%8B%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E4%B8%8E%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8"><span class="toc-number">3.</span> <span class="toc-text">
+          解释一下顺序存储与链式存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%B4%E6%8C%87%E9%92%88%E5%92%8C%E5%A4%B4%E7%BB%93%E7%82%B9%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">4.</span> <span class="toc-text">
+          头指针和头结点的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E5%92%8C%E9%93%BE%E8%A1%A8%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">5.</span> <span class="toc-text">
+          数组和链表的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">6.</span> <span class="toc-text">
+          栈和队列的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%88%E5%92%8C%E5%A0%86%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%8C%E4%BB%A5%E5%8F%8A%E4%B8%BA%E4%BB%80%E4%B9%88%E6%A0%88%E8%A6%81%E5%BF%AB"><span class="toc-number">7.</span> <span class="toc-text">
+          栈和堆的区别，以及为什么栈要快</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95KMP%E7%AE%97%E6%B3%95"><span class="toc-number">8.</span> <span class="toc-text">
+          介绍一下字符串匹配算法KMP算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D%E4%B8%8Bprim%E7%AE%97%E6%B3%95%E5%92%8CKruskal%E7%AE%97%E6%B3%95"><span class="toc-number">9.</span> <span class="toc-text">
+          介绍下prim算法和Kruskal算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D%E4%B8%8B%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95"><span class="toc-number">10.</span> <span class="toc-text">
+          介绍下拓扑排序算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84%E5%A6%82%E4%BD%95%E7%A1%AE%E5%AE%9A%EF%BC%9F"><span class="toc-number">11.</span> <span class="toc-text">
+          关键路径如何确定？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D%E6%95%A3%E5%88%97%E8%A1%A8%E5%A4%84%E7%90%86%E5%86%B2%E7%AA%81%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95"><span class="toc-number">12.</span> <span class="toc-text">
+          介绍散列表处理冲突的几种方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9F%A5%E9%81%93%E5%93%AA%E4%BA%9B%EF%BC%8C%E5%93%AA%E4%B8%AA%E6%98%AF%E6%9C%80%E5%BF%AB%E7%9A%84%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">13.</span> <span class="toc-text">
+          排序算法知道哪些，哪个是最快的，为什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8BB-%E6%A0%91"><span class="toc-number">14.</span> <span class="toc-text">
+          介绍一下B+树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AVL%E6%A0%91%E5%92%8C%E7%BA%A2%E9%BB%91%E6%A0%91%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">15.</span> <span class="toc-text">
+          AVL树和红黑树的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%9C%A8%E6%97%A0%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E7%AC%ACk%E5%B0%8F%E7%9A%84%E5%80%BC"><span class="toc-number">16.</span> <span class="toc-text">
+          如何在无序数组中查找第k小的值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E5%A6%82%E4%BD%95%E5%8E%BB%E5%8F%96%E6%9C%80%E5%A4%A7%E7%9A%84k%E4%B8%AA"><span class="toc-number">17.</span> <span class="toc-text">
+          海量数据如何去取最大的k个</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%AA%E4%BA%9B%E5%9B%BE%E7%AE%97%E6%B3%95%E7%94%A8%E5%88%B0%E4%BA%86%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E6%80%9D%E6%83%B3"><span class="toc-number">18.</span> <span class="toc-text">
+          哪些图算法用到了动态规划思想</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E9%93%BE%E8%A1%A8%E6%98%AF%E5%90%A6%E6%9C%89%E7%8E%AF"><span class="toc-number">19.</span> <span class="toc-text">
+          判断链表是否有环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2%E5%92%8C%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2%E6%98%AF%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E7%9A%84%EF%BC%9F"><span class="toc-number">20.</span> <span class="toc-text">
+          介绍一下深度优先搜索和广度优先搜索是如何实现的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%88%E5%B8%8C%E8%A1%A8%E7%9A%84%E6%A6%82%E5%BF%B5%E3%80%81%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E3%80%81%E5%86%B2%E7%AA%81%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%EF%BC%9F"><span class="toc-number">21.</span> <span class="toc-text">
+          哈希表的概念、构造方法、冲突的解决办法？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%84%E7%A7%8D%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95"><span class="toc-number">22.</span> <span class="toc-text">
+          各种排序算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95%E5%92%8C%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%BB%A5%E5%8F%8A%E5%88%86%E6%B2%BB%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">23.</span> <span class="toc-text">
+          贪心算法和动态规划以及分治法的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E5%BE%AA%E7%8E%AF%E6%AF%94%E9%80%92%E5%BD%92%E7%9A%84%E6%95%88%E7%8E%87%E9%AB%98%E5%90%97%EF%BC%9F"><span class="toc-number">24.</span> <span class="toc-text">
+          用循环比递归的效率高吗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%8C%BA%E5%88%86%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%E6%98%AF%E9%98%9F%E7%A9%BA%E8%BF%98%E6%98%AF%E9%98%9F%E6%BB%A1%EF%BC%9F"><span class="toc-number">25.</span> <span class="toc-text">
+          如何区分循环队列是队空还是队满？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E6%8E%92%E5%AD%98%E5%9C%A8%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%8C%E5%A6%82%E4%BD%95%E4%BC%98%E5%8C%96"><span class="toc-number">26.</span> <span class="toc-text">
+          快排存在的问题，如何优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%9F%E5%88%97%E5%9C%A8%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9F"><span class="toc-number">27.</span> <span class="toc-text">
+          队列在计算机系统中的应用？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%AD%98%E5%82%A8"><span class="toc-number">28.</span> <span class="toc-text">
+          矩阵的压缩存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%A6%82%E5%BF%B5%EF%BC%9F"><span class="toc-number">29.</span> <span class="toc-text">
+          线索二叉树的概念？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%91%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84%EF%BC%9F"><span class="toc-number">30.</span> <span class="toc-text">
+          树的存储结构？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81"><span class="toc-number">31.</span> <span class="toc-text">
+          什么是哈夫曼编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="toc-number">32.</span> <span class="toc-text">
+          图的存储结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E9%97%AE%E9%A2%98"><span class="toc-number">33.</span> <span class="toc-text">
+          海量数据问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8"><span class="toc-number">34.</span> <span class="toc-text">
+          反转链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97"><span class="toc-number">35.</span> <span class="toc-text">
+          两个栈实现队列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E9%98%9F%E5%88%97%E5%AE%9E%E7%8E%B0%E6%A0%88"><span class="toc-number">36.</span> <span class="toc-text">
+          两个队列实现栈</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/头像.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">time_cool</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/timecool-cpu" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://www.zhihu.com/people/shi-guang-85-73-85" target="_blank" rel="noopener" data-popover="知乎" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">知</span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">17</div><div class="sidebar-ov-state-item__name">归档</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>水水水</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v6.3.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.7.0</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta name="description" content="DES加密算法       分组加密算法，对称加密算法 以64bit的单位称为分组 DES的基本结构是Feistel网络 在Feistel网络中，加密的各个步骤称为轮（round），整个加密过程就是进行若干次轮的循环。  加密：将64 6464bit的数据分为两部分，每部分32 3232bit，分别对应“左侧”和“右侧”。重复多轮，两轮之间左右对调。 解密：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="保研复习之密码学">
+<meta property="og:url" content="http://example.com/2022/10/05/%E5%AF%86%E7%A0%81%E5%AD%A6/index.html">
+<meta property="og:site_name" content="时光cool的博客仓库">
+<meta property="og:description" content="DES加密算法       分组加密算法，对称加密算法 以64bit的单位称为分组 DES的基本结构是Feistel网络 在Feistel网络中，加密的各个步骤称为轮（round），整个加密过程就是进行若干次轮的循环。  加密：将64 6464bit的数据分为两部分，每部分32 3232bit，分别对应“左侧”和“右侧”。重复多轮，两轮之间左右对调。 解密：">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/cb94014aca3440c0a63fc09a8f0cc174.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5rW35bCG5rKz5o6o6LWw,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/083cc694756e481faec10e6d5a510eea.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5rW35bCG5rKz5o6o6LWw,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/de9ed933916047c99f2e9e5527155820.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5rW35bCG5rKz5o6o6LWw,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/1d46a37329cd4c86bb68a1a90d05ed04.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAY2hvY29jb2xhdGU=,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/c2de879ef1604343a70e2e1b40aed41b.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAY2hvY29jb2xhdGU=,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/98aa5c31fc2e49949c286b343c2a2175.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAY2hvY29jb2xhdGU=,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="article:published_time" content="2022-10-05T12:52:25.204Z">
+<meta property="article:modified_time" content="2022-10-05T13:02:21.992Z">
+<meta property="article:author" content="水水水">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/cb94014aca3440c0a63fc09a8f0cc174.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5rW35bCG5rKz5o6o6LWw,size_20,color_FFFFFF,t_70,g_se,x_16"><title>保研复习之密码学 | 时光cool的博客仓库</title><link ref="canonical" href="http://example.com/2022/10/05/%E5%AF%86%E7%A0%81%E5%AD%A6/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":true},
+  reward: false,
+  fancybox: true,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="时光cool的博客仓库" type="application/atom+xml">
+</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">时光cool的博客仓库</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">保研复习之密码学</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-10-05</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-10-05</span></span></div></header><div class="post-body">
+        <h2 id="DES加密算法"   >
+          <a href="#DES加密算法" class="heading-link"><i class="fas fa-link"></i></a><a href="#DES加密算法" class="headerlink" title="DES加密算法"></a>DES加密算法</h2>
+      <p>分组加密算法，对称加密算法</p>
+<p>以64bit的单位称为分组</p>
+<p>DES的基本结构是Feistel网络</p>
+<p>在Feistel网络中，加密的各个步骤称为<strong>轮</strong>（round），整个加密过程就是进行若干次轮的循环。</p>
+<ul>
+<li>加密：将64 6464bit的数据分为两部分，每部分32 3232bit，分别对应“左侧”和“右侧”。重复多轮，两轮之间左右对调。</li>
+<li>解密：使用与加密时相反的子密钥。 </li>
+<li>子密钥：每一轮都需要使用一个不同的密钥，因为它只是一个局部密钥，所以称为<strong>子密钥</strong>（subkey）。</li>
+<li>轮函数：根据“右侧”和子密钥生成对“左侧”进行加密的比特序列。</li>
+</ul>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">轮数可以任意增加。</span><br><span class="line">加密时使用任何函数作为轮函数都可以正确解密，即使该函数不存在反函数。</span><br><span class="line">加密和解密可以用完全相同的结构来实现。</span><br></pre></td></tr></table></div></figure>
+
+
+
+
+        <h2 id="三重DES"   >
+          <a href="#三重DES" class="heading-link"><i class="fas fa-link"></i></a><a href="#三重DES" class="headerlink" title="三重DES"></a>三重DES</h2>
+      <p>由于现在DES已经可以在短时间内被暴力破解，所以三重DES出于这个目的被开发出来了。<strong>三重DES</strong>（triple-DES，3DES）是将DES重复3次得到的一种密码算法。</p>
+<ul>
+<li>加密：使用3个DES密钥，进行DES加密-&gt;<strong>解密</strong>-&gt;加密的过程。</li>
+<li>解密：与加密过程相反。 </li>
+<li>特点<ul>
+<li>向下兼容：当密钥1 11、2 22、3 33相同时，三重DES就等同于普通的DES。</li>
+<li>处理速度慢，除了特别重视向下兼容的情况以外，很少被用于新用途。</li>
+</ul>
+</li>
+</ul>
+
+        <h2 id="ECB模式"   >
+          <a href="#ECB模式" class="heading-link"><i class="fas fa-link"></i></a><a href="#ECB模式" class="headerlink" title="ECB模式"></a>ECB模式</h2>
+      <p><strong>ECB模式</strong>（Electronic CodeBook）非常简单，但由于存在弱点因此通常不会被使用。ECB将明文分组加密后的结果直接变成密文分组：<br><img   src="https://img-blog.csdnimg.cn/cb94014aca3440c0a63fc09a8f0cc174.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5rW35bCG5rKz5o6o6LWw,size_20,color_FFFFFF,t_70,g_se,x_16" style="width: image/watermark,type_d3F5LXplbmhlaQ,shadow_50,tepx;height: t_Q1NETiBA5rW35bCG5rKz5o6o6LWw,size_20,color_FFFFFF,t_70,g_se,px;"  alt="ECB模式"></p>
+<ul>
+<li>当最后一个明文分组的内容小于分组长度时，需要用一些特定的数据进行<strong>填充</strong>（padding）。</li>
+<li>特点<ul>
+<li>由于明文分组与密文分组一一对应，因此根据密文就知道明文中存在怎样的重复组合，可以以此为线索来破译密码。</li>
+<li>由于每个明文分组都独立地加密解密，所以密文分组的顺序改变会导致相应的明文分组的顺序改变，因此<strong>攻击者Mallory无需破译密码就能操纵明文</strong>。</li>
+</ul>
+</li>
+</ul>
+
+        <h2 id="CBC模式"   >
+          <a href="#CBC模式" class="heading-link"><i class="fas fa-link"></i></a><a href="#CBC模式" class="headerlink" title="CBC模式"></a>CBC模式</h2>
+      <p><strong>CBC模式</strong>（Cipher Block Chaining）将前一个密文分组与当前明文分组进行异或运算，然后再进行加密，这样可以避免ECB模式的弱点：<br><img   src="https://img-blog.csdnimg.cn/083cc694756e481faec10e6d5a510eea.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5rW35bCG5rKz5o6o6LWw,size_20,color_FFFFFF,t_70,g_se,x_16" style="width: image/watermark,type_d3F5LXplbmhlaQ,shadow_50,tepx;height: t_Q1NETiBA5rW35bCG5rKz5o6o6LWw,size_20,color_FFFFFF,t_70,g_se,px;"  alt="CBC模式"></p>
+<ul>
+<li>由于第一个明文分组不存在“前一个密文分组”，因此通常需要随机产生一个长度为一个分组的比特序列来代替“前一个密文分组”，这个比特序列称为<strong>初始化向量</strong>（Initialization Vector），通常缩写为<strong>IV</strong>。</li>
+<li>特点<ul>
+<li>由于明文分组在加密前会与“前一个密文分组“进行异或运算，因此即便明文分组1 11和2 22的值是相等的，密文分组1 11和2 22的值也不一定是相等的。</li>
+<li>假设CBC模式的密文分组中有一个密文分组<strong>损坏</strong>（分组的长度不变，值变）了，此时解密时最多只有2 22个分组收到影响（即损坏的分组和损坏分组的下一个分组）。</li>
+<li>假设CBC模式的密文分组中有一些比特<strong>缺失</strong>（分组的长度改变）了，那么缺失比特之后的密文分组就无法解密了。</li>
+<li>当初始化向量被篡改时，CBC模式的第一个明文分组会受到影响。使用消息认证码可以判断数据是否被篡改。</li>
+</ul>
+</li>
+</ul>
+<p><img   src="https://img-blog.csdnimg.cn/de9ed933916047c99f2e9e5527155820.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5rW35bCG5rKz5o6o6LWw,size_20,color_FFFFFF,t_70,g_se,x_16" style="width: image/watermark,type_d3F5LXplbmhlaQ,shadow_50,tepx;height: t_Q1NETiBA5rW35bCG5rKz5o6o6LWw,size_20,color_FFFFFF,t_70,g_se,px;"  alt="img"> </p>
+
+        <h2 id="解决密钥配送问题的方法"   >
+          <a href="#解决密钥配送问题的方法" class="heading-link"><i class="fas fa-link"></i></a><a href="#解决密钥配送问题的方法" class="headerlink" title="解决密钥配送问题的方法"></a>解决密钥配送问题的方法</h2>
+      <p>公钥密码无法解决的问题：</p>
+<ul>
+<li>会受到中间人攻击。</li>
+<li>处理速度慢，只有对成密码的几百分之一。</li>
+</ul>
+
+        <h2 id="RSA算法"   >
+          <a href="#RSA算法" class="heading-link"><i class="fas fa-link"></i></a><a href="#RSA算法" class="headerlink" title="RSA算法"></a>RSA算法</h2>
+      <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">取两个大质数p、q；</span><br><span class="line"></span><br><span class="line">计算公共模数n=p*q；</span><br><span class="line"></span><br><span class="line">计算n的欧拉函数f(n)=(p-1)*(q-1);</span><br><span class="line"></span><br><span class="line">任取公钥e大于1小于f(n)且与f(n)互质；</span><br><span class="line"></span><br><span class="line">根据ed mod f(n) =1算出私钥d；</span><br><span class="line"></span><br><span class="line">公钥（e，n) C=M^e mod n；</span><br><span class="line"></span><br><span class="line">私钥（d，n) M=C^d mod n；</span><br><span class="line"></span><br><span class="line">RSA大于等于124bit比较安全。</span><br></pre></td></tr></table></div></figure>
+
+
+
+
+        <h2 id="对称加密算法与非对称加密算法区别与优缺点"   >
+          <a href="#对称加密算法与非对称加密算法区别与优缺点" class="heading-link"><i class="fas fa-link"></i></a><a href="#对称加密算法与非对称加密算法区别与优缺点" class="headerlink" title="对称加密算法与非对称加密算法区别与优缺点"></a>对称加密算法与非对称加密算法区别与优缺点</h2>
+      <p>对称加密与非对称加密的主要区别在于密钥的个数。</p>
+<p>对称加密，双方用相同密钥，加密速度快、高效、适用于大量数据的加密场景 ，但是无法解决密钥管理、无法确认消息来源。</p>
+<p>非对称加密，公钥私钥，能提供身份验证、数字签名，但是加密速度慢、算法复杂。</p>
+
+        <h2 id="HASH算法和SHA-1算法？"   >
+          <a href="#HASH算法和SHA-1算法？" class="heading-link"><i class="fas fa-link"></i></a><a href="#HASH算法和SHA-1算法？" class="headerlink" title="HASH算法和SHA-1算法？"></a>HASH算法和SHA-1算法？</h2>
+      <p>hash算法就是一个散列函数对于输入的变长信息产生一个定长的散列码。</p>
+<p>即已知c好求散列值，但由散列值不好求c。</p>
+<p><strong>SHA-1 secure hash algorithm 安全哈希算法</strong></p>
+<p>MD-5                                                              输出128bit</p>
+<p>SHA-1报文最长2^ 64           80轮运算            输出160 bit</p>
+<p>SHA-256                                                        输出256 bit</p>
+<p>SHA-512                                                        输出512 bit</p>
+
+        <h2 id="分组加密算法与序列加密算法区别"   >
+          <a href="#分组加密算法与序列加密算法区别" class="heading-link"><i class="fas fa-link"></i></a><a href="#分组加密算法与序列加密算法区别" class="headerlink" title="分组加密算法与序列加密算法区别"></a>分组加密算法与序列加密算法区别</h2>
+      <p>分组加密每次处理特定长度的快数据，输出定长密文。扩散性好，插入敏感，但处理速度慢。</p>
+<p>序列加密&#x2F;流加密对数据流进行连续处理，明密文长度相同。速度快，低错误传播 但扩散性差，插入不敏感。</p>
+
+        <h2 id="加密攻击有哪些工作模式-x2F-威胁模型？"   >
+          <a href="#加密攻击有哪些工作模式-x2F-威胁模型？" class="heading-link"><i class="fas fa-link"></i></a><a href="#加密攻击有哪些工作模式-x2F-威胁模型？" class="headerlink" title="加密攻击有哪些工作模式&#x2F;威胁模型？"></a>加密攻击有哪些工作模式&#x2F;威胁模型？</h2>
+      <p>唯密文攻击        只知道密文或密文的一部分 ，可通过统计学方法破密。</p>
+<p>已知明文攻击      同一密钥的几个明-密文对</p>
+<p>选择明文攻击      攻击者可选明文获得密文</p>
+<p>选择密文攻击      攻击者可选密文获得明文</p>
+
+        <h2 id="AES-x2F-DES加密"   >
+          <a href="#AES-x2F-DES加密" class="heading-link"><i class="fas fa-link"></i></a><a href="#AES-x2F-DES加密" class="headerlink" title="AES&#x2F;DES加密"></a>AES&#x2F;DES加密</h2>
+      <p>DES data encryption standard 对称密码 分组密码&#x2F;块加密</p>
+<p> IP置换 16轮迭代 IP逆置换    64bit&#x2F;块   密钥64bit</p>
+<p>每64位</p>
+<p>先进行IP置换，64位分成左右两个32位部分</p>
+<p>在密钥的参与下进行16轮迭代，48E扩展、与密钥异或、32S压缩等</p>
+<p>16轮后，左右两部分交换并连接，再进行逆置换。</p>
+<p><img   src="https://img-blog.csdnimg.cn/1d46a37329cd4c86bb68a1a90d05ed04.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAY2hvY29jb2xhdGU=,size_20,color_FFFFFF,t_70,g_se,x_16" style="width: image/watermark,type_d3F5LXplbmhlaQ,shadow_50,tepx;height: t_Q1NETiBAY2hvY29jb2px;"  alt="img"><img   src="https://img-blog.csdnimg.cn/c2de879ef1604343a70e2e1b40aed41b.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAY2hvY29jb2xhdGU=,size_20,color_FFFFFF,t_70,g_se,x_16" style="width: image/watermark,type_d3F5LXplbmhlaQ,shadow_50,tepx;height: t_Q1NETiBAY2hvY29jb2px;"  alt="img"></p>
+<p> AES advanced encryption standard 对称密码 分组密码&#x2F;块加密</p>
+<p> AES      128bit&#x2F;块  密钥每多64位多两轮   128-10  192-12  256-14</p>
+<p>先进行一次明文与子密钥矩阵异或初始变换，</p>
+<p>再进行 9轮运算，具体是字节代换，行列变换、轮密钥加密等，</p>
+<p>最后进行一次最终轮变换（无列变换）。</p>
+<p><img   src="https://img-blog.csdnimg.cn/98aa5c31fc2e49949c286b343c2a2175.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAY2hvY29jb2xhdGU=,size_20,color_FFFFFF,t_70,g_se,x_16" style="width: image/watermark,type_d3F5LXplbmhlaQ,shadow_50,tepx;height: t_Q1NETiBAY2hvY29jb2px;"  alt="img"></p>
+
+        <h2 id="数字签名"   >
+          <a href="#数字签名" class="heading-link"><i class="fas fa-link"></i></a><a href="#数字签名" class="headerlink" title="数字签名"></a>数字签名</h2>
+      <p>主要是防止抵赖、认证、防篡改的技术，一般先hash处理。</p>
+<p>私钥加密 公钥解密</p>
+
+        <h2 id="密码学攻击"   >
+          <a href="#密码学攻击" class="heading-link"><i class="fas fa-link"></i></a><a href="#密码学攻击" class="headerlink" title="密码学攻击"></a>密码学攻击</h2>
+      <p><strong>主动攻击</strong></p>
+<p>在主动攻击中，攻击者尝试修改信息。 由于修改，由于可见性，可以容易地检测到这种攻击。比如重放、篡改等。</p>
+<p><strong>被动攻击</strong></p>
+<p>在被动攻击中，攻击者尝试获取信息而不修改信息。 因此，这些类型的攻击很难进行攻击，因为在数据中看不到任何干预迹象。比如窃听等。</p>
+
+        <h2 id="密码学安全性"   >
+          <a href="#密码学安全性" class="heading-link"><i class="fas fa-link"></i></a><a href="#密码学安全性" class="headerlink" title="密码学安全性"></a><strong>密码学安全性</strong></h2>
+      <p>密码学中的安全性可以分为两种：理论安全性与计算安全性。</p>
+<p>理论安全性：当攻击者拥有无限时间和资源还是不能破译密码时，称其为理论安全，也叫做无条件安全。</p>
+<p>计算安全性：如果一个密码算法在给定时间和资源内无法被攻破，则称其为计算安全的。</p>
+<p><strong>评估某密码算法的安全性，我们一般会通过数学证明得到。</strong></p>
+<p>在密码学中其被称为可证明安全性，它可以证明某个密码方案至少和解决另一个已知的困难问题是同等困难的，只要困难问题仍然存在，那么方案就是安全的，这种证明方式被称为规约，其来自复杂性理论。</p>
+
+        <h2 id="MAC消息认证码-message-authentication-code"   >
+          <a href="#MAC消息认证码-message-authentication-code" class="heading-link"><i class="fas fa-link"></i></a><a href="#MAC消息认证码-message-authentication-code" class="headerlink" title="MAC消息认证码 message authentication code"></a>MAC消息认证码 message authentication code</h2>
+      <p>是一种确认完整性并进行认证的技术。</p>
+<p>通过消息认证码可以确认自己收到的消息是否就是发送者的本意，也就是说可以判断消息是否被篡改，是否有人伪装成发送者发送了这条消息。</p>
+<p>消息认证码的输入包括任意长度的消息和一个发送者与接收者之间的共享密钥。输出固定长度的数据，输出的数据就是 MAC 值。</p>
+<p>消息认证码是一种与密钥相关联的单向散列函数。</p>
+<p>单向散列函数保证消息的一致性，完整性，没有被篡改。</p>
+<p>消息认证码保证消息的一致性，完整性，没有被篡改，并且不存在中间人伪装。</p>
+<p>数字签名保证消息的一致性，完整性，没有被篡改，并且不存在中间人伪装，并且能防止抵赖。</p>
+
+        <h2 id="重放攻击"   >
+          <a href="#重放攻击" class="heading-link"><i class="fas fa-link"></i></a><a href="#重放攻击" class="headerlink" title="重放攻击"></a>重放攻击</h2>
+      <p>窃听者不直接破解消息认证码，而是把它保存起来，反复利用，这种攻击就叫做重放攻击(replay attack)。</p>
+<p>防止重放攻击的3种方法：</p>
+<ol>
+<li>加入序列号</li>
+<li>加入时间戳</li>
+<li>加入随机数</li>
+</ol>
+
+        <h2 id="生日攻击"   >
+          <a href="#生日攻击" class="heading-link"><i class="fas fa-link"></i></a><a href="#生日攻击" class="headerlink" title="生日攻击"></a>生日攻击</h2>
+      <p>生日攻击不是真实的一个攻击，而是一种概率的结果。生日攻击是以概率论中的生日问题为数据基础的一种密码学攻击方法。</p>
+<p>如果一个房间里有23个或23个以上的人，那么至少有两个人的生日相同的概率要大于50%。对于60人以上，这种概率要大于99%。70人为99%，严格意义上，这并不是一个悖论，称之为悖论是由于跟人们的常识相悖。</p>
+<p>所以由生日悖论结论可以看出来：<strong>产生哈希冲突所需的输入样本数量，远低于所有可能哈希值的全集数量。</strong></p>
+
+        <h2 id="信息熵"   >
+          <a href="#信息熵" class="heading-link"><i class="fas fa-link"></i></a><a href="#信息熵" class="headerlink" title="信息熵"></a>信息熵</h2>
+      <p>香农在信息论中提出了信息熵的概念 </p>
+<p>熵是表示随机变量不确定性的度量</p>
+<p>从直观上，信息熵越大，变量包含的信息量越大，变量的不确定性也越大。</p>
+
+        <h2 id="什么是哈希碰撞"   >
+          <a href="#什么是哈希碰撞" class="heading-link"><i class="fas fa-link"></i></a><a href="#什么是哈希碰撞" class="headerlink" title="什么是哈希碰撞"></a>什么是哈希碰撞</h2>
+      <p>两个不同的输入，经过哈希算法后，得到了同样的哈希值，就叫做哈希碰撞。</p>
+<p>产生原因：</p>
+<p>一个空间较大的集合(输入)通过哈希算法映射到一个空间较小的集合(哈希值)，必然会造成多个输入映射到一个哈希值上。</p>
+<p>避免方法：</p>
+<p>避免哈希碰撞的主要手段是，根据输入集合的数量级，<strong>选取输出合适哈希值长度的哈希函数</strong>，将哈希碰撞的概率降为“几乎不可能”</p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://example.com">水水水</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://example.com/2022/10/05/%E5%AF%86%E7%A0%81%E5%AD%A6/">http://example.com/2022/10/05/%E5%AF%86%E7%A0%81%E5%AD%A6/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/10/05/%E6%97%A5%E5%B8%B8/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">保研复习之日常提问</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/10/05/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/"><span class="paginator-prev__text">保研复习之离散数学</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#DES%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">
+          DES加密算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E9%87%8DDES"><span class="toc-number">2.</span> <span class="toc-text">
+          三重DES</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ECB%E6%A8%A1%E5%BC%8F"><span class="toc-number">3.</span> <span class="toc-text">
+          ECB模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CBC%E6%A8%A1%E5%BC%8F"><span class="toc-number">4.</span> <span class="toc-text">
+          CBC模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E5%AF%86%E9%92%A5%E9%85%8D%E9%80%81%E9%97%AE%E9%A2%98%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">5.</span> <span class="toc-text">
+          解决密钥配送问题的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RSA%E7%AE%97%E6%B3%95"><span class="toc-number">6.</span> <span class="toc-text">
+          RSA算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E4%B8%8E%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E5%8C%BA%E5%88%AB%E4%B8%8E%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-number">7.</span> <span class="toc-text">
+          对称加密算法与非对称加密算法区别与优缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HASH%E7%AE%97%E6%B3%95%E5%92%8CSHA-1%E7%AE%97%E6%B3%95%EF%BC%9F"><span class="toc-number">8.</span> <span class="toc-text">
+          HASH算法和SHA-1算法？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E4%B8%8E%E5%BA%8F%E5%88%97%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E5%8C%BA%E5%88%AB"><span class="toc-number">9.</span> <span class="toc-text">
+          分组加密算法与序列加密算法区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A0%E5%AF%86%E6%94%BB%E5%87%BB%E6%9C%89%E5%93%AA%E4%BA%9B%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F-x2F-%E5%A8%81%E8%83%81%E6%A8%A1%E5%9E%8B%EF%BC%9F"><span class="toc-number">10.</span> <span class="toc-text">
+          加密攻击有哪些工作模式&#x2F;威胁模型？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AES-x2F-DES%E5%8A%A0%E5%AF%86"><span class="toc-number">11.</span> <span class="toc-text">
+          AES&#x2F;DES加密</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D"><span class="toc-number">12.</span> <span class="toc-text">
+          数字签名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%AD%A6%E6%94%BB%E5%87%BB"><span class="toc-number">13.</span> <span class="toc-text">
+          密码学攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%AD%A6%E5%AE%89%E5%85%A8%E6%80%A7"><span class="toc-number">14.</span> <span class="toc-text">
+          密码学安全性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MAC%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E7%A0%81-message-authentication-code"><span class="toc-number">15.</span> <span class="toc-text">
+          MAC消息认证码 message authentication code</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E6%94%BE%E6%94%BB%E5%87%BB"><span class="toc-number">16.</span> <span class="toc-text">
+          重放攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E6%97%A5%E6%94%BB%E5%87%BB"><span class="toc-number">17.</span> <span class="toc-text">
+          生日攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E7%86%B5"><span class="toc-number">18.</span> <span class="toc-text">
+          信息熵</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%93%88%E5%B8%8C%E7%A2%B0%E6%92%9E"><span class="toc-number">19.</span> <span class="toc-text">
+          什么是哈希碰撞</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/头像.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">time_cool</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/timecool-cpu" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://www.zhihu.com/people/shi-guang-85-73-85" target="_blank" rel="noopener" data-popover="知乎" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">知</span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">17</div><div class="sidebar-ov-state-item__name">归档</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>水水水</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v6.3.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.7.0</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>

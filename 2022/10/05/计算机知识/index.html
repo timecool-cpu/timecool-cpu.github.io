@@ -1,0 +1,102 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta name="description" content="switch为什么比if快？       switch以空间换时间。1、当分支较多时，当时用switch的效率是很高的。因为switch是随机访问的，就是确定了选择值之后直接跳转到那个特定的分支，但是if…else是遍历所以得可能值，知道找到符合条件的分支。如此看来，switch的效率确实比ifelse要高的多。2、由汇编代码可知道，switch…case占">
+<meta property="og:type" content="article">
+<meta property="og:title" content="保研复习之计算机知识">
+<meta property="og:url" content="http://example.com/2022/10/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/index.html">
+<meta property="og:site_name" content="时光cool的博客仓库">
+<meta property="og:description" content="switch为什么比if快？       switch以空间换时间。1、当分支较多时，当时用switch的效率是很高的。因为switch是随机访问的，就是确定了选择值之后直接跳转到那个特定的分支，但是if…else是遍历所以得可能值，知道找到符合条件的分支。如此看来，switch的效率确实比ifelse要高的多。2、由汇编代码可知道，switch…case占">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-10-05T12:52:25.194Z">
+<meta property="article:modified_time" content="2022-10-05T13:01:12.447Z">
+<meta property="article:author" content="水水水">
+<meta name="twitter:card" content="summary"><title>保研复习之计算机知识 | 时光cool的博客仓库</title><link ref="canonical" href="http://example.com/2022/10/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":true},
+  reward: false,
+  fancybox: true,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="时光cool的博客仓库" type="application/atom+xml">
+</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">时光cool的博客仓库</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">保研复习之计算机知识</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-10-05</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-10-05</span></span></div></header><div class="post-body">
+        <h3 id="switch为什么比if快？"   >
+          <a href="#switch为什么比if快？" class="heading-link"><i class="fas fa-link"></i></a><a href="#switch为什么比if快？" class="headerlink" title="switch为什么比if快？"></a>switch为什么比if快？</h3>
+      <p>switch以空间换时间。<br>1、当分支较多时，当时用switch的效率是很高的。因为switch是随机访问的，就是确定了选择值之后直接跳转到那个特定的分支，但是if…else是遍历所以得可能值，知道找到符合条件的分支。如此看来，switch的效率确实比ifelse要高的多。<br>2、由汇编代码可知道，switch…case占用较多的代码空间，因为它要生成跳表，特别是当case常量分布范围很大但实际有效值又比较少的情况，switch…case的空间利用率将变得很低。<br>3、switch…case只能处理case为常量的情况，对非常量的情况是无能为力的。例如 if (a &gt; 1 &amp;&amp; a &lt; 100)，是无法使用switch…case来处理的。所以，switch只能是在常量选择分支时比ifelse效率高，但是ifelse能应用于更多的场合，ifelse比较灵活。</p>
+
+        <h3 id="并发和并行的区别？"   >
+          <a href="#并发和并行的区别？" class="heading-link"><i class="fas fa-link"></i></a><a href="#并发和并行的区别？" class="headerlink" title="并发和并行的区别？"></a>并发和并行的区别？</h3>
+      <p>一、意思不同</p>
+<p>1、并发：并发是指两个或多个事件在同一时间间隔发生。</p>
+<p>2、并行：并行是指两个或者多个事件在同一时刻发生。</p>
+<p>二、侧重不同</p>
+<p>1、并发：并发侧重于在同一实体上。</p>
+<p>2、并行：并行侧重于在不同实体上。</p>
+<p>三、处理不同</p>
+<p>1、并发：并发在一台处理器上“同时”处理多个任务。</p>
+<p>2、并行：并行在多台处理器上同时处理多个任务。</p>
+
+        <h3 id="局部变量在定义时不初始化则初始值是不确定的，但全局变量初始化为0？"   >
+          <a href="#局部变量在定义时不初始化则初始值是不确定的，但全局变量初始化为0？" class="heading-link"><i class="fas fa-link"></i></a><a href="#局部变量在定义时不初始化则初始值是不确定的，但全局变量初始化为0？" class="headerlink" title="局部变量在定义时不初始化则初始值是不确定的，但全局变量初始化为0？"></a>局部变量在定义时不初始化则初始值是不确定的，但全局变量初始化为0？</h3>
+      <p>定义局部变量,其实就是在栈中通过移动栈指针,来给程序提供一个内存空间和这个局部变量名绑定。因为这段内存空间在栈上,而栈内存是反复使用的(脏的,上次用完没清零的) ,所以说使用栈来实现的局部变量定义时如果不初始化,里面的值就是一个垃圾值。由此我们扩展一下,其实不仅仅是局部变量,所有的变量在定义时只是在内存中分配一块空间,并没有对这块空间进行任何的初始化。如果这块内存以前被用过,里面的数据还在,那它对于我们来说是没有任何意义的垃圾值。</p>
+<p>全局变量是定义在堆中的，为静态存储。变量定义的时候,分配了一定的内存单元,在整个程序中,内存单元都不变.只能初始化一次,可以多次赋值,静态存储变量不初始化则初始为0.由堆进行初始化和收回，因此在定义时会默认初始化为0</p>
+
+        <h3 id="如何求圆周率？"   >
+          <a href="#如何求圆周率？" class="heading-link"><i class="fas fa-link"></i></a><a href="#如何求圆周率？" class="headerlink" title="如何求圆周率？"></a>如何求圆周率？</h3>
+      <p>①基于蒙特卡洛来计算，比如构造一个半径为1的圆和它的外切正方形，然后向其中去随机大量的点，计算落在圆中的概率应该是等于π&#x2F;4,当随机量足够多时可以认为这个比例就是概率即可计算。</p>
+<p>②圆周率定义为一个圆形的周长和直径的比值。构造一个圆，然后用一个软绳去算出圆的周长去除于直径即可得到。</p>
+
+        <h3 id="多个点拟合使用什么算法？"   >
+          <a href="#多个点拟合使用什么算法？" class="heading-link"><i class="fas fa-link"></i></a><a href="#多个点拟合使用什么算法？" class="headerlink" title="多个点拟合使用什么算法？"></a>多个点拟合使用什么算法？</h3>
+      <p>首先通过观察这些点，如果能够发现明显的线性关系，则去尝试使用多元线性回归。比如可以明显的看出他们可以拟合为一条直线，则可以使用最小二乘法去求解最合适的k和b。然后去计算拟合优度$R^2$去判断拟合的效果。</p>
+<p>除此之外也可以针对我们研究的问题去查阅文献，尝试去获取具有科学性的模型，然后将我们的实际问题赋予此去求出相应的参数。</p>
+<p>如果没有其他办法则可以尝试使用神经网络去进行预测，比如在数学建模美赛中我就尝试使用XGboost去针对过去十年的比特币价格进行合理预测，得到的不错的拟合度。</p>
+
+        <h3 id="面向过程和面向对象的区别，面向对象的性质？"   >
+          <a href="#面向过程和面向对象的区别，面向对象的性质？" class="heading-link"><i class="fas fa-link"></i></a><a href="#面向过程和面向对象的区别，面向对象的性质？" class="headerlink" title="面向过程和面向对象的区别，面向对象的性质？"></a>面向过程和面向对象的区别，面向对象的性质？</h3>
+      <p>区别：①首先他们都是软件开发的思想，先有的面向过程再有的面向对象。面向对象是为了弥补在大型项目中面向过程的不足。②面向过程可以抽象为程序&#x3D;数据结构+算法，但在面向对象的编程中是对象&#x3D;数据结构+算法，程序&#x3D;对象+对象，具有更好的迁移性，控制和复用③编程思想不同，面向过程是专注于涉及功能函数，面向对象编程则是抽象出类、属性、方法等元素，然后进行封装实现④他们都具有封装性，但是面向对象的对象具有多态、继承等特点。</p>
+<p>性质：三大特性</p>
+<p>a)封装：将对象中的属性、方法进行隐藏，仅对外提供公共访问方法，使得外部无法获取其中的实现过程，易于复用同时提高安全性。</p>
+<p>b)继承:使用目前已经定义好的类来作为基础建立新类的技术，在基础类上添加新的数据和函数，是多态的基础。</p>
+<p>c)多态:一个已经定义好的引用变量只有在程序运行时才能确定指向的是哪个类的实例对象，调用的是哪个类的实现方法。</p>
+
+        <h3 id="你是怎么理解类和对象的？"   >
+          <a href="#你是怎么理解类和对象的？" class="heading-link"><i class="fas fa-link"></i></a><a href="#你是怎么理解类和对象的？" class="headerlink" title="你是怎么理解类和对象的？"></a>你是怎么理解类和对象的？</h3>
+      <p>类是一个概念，是一类具有相同特性对象的抽象，是一个模板。代表的是一类事物，当我们遇到多个对象具有相同的特性时我们便可以进行类的抽象。</p>
+<p>对象是类的实例化，是实际存在的个体。</p>
+<p>他们之间的关系就是类时对象的抽象，对象是类的实例化。</p>
+
+        <h3 id="介绍一下c-的多态"   >
+          <a href="#介绍一下c-的多态" class="heading-link"><i class="fas fa-link"></i></a><a href="#介绍一下c-的多态" class="headerlink" title="介绍一下c++的多态"></a>介绍一下c++的多态</h3>
+      <p>主要包括两种，静态多态和动态多态。</p>
+<p>静态多态是指在编译的时候实现函数的多个状态，比如通过修改函数的参数数量、参数类型来实现函数重载。这个的实现原理是通过编译器在编译c++函数时函数名会发生变化，包含参数的数量以及类型等信息，依次来区分不同的函数调用。</p>
+<p>静态多态是指在程序运行才确定调用的是哪个函数，是一种动态绑定。比如具有虚函数的基类和实现了虚函数的子类，我们可以通过基类指针来调用子类中的虚函数。实现原理是通过虚函数指针以及虚函数表。当一个有虚函数的类在实例化的时候编译器会为其分配一个指向虚函数表的指针vptr,通过函数指针来调用虚函数时只会根据所指向对象类型来执行相对应的虚函数。</p>
+
+        <h3 id="C语言中-局部变量和全局变量都是存储在什么区"   >
+          <a href="#C语言中-局部变量和全局变量都是存储在什么区" class="heading-link"><i class="fas fa-link"></i></a><a href="#C语言中-局部变量和全局变量都是存储在什么区" class="headerlink" title="C语言中 局部变量和全局变量都是存储在什么区"></a>C语言中 局部变量和全局变量都是存储在什么区</h3>
+      <p>局部变量是分配在栈中的，也可以手动分配在堆上不过需要记得手动回收。这个局部变量所在的函数被多次调用时，每次调用这个局部变量在栈上的位置都不一定相同 </p>
+<p>全局变量分布在堆上，也就是静态存储器。在程序开始执行时给全局变量分配存储区，程序行完毕就释放。在程序执行过程中它们占据固定的存储单元，而不动态地进行分配和释放； </p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://example.com">水水水</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://example.com/2022/10/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/">http://example.com/2022/10/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/10/05/%E8%AE%A1%E7%BD%91/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">保研复习之计算机网络</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/10/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"><span class="paginator-prev__text">保研复习之计算机与网络安全</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#switch%E4%B8%BA%E4%BB%80%E4%B9%88%E6%AF%94if%E5%BF%AB%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">
+          switch为什么比if快？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B6%E5%8F%91%E5%92%8C%E5%B9%B6%E8%A1%8C%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">
+          并发和并行的区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E5%9C%A8%E5%AE%9A%E4%B9%89%E6%97%B6%E4%B8%8D%E5%88%9D%E5%A7%8B%E5%8C%96%E5%88%99%E5%88%9D%E5%A7%8B%E5%80%BC%E6%98%AF%E4%B8%8D%E7%A1%AE%E5%AE%9A%E7%9A%84%EF%BC%8C%E4%BD%86%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%BA0%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">
+          局部变量在定义时不初始化则初始值是不确定的，但全局变量初始化为0？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%B1%82%E5%9C%86%E5%91%A8%E7%8E%87%EF%BC%9F"><span class="toc-number">4.</span> <span class="toc-text">
+          如何求圆周率？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E4%B8%AA%E7%82%B9%E6%8B%9F%E5%90%88%E4%BD%BF%E7%94%A8%E4%BB%80%E4%B9%88%E7%AE%97%E6%B3%95%EF%BC%9F"><span class="toc-number">5.</span> <span class="toc-text">
+          多个点拟合使用什么算法？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B%E5%92%8C%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%8C%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%80%A7%E8%B4%A8%EF%BC%9F"><span class="toc-number">6.</span> <span class="toc-text">
+          面向过程和面向对象的区别，面向对象的性质？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%A0%E6%98%AF%E6%80%8E%E4%B9%88%E7%90%86%E8%A7%A3%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1%E7%9A%84%EF%BC%9F"><span class="toc-number">7.</span> <span class="toc-text">
+          你是怎么理解类和对象的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8Bc-%E7%9A%84%E5%A4%9A%E6%80%81"><span class="toc-number">8.</span> <span class="toc-text">
+          介绍一下c++的多态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C%E8%AF%AD%E8%A8%80%E4%B8%AD-%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E5%92%8C%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E9%83%BD%E6%98%AF%E5%AD%98%E5%82%A8%E5%9C%A8%E4%BB%80%E4%B9%88%E5%8C%BA"><span class="toc-number">9.</span> <span class="toc-text">
+          C语言中 局部变量和全局变量都是存储在什么区</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/头像.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">time_cool</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/timecool-cpu" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://www.zhihu.com/people/shi-guang-85-73-85" target="_blank" rel="noopener" data-popover="知乎" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">知</span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">17</div><div class="sidebar-ov-state-item__name">归档</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>水水水</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v6.3.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.7.0</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>

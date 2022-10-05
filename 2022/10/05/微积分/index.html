@@ -1,0 +1,100 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta name="description" content="123456789101112131415导数导函数可导求导可微微分连续可微：函数f(x)的导数f’(x)存在且是连续函数，则f(x)连续可微。多元函数偏增量全增量偏导数全导数偏微分全微分                      什么是导数和导函数？       函数y &#x3D; f(x) 在点x0的某个邻域内有定义， 则当自变量x在x0处取得增量 deltax，函数输出值也相应取得增量de">
+<meta property="og:type" content="article">
+<meta property="og:title" content="保研复习之微积分">
+<meta property="og:url" content="http://example.com/2022/10/05/%E5%BE%AE%E7%A7%AF%E5%88%86/index.html">
+<meta property="og:site_name" content="时光cool的博客仓库">
+<meta property="og:description" content="123456789101112131415导数导函数可导求导可微微分连续可微：函数f(x)的导数f’(x)存在且是连续函数，则f(x)连续可微。多元函数偏增量全增量偏导数全导数偏微分全微分                      什么是导数和导函数？       函数y &#x3D; f(x) 在点x0的某个邻域内有定义， 则当自变量x在x0处取得增量 deltax，函数输出值也相应取得增量de">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=F(x)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=G(x)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=x_%7B0%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=x%5Crightarrow">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=x_%7B0%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=A">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Clim_%7Bx+%5Crightarrow+x_%7B0%7D%7D%7BF(x)%7D+=+%5Clim_%7Bx+%5Crightarrow+x_%7B0%7D%7D%7BG(x)%7D+=+A">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=x_%7B0%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=F(x)%5Cleq+f(x)+%5Cleq+G(x)">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=x%5Crightarrow+x_%7B0%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Clim_%7Bx+%5Crightarrow+x_%7B0%7D%7D%7BF(x)%7D%5Cleq+%5Clim_%7Bx+%5Crightarrow+x_%7B0%7D%7D%7Bf(x)%7D%5Cleq+%5Clim_%7Bx+%5Crightarrow+x_%7B0%7D%7D%7BG(x)%7D">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=A%5Cleq%5Clim_%7Bx+%5Crightarrow+x_%7B0%7D%7D%7Bf(x)%7D+%5Cleq+A">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=%5Clim_%7Bx+%5Crightarrow+x_%7B0%7D%7D%7Bf(x)%7D=A">
+<meta property="article:published_time" content="2022-10-05T12:52:25.223Z">
+<meta property="article:modified_time" content="2022-10-05T12:59:01.575Z">
+<meta property="article:author" content="水水水">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.zhihu.com/equation?tex=F(x)"><title>保研复习之微积分 | 时光cool的博客仓库</title><link ref="canonical" href="http://example.com/2022/10/05/%E5%BE%AE%E7%A7%AF%E5%88%86/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":true},
+  reward: false,
+  fancybox: true,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="时光cool的博客仓库" type="application/atom+xml">
+</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">时光cool的博客仓库</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">保研复习之微积分</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-10-05</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-10-05</span></span></div></header><div class="post-body"><figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">导数</span><br><span class="line">导函数</span><br><span class="line">可导</span><br><span class="line">求导</span><br><span class="line">可微</span><br><span class="line">微分</span><br><span class="line">连续可微：函数f(x)的导数f’(x)存在且是连续函数，则f(x)连续可微。</span><br><span class="line">多元函数</span><br><span class="line">偏增量</span><br><span class="line">全增量</span><br><span class="line">偏导数</span><br><span class="line">全导数</span><br><span class="line">偏微分</span><br><span class="line">全微分</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+
+        <h3 id="什么是导数和导函数？"   >
+          <a href="#什么是导数和导函数？" class="heading-link"><i class="fas fa-link"></i></a><a href="#什么是导数和导函数？" class="headerlink" title="什么是导数和导函数？"></a>什么是导数和导函数？</h3>
+      <p>函数y &#x3D; f(x) 在点x0的某个邻域内有定义， 则当自变量x在x0处取得增量 deltax，函数输出值也相应取得增量deltay。如果deltay与deltax的比值在delta_x趋于0时的极限存在，则f(x)在x0处的导数存在，即f(x)在x0处可导。该极限即为f(x)在x0处的导数，记作f’(x0)。如果函数的自变量和取值都是实数的话，那么函数在某一点的导数就是该函数所代表的曲线在这一点上的切线斜率。</p>
+<p>如果函数在一段区间中每个点都是可导的，那么我们将得到的导数和对应的x值对应起来，就可以得到对应区间的一个导函数，表示的是在对应x下该函数的导数。</p>
+
+        <h3 id="可导和可微之间的关系"   >
+          <a href="#可导和可微之间的关系" class="heading-link"><i class="fas fa-link"></i></a><a href="#可导和可微之间的关系" class="headerlink" title="可导和可微之间的关系"></a>可导和可微之间的关系</h3>
+      <p>首先可微可以推出可导</p>
+<p>对于一元函数而言可微和可导是完全等价的，dy&#x3D;导数·dx</p>
+<p>对于多元函数而言可微是需要在各个维度都可导才能推出的</p>
+
+        <h3 id="介绍一下夹逼定理"   >
+          <a href="#介绍一下夹逼定理" class="heading-link"><i class="fas fa-link"></i></a><a href="#介绍一下夹逼定理" class="headerlink" title="介绍一下夹逼定理"></a>介绍一下夹逼定理</h3>
+      <p>有三个函数在某一区间满足A&gt;B&gt;C，在区间中某个点$x_0$有$\lim_{x \to 0} A&#x3D;\lim_{x \to 0} C&#x3D;X$则必有$\lim_{x \to 0} B&#x3D;X$</p>
+<p>定理内容：</p>
+<p>若函数 <img   src="https://www.zhihu.com/equation?tex=F(x)" style=""  alt="F(x)"> 和 <img   src="https://www.zhihu.com/equation?tex=G(x)" style=""  alt="G(x)"> 在 <img   src="https://www.zhihu.com/equation?tex=x_%7B0%7D" style=""  alt="x_{0}"> 的邻域连续， <img   src="https://www.zhihu.com/equation?tex=x%5Crightarrow" style=""  alt="x\rightarrow"> <img   src="https://www.zhihu.com/equation?tex=x_%7B0%7D" style=""  alt="x_{0}"> 时极限都为 <img   src="https://www.zhihu.com/equation?tex=A" style=""  alt="A"> ，即 <img   src="https://www.zhihu.com/equation?tex=%5Clim_%7Bx+%5Crightarrow+x_%7B0%7D%7D%7BF(x)%7D+=+%5Clim_%7Bx+%5Crightarrow+x_%7B0%7D%7D%7BG(x)%7D+=+A" style=""  alt="\lim_{x \rightarrow x_{0}}{F(x)} = \lim_{x \rightarrow x_{0}}{G(x)} = A"> ，且在该 <img   src="https://www.zhihu.com/equation?tex=x_%7B0%7D" style=""  alt="x_{0}"> 的邻域一直满足 <img   src="https://www.zhihu.com/equation?tex=F(x)%5Cleq+f(x)+%5Cleq+G(x)" style=""  alt="F(x)\leq f(x) \leq G(x)"> 。</p>
+<p>则当 <img   src="https://www.zhihu.com/equation?tex=x%5Crightarrow+x_%7B0%7D" style=""  alt="x\rightarrow x_{0}"> 时也有 <img   src="https://www.zhihu.com/equation?tex=%5Clim_%7Bx+%5Crightarrow+x_%7B0%7D%7D%7BF(x)%7D%5Cleq+%5Clim_%7Bx+%5Crightarrow+x_%7B0%7D%7D%7Bf(x)%7D%5Cleq+%5Clim_%7Bx+%5Crightarrow+x_%7B0%7D%7D%7BG(x)%7D" style=""  alt="\lim_{x \rightarrow x_{0}}{F(x)}\leq \lim_{x \rightarrow x_{0}}{f(x)}\leq \lim_{x \rightarrow x_{0}}{G(x)}"> ，也就是 <img   src="https://www.zhihu.com/equation?tex=A%5Cleq%5Clim_%7Bx+%5Crightarrow+x_%7B0%7D%7D%7Bf(x)%7D+%5Cleq+A" style=""  alt="A\leq\lim_{x \rightarrow x_{0}}{f(x)} \leq A"> ，</p>
+<p>所以 <img   src="https://www.zhihu.com/equation?tex=%5Clim_%7Bx+%5Crightarrow+x_%7B0%7D%7D%7Bf(x)%7D=A" style=""  alt="\lim_{x \rightarrow x_{0}}{f(x)}=A"> .</p>
+
+        <h3 id="介绍一下拉格朗日中值定理"   >
+          <a href="#介绍一下拉格朗日中值定理" class="heading-link"><i class="fas fa-link"></i></a><a href="#介绍一下拉格朗日中值定理" class="headerlink" title="介绍一下拉格朗日中值定理"></a>介绍一下拉格朗日中值定理</h3>
+      <p>定理：对于一个函数而言</p>
+<p>（1）在(a,b)中可导  </p>
+<p>（2）在[a,b]中连续  </p>
+<p>（3）则必有一个 ξ∈(a,b)使得$f(b)-f(a)&#x3D;f’(\xi )*(b-a)$</p>
+<p>几何含义：若连续曲线 y&#x3D;f(x) 在 A(a,f(a)), B(b,f(b)) 两点间的每一点处都有不垂直于x轴的切线，则曲线在 A,B 间至少存在一个点 P(c,f©)，使得该曲线在P点的切线与割线AB平行。 </p>
+<p>物理含义：对于直线运动，在任意一个运动过程中至少存在一个位置（或一个时刻）的瞬时速度等于这个过程中的平均速度。</p>
+
+        <h3 id="介绍一下凸函数"   >
+          <a href="#介绍一下凸函数" class="heading-link"><i class="fas fa-link"></i></a><a href="#介绍一下凸函数" class="headerlink" title="介绍一下凸函数"></a>介绍一下凸函数</h3>
+      <p>定义：对于任意的$x_1,x_2$都有$f\left(\lambda x_{1}+(1-\lambda) x_{2}\right) \leq \lambda f\left(x_{1}\right)+(1-\lambda) f\left(x_{2}\right), \forall \lambda \in(0,1)$</p>
+<p>例子：指数函数$y&#x3D;e^x$</p>
+<p>判断条件：$f^{\prime \prime}(x) \geq 0, \forall x$</p>
+<p>重要性质：琴生不等式（定义的推广）</p>
+<p>那么对于任意的 $ \left{x_{1}, x_{2}, \cdots, x_{n}\right} $ ， 以及正的权重系数 $ \left{w_{1}, w_{2}, \cdots, w_{n}\right} $, 且  $w_{1}+w_{2}+\cdots+w_{n}&#x3D;1$ , 则如下不等式成立$f\left(\sum_{k&#x3D;1}^{n} w_{k} \cdot x_{k}\right) \leq \sum_{k&#x3D;1}^{n} w_{k} \cdot f\left(x_{k}\right)$</p>
+
+        <h3 id="你是如何理解e的？"   >
+          <a href="#你是如何理解e的？" class="heading-link"><i class="fas fa-link"></i></a><a href="#你是如何理解e的？" class="headerlink" title="你是如何理解e的？"></a>你是如何理解e的？</h3>
+      <p>来源命题：当增长率为100%时，让一个细胞总群能够增长的极限是扩大到e倍</p>
+<p>含义：单位时间内，持续的翻倍增长所能达到的极限值</p>
+<p>$lim（1+1&#x2F;x）^x $</p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://example.com">水水水</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://example.com/2022/10/05/%E5%BE%AE%E7%A7%AF%E5%88%86/">http://example.com/2022/10/05/%E5%BE%AE%E7%A7%AF%E5%88%86/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/10/05/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">保研复习之线性代数</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/10/05/%E6%95%B0%E6%8D%AE%E5%BA%93/"><span class="paginator-prev__text">保研复习之数据库</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%BC%E6%95%B0%E5%92%8C%E5%AF%BC%E5%87%BD%E6%95%B0%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">
+          什么是导数和导函数？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E5%AF%BC%E5%92%8C%E5%8F%AF%E5%BE%AE%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">2.</span> <span class="toc-text">
+          可导和可微之间的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B%E5%A4%B9%E9%80%BC%E5%AE%9A%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">
+          介绍一下夹逼定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86"><span class="toc-number">4.</span> <span class="toc-text">
+          介绍一下拉格朗日中值定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B%E5%87%B8%E5%87%BD%E6%95%B0"><span class="toc-number">5.</span> <span class="toc-text">
+          介绍一下凸函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%A0%E6%98%AF%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3e%E7%9A%84%EF%BC%9F"><span class="toc-number">6.</span> <span class="toc-text">
+          你是如何理解e的？</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/头像.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">time_cool</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/timecool-cpu" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://www.zhihu.com/people/shi-guang-85-73-85" target="_blank" rel="noopener" data-popover="知乎" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">知</span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">17</div><div class="sidebar-ov-state-item__name">归档</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>水水水</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v6.3.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.7.0</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>

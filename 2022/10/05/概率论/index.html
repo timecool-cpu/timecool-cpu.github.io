@@ -1,0 +1,106 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta name="description" content="什么是最大似然估计？       基本介绍：在所有θ 可能的取值中，寻找一个值使得这个采样的可能性最大化，可以通过使得似然函数的一阶导数等于零，使得这个函数取到最大值。这个使得可能性最大的值称为最大似然估计 定义：设  $X 1, X 2, \ldots, X n  $为来自总体$  X  $的简单随机样本，$  x 1, x 2, \ldots, x n">
+<meta property="og:type" content="article">
+<meta property="og:title" content="保研复习之概率论">
+<meta property="og:url" content="http://example.com/2022/10/05/%E6%A6%82%E7%8E%87%E8%AE%BA/index.html">
+<meta property="og:site_name" content="时光cool的博客仓库">
+<meta property="og:description" content="什么是最大似然估计？       基本介绍：在所有θ 可能的取值中，寻找一个值使得这个采样的可能性最大化，可以通过使得似然函数的一阶导数等于零，使得这个函数取到最大值。这个使得可能性最大的值称为最大似然估计 定义：设  $X 1, X 2, \ldots, X n  $为来自总体$  X  $的简单随机样本，$  x 1, x 2, \ldots, x n">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-10-05T12:52:25.182Z">
+<meta property="article:modified_time" content="2022-10-05T13:00:37.184Z">
+<meta property="article:author" content="水水水">
+<meta name="twitter:card" content="summary"><title>保研复习之概率论 | 时光cool的博客仓库</title><link ref="canonical" href="http://example.com/2022/10/05/%E6%A6%82%E7%8E%87%E8%AE%BA/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":true},
+  reward: false,
+  fancybox: true,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="时光cool的博客仓库" type="application/atom+xml">
+</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">时光cool的博客仓库</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">保研复习之概率论</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-10-05</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-10-05</span></span></div></header><div class="post-body">
+        <h3 id="什么是最大似然估计？"   >
+          <a href="#什么是最大似然估计？" class="heading-link"><i class="fas fa-link"></i></a><a href="#什么是最大似然估计？" class="headerlink" title="什么是最大似然估计？"></a>什么是最大似然估计？</h3>
+      <p>基本介绍：在所有θ 可能的取值中，寻找一个值使得这个采样的可能性最大化，可以通过使得似然函数的一阶导数等于零，使得这个函数取到最大值。这个使得可能性最大的值称为最大似然估计</p>
+<p>定义：设  $X 1, X 2, \ldots, X n  $为来自总体$  X  $的简单随机样本，$  x 1, x 2, \ldots, x n  $为样本观测值称</p>
+<p>$L(\theta)&#x3D;\prod_{i&#x3D;1}^{n} p\left(x_{i}, \theta\right)$为参数θ的似然函数,通过使得这个似然函数取得最大值，得到的对应参数值就是最大似然估计。</p>
+<p><strong>⚠️注意：</strong>1）这里的似然函数是指 x1,x2,…,xn 不变时，关于 θ 的一个函数。</p>
+<p>2）最大似然估计不一定存在，也不一定唯一。</p>
+
+        <h3 id="什么是中心极限定理？"   >
+          <a href="#什么是中心极限定理？" class="heading-link"><i class="fas fa-link"></i></a><a href="#什么是中心极限定理？" class="headerlink" title="什么是中心极限定理？"></a>什么是中心极限定理？</h3>
+      <p>定义：如果样本量足够大，则变量均值的采样分布将近似于正态分布，而与该变量在总体中的分布无关。</p>
+<p>说明：中心极限定理意味着即使数据分布不是正态的，从中抽取的样本均值的分布也是正态的。 </p>
+<p>核心：独立同分布随机变量的均值呈正态分布。</p>
+
+        <h3 id="什么是大数定理？"   >
+          <a href="#什么是大数定理？" class="heading-link"><i class="fas fa-link"></i></a><a href="#什么是大数定理？" class="headerlink" title="什么是大数定理？"></a>什么是大数定理？</h3>
+      <p>沟通概率论和统计的桥梁。</p>
+<p>样本容量极大时，样本的均值必然趋近于总体的期望。</p>
+<p><strong>大数定律告诉我们当样本量很大时能用频率近似代替概率；能用样本均值近似代替总体均值。</strong> </p>
+
+        <h3 id="一句话概括假设检验"   >
+          <a href="#一句话概括假设检验" class="heading-link"><i class="fas fa-link"></i></a><a href="#一句话概括假设检验" class="headerlink" title="一句话概括假设检验"></a>一句话概括假设检验</h3>
+      <ul>
+<li><p><strong>假设检验</strong>：</p>
+</li>
+<li><ul>
+<li>你提出假设：说你的硬币是公平的</li>
+<li>我提出要检验你的假设：扔十次，看实验的结果是不是和你的假设相符</li>
+</ul>
+</li>
+<li><p><strong>P值</strong></p>
+</li>
+<li><ul>
+<li>一般认为<br>p−value≤0.05<br>就可以认为假设是不正确的。0.05这个标准就是<strong>显著水平</strong>，当然选择多少作为显著水平也是主观的。</li>
+</ul>
+</li>
+<li></li>
+</ul>
+
+        <h3 id="概率和统计的区别"   >
+          <a href="#概率和统计的区别" class="heading-link"><i class="fas fa-link"></i></a><a href="#概率和统计的区别" class="headerlink" title="概率和统计的区别"></a>概率和统计的区别</h3>
+      <p><strong>概率是已知模型和参数，推数据。统计是已知数据，推模型和参数。</strong> </p>
+<p>概率一般是个确定的值，统计得到的具有一定的随机性</p>
+
+        <h3 id="概率和似然的区别"   >
+          <a href="#概率和似然的区别" class="heading-link"><i class="fas fa-link"></i></a><a href="#概率和似然的区别" class="headerlink" title="概率和似然的区别"></a>概率和似然的区别</h3>
+      <ul>
+<li><p>P(x|θ)<br>输入有两个：x表示某一个具体的数据；θ表示模型的参数。</p>
+</li>
+<li><ul>
+<li><strong>如果θ是已知确定的，x是变量</strong>，这个函数叫做概率函数(probability function)，它描述对于不同的样本点x，其出现概率是多少。</li>
+<li><strong>如果x是已知确定的，θ是变量</strong>，这个函数叫做似然函数(<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=likelihood+function&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22268007494%22%7D" >likelihood function</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>), 它描述对于不同的模型参数，出现x这个样本点的概率是多少。</li>
+</ul>
+</li>
+</ul>
+
+        <h3 id="介绍一下欧拉公式"   >
+          <a href="#介绍一下欧拉公式" class="heading-link"><i class="fas fa-link"></i></a><a href="#介绍一下欧拉公式" class="headerlink" title="介绍一下欧拉公式"></a>介绍一下欧拉公式</h3>
+      <p>公式：$e^{i \theta}&#x3D;\cos (\theta)+i \sin (\theta)$</p>
+<p>指数函数的定义域扩大到了复数域 </p>
+<p>建立和三角函数和指数函数的关系 </p>
+<p>在傅里叶变换中用到了欧拉函数</p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://example.com">水水水</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://example.com/2022/10/05/%E6%A6%82%E7%8E%87%E8%AE%BA/">http://example.com/2022/10/05/%E6%A6%82%E7%8E%87%E8%AE%BA/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/10/05/%E6%9C%BA%E7%BB%84/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">保研复习之计算机组成原理</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/10/05/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"><span class="paginator-prev__text">保研复习之操作系统</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%9C%80%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">
+          什么是最大似然估计？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">
+          什么是中心极限定理？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E5%AE%9A%E7%90%86%EF%BC%9F"><span class="toc-number">3.</span> <span class="toc-text">
+          什么是大数定理？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%A6%82%E6%8B%AC%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C"><span class="toc-number">4.</span> <span class="toc-text">
+          一句话概括假设检验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E7%8E%87%E5%92%8C%E7%BB%9F%E8%AE%A1%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">5.</span> <span class="toc-text">
+          概率和统计的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E7%8E%87%E5%92%8C%E4%BC%BC%E7%84%B6%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">6.</span> <span class="toc-text">
+          概率和似然的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B%E6%AC%A7%E6%8B%89%E5%85%AC%E5%BC%8F"><span class="toc-number">7.</span> <span class="toc-text">
+          介绍一下欧拉公式</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/头像.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">time_cool</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/timecool-cpu" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://www.zhihu.com/people/shi-guang-85-73-85" target="_blank" rel="noopener" data-popover="知乎" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">知</span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">17</div><div class="sidebar-ov-state-item__name">归档</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>水水水</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v6.3.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.7.0</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>

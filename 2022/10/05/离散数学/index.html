@@ -1,0 +1,111 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta name="description" content="关键词：         命题、主析取范式、主合取范式、极小项、极大项  个体词、谓词、量词   P规则、T规则、CP规则  辖域、自由变元、约束变元  环和、环积，幂集，补集，对称差集，笛卡尔乘积，文氏图  关系的定义域、值域、域、逆、合成、限制和像   自反、对称、传递、偏序关系   闭包、自反闭包、对称闭包、传递闭包  覆盖、划分、等价关系、等价类">
+<meta property="og:type" content="article">
+<meta property="og:title" content="保研复习之离散数学">
+<meta property="og:url" content="http://example.com/2022/10/05/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/index.html">
+<meta property="og:site_name" content="时光cool的博客仓库">
+<meta property="og:description" content="关键词：         命题、主析取范式、主合取范式、极小项、极大项  个体词、谓词、量词   P规则、T规则、CP规则  辖域、自由变元、约束变元  环和、环积，幂集，补集，对称差集，笛卡尔乘积，文氏图  关系的定义域、值域、域、逆、合成、限制和像   自反、对称、传递、偏序关系   闭包、自反闭包、对称闭包、传递闭包  覆盖、划分、等价关系、等价类">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:\Users\86150\AppData\Local\Temp\1656988084687.png">
+<meta property="og:image" content="c:\Users\86150\AppData\Local\Temp\1657009248374.png">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=G">
+<meta property="og:image" content="https://www.zhihu.com/equation?tex=G">
+<meta property="article:published_time" content="2022-10-05T12:52:25.200Z">
+<meta property="article:modified_time" content="2022-10-05T13:00:45.929Z">
+<meta property="article:author" content="水水水">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:\Users\86150\AppData\Local\Temp\1656988084687.png"><title>保研复习之离散数学 | 时光cool的博客仓库</title><link ref="canonical" href="http://example.com/2022/10/05/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":true},
+  reward: false,
+  fancybox: true,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="时光cool的博客仓库" type="application/atom+xml">
+</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">时光cool的博客仓库</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">保研复习之离散数学</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-10-05</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-10-05</span></span></div></header><div class="post-body">
+        <h3 id="关键词："   >
+          <a href="#关键词：" class="heading-link"><i class="fas fa-link"></i></a><a href="#关键词：" class="headerlink" title="关键词："></a>关键词：</h3>
+      <ul>
+<li><input disabled="" type="checkbox"> 命题、主析取范式、主合取范式、极小项、极大项</li>
+<li><input disabled="" type="checkbox"> 个体词、谓词、量词 </li>
+<li><input disabled="" type="checkbox"> P规则、T规则、CP规则</li>
+<li><input disabled="" type="checkbox"> 辖域、自由变元、约束变元</li>
+<li><input disabled="" type="checkbox"> 环和、环积，幂集，补集，对称差集，笛卡尔乘积，文氏图</li>
+<li><input disabled="" type="checkbox"> 关系的定义域、值域、域、逆、合成、限制和像 </li>
+<li><input disabled="" type="checkbox"> 自反、对称、传递、偏序关系 </li>
+<li><input disabled="" type="checkbox"> 闭包、自反闭包、对称闭包、传递闭包</li>
+<li><input disabled="" type="checkbox"> 覆盖、划分、等价关系、等价类</li>
+<li><input disabled="" type="checkbox"> <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%93%88%E6%96%AF%E5%9B%BE&spm=1001.2101.3001.7020" >哈斯图</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>、上下界、偏序</li>
+<li><input disabled="" type="checkbox"> 幺元、零元、逆元</li>
+<li><input disabled="" type="checkbox"> 代数、半群、独异点、群、阿贝尔群、循环独异点、生成元</li>
+<li><input disabled="" type="checkbox"> 简单图、平凡图、多重图、线图、子图、补图、出度、入度、同构</li>
+<li><input disabled="" type="checkbox"> 出度、入度、度、同构、子图、真子图、生成子图、有向完全图、无向完全图、补图</li>
+<li><input disabled="" type="checkbox"> 连通图、单向连通图、弱连通图、强连通图、基图、连通分图、点连通度、边连通度</li>
+<li><input disabled="" type="checkbox"> 基本路径、基本回路、简单路径、简单回路</li>
+<li><input disabled="" type="checkbox"> 欧拉路径、欧拉回路、欧拉图、哈密顿路径、哈密顿回路、哈密顿图、哈密尔顿图、欧拉公式</li>
+<li><input disabled="" type="checkbox"> 树、无向树、平凡树、森林、连通分支、树叶、分支点、生成树、树枝、弦、余树、Kruskal</li>
+</ul>
+
+        <h3 id="主析取范式和主合取范式"   >
+          <a href="#主析取范式和主合取范式" class="heading-link"><i class="fas fa-link"></i></a><a href="#主析取范式和主合取范式" class="headerlink" title="主析取范式和主合取范式"></a>主析取范式和主合取范式</h3>
+      <p>极小项是若命题变元或其否定的合取∧；</p>
+<p>极大项是若命题变元或其否定的析取∨； </p>
+<p><img src="C:\Users\86150\AppData\Local\Temp\1656988084687.png" alt="1656988084687"></p>
+
+        <h3 id="推理规则"   >
+          <a href="#推理规则" class="heading-link"><i class="fas fa-link"></i></a><a href="#推理规则" class="headerlink" title="推理规则"></a>推理规则</h3>
+      <p>P规则：就是直接利用推理中给出的前提，即前提引入。</p>
+<p>T规则：就是由某一个或几个前提可以通过等价、蕴含得到其他命题公式，即推理规则。 </p>
+<p>I表示在T规则中通过蕴含式推出其他命题公式，即推理规则中的蕴含推理。</p>
+<p>E表示在T规则中通过等价式推出其他命题公式，即推理规则中的置换规则。 </p>
+<p>CP(Conditional Proof)规则，若证明AB→C, B可作为附加前提引入。通俗点说，就是咱在做证明题时，看到待证结论是B→C这样的，把B当作前提来用，这就是CP规则。 </p>
+
+        <h3 id="代数、半群、独异点、群、阿贝尔群之间的关系"   >
+          <a href="#代数、半群、独异点、群、阿贝尔群之间的关系" class="heading-link"><i class="fas fa-link"></i></a><a href="#代数、半群、独异点、群、阿贝尔群之间的关系" class="headerlink" title="代数、半群、独异点、群、阿贝尔群之间的关系"></a>代数、半群、独异点、群、阿贝尔群之间的关系</h3>
+      <p><img src="C:\Users\86150\AppData\Local\Temp\1657009248374.png" alt="1657009248374"></p>
+
+        <h3 id="欧拉图和哈密顿图"   >
+          <a href="#欧拉图和哈密顿图" class="heading-link"><i class="fas fa-link"></i></a><a href="#欧拉图和哈密顿图" class="headerlink" title="欧拉图和哈密顿图"></a>欧拉图和哈密顿图</h3>
+      <p>欧拉回路：若存在一条从起点S出发的路径，每条边恰好只走一次，最终回到起点S的路径被称为欧拉路径。</p>
+<p>欧拉通路：若存在一条从起点S出发的路径，经过每条边一次，但是不要求回到起点S的路径被称作欧拉通路。</p>
+<p>哈密顿路径：在无向图 <img   src="https://www.zhihu.com/equation?tex=G" style=""  alt="[公式]"> 中包含其所有顶点的初级路径</p>
+<p>哈密顿回路：在无向图 <img   src="https://www.zhihu.com/equation?tex=G" style=""  alt="[公式]"> 中包含其所有顶点的初级回路</p>
+<p>哈密顿图：具有哈密顿回路的无向图</p>
+<p>欧拉公式：n-m+k&#x3D;2</p>
+
+        <h3 id="离散数学讲了什么"   >
+          <a href="#离散数学讲了什么" class="heading-link"><i class="fas fa-link"></i></a><a href="#离散数学讲了什么" class="headerlink" title="离散数学讲了什么"></a>离散数学讲了什么</h3>
+      <p>数理逻辑，二元关系，群与环，数论什么的，是一门比较抽象的学科，主要作用是建立相关的数学模型，把实际问题抽象成为计算机能够理解的逻辑结构，并且用计算机的思维去解决实际问题，往往实际用的不多，主要是训练思维。</p>
+
+        <h3 id="什么是完全图？"   >
+          <a href="#什么是完全图？" class="heading-link"><i class="fas fa-link"></i></a><a href="#什么是完全图？" class="headerlink" title="什么是完全图？"></a>什么是完全图？</h3>
+      <p>在无向图中，若每对顶点之间都有一条边相连，则称该图为完全图<br>在有向图中，若每对顶点之间都有二条有向边相互连接，则称该图为完全图</p>
+
+        <h3 id="什么是群？"   >
+          <a href="#什么是群？" class="heading-link"><i class="fas fa-link"></i></a><a href="#什么是群？" class="headerlink" title="什么是群？"></a>什么是群？</h3>
+      <p>代数系统封闭性 结合律 他就是 半群 含有单位元 就是含幺半群 有逆元就是 群</p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="http://example.com">水水水</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="http://example.com/2022/10/05/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/">http://example.com/2022/10/05/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2022/10/05/%E5%AF%86%E7%A0%81%E5%AD%A6/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">保研复习之密码学</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2022/10/05/%E8%AE%A1%E7%BD%91/"><span class="paginator-prev__text">保研复习之计算机网络</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E8%AF%8D%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">
+          关键词：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E6%9E%90%E5%8F%96%E8%8C%83%E5%BC%8F%E5%92%8C%E4%B8%BB%E5%90%88%E5%8F%96%E8%8C%83%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">
+          主析取范式和主合取范式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E7%90%86%E8%A7%84%E5%88%99"><span class="toc-number">3.</span> <span class="toc-text">
+          推理规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E6%95%B0%E3%80%81%E5%8D%8A%E7%BE%A4%E3%80%81%E7%8B%AC%E5%BC%82%E7%82%B9%E3%80%81%E7%BE%A4%E3%80%81%E9%98%BF%E8%B4%9D%E5%B0%94%E7%BE%A4%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">4.</span> <span class="toc-text">
+          代数、半群、独异点、群、阿贝尔群之间的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AC%A7%E6%8B%89%E5%9B%BE%E5%92%8C%E5%93%88%E5%AF%86%E9%A1%BF%E5%9B%BE"><span class="toc-number">5.</span> <span class="toc-text">
+          欧拉图和哈密顿图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E8%AE%B2%E4%BA%86%E4%BB%80%E4%B9%88"><span class="toc-number">6.</span> <span class="toc-text">
+          离散数学讲了什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%AE%8C%E5%85%A8%E5%9B%BE%EF%BC%9F"><span class="toc-number">7.</span> <span class="toc-text">
+          什么是完全图？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%BE%A4%EF%BC%9F"><span class="toc-number">8.</span> <span class="toc-text">
+          什么是群？</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/头像.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">time_cool</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/timecool-cpu" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://www.zhihu.com/people/shi-guang-85-73-85" target="_blank" rel="noopener" data-popover="知乎" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">知</span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">17</div><div class="sidebar-ov-state-item__name">归档</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>水水水</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v6.3.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.7.0</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>

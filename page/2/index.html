@@ -1,0 +1,1054 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta property="og:type" content="website">
+<meta property="og:title" content="时光cool的博客仓库">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="时光cool的博客仓库">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="水水水">
+<meta name="twitter:card" content="summary"><title>时光cool的博客仓库</title><link ref="canonical" href="http://example.com/page/2/index.html"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":true},
+  reward: false,
+  fancybox: true,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="时光cool的博客仓库" type="application/atom+xml">
+</head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">时光cool的博客仓库</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/10/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/">保研复习之计算机知识</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-10-05</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-10-05</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="switch为什么比if快？"   >
+          <a href="#switch为什么比if快？" class="heading-link"><i class="fas fa-link"></i></a><a href="#switch为什么比if快？" class="headerlink" title="switch为什么比if快？"></a>switch为什么比if快？</h3>
+      <p>switch以空间换时间。<br>1、当分支较多时，当时用switch的效率是很高的。因为switch是随机访问的，就是确定了选择值之后直接跳转到那个特定的分支，但是if…else是遍历所以得可能值，知道找到符合条件的分支。如此看来，switch的效率确实比ifelse要高的多。<br>2、由汇编代码可知道，switch…case占用较多的代码空间，因为它要生成跳表，特别是当case常量分布范围很大但实际有效值又比较少的情况，switch…case的空间利用率将变得很低。<br>3、switch…case只能处理case为常量的情况，对非常量的情况是无能为力的。例如 if (a &gt; 1 &amp;&amp; a &lt; 100)，是无法使用switch…case来处理的。所以，switch只能是在常量选择分支时比ifelse效率高，但是ifelse能应用于更多的场合，ifelse比较灵活。</p>
+
+        <h3 id="并发和并行的区别？"   >
+          <a href="#并发和并行的区别？" class="heading-link"><i class="fas fa-link"></i></a><a href="#并发和并行的区别？" class="headerlink" title="并发和并行的区别？"></a>并发和并行的区别？</h3>
+      <p>一、意思不同</p>
+<p>1、并发：并发是指两个或多个事件在同一时间间隔发生。</p>
+<p>2、并行：并行是指两个或者多个事件在同一时刻发生。</p>
+<p>二、侧重不同</p>
+<p>1、并发：并发侧重于在同一实体上。</p>
+<p>2、并行：并行侧重于在不同实体上。</p>
+<p>三、处理不同</p>
+<p>1、并发：并发在一台处理器上“同时”处理多个任务。</p>
+<p>2、并行：并行在多台处理器上同时处理多个任务。</p>
+
+        <h3 id="局部变量在定义时不初始化则初始值是不确定的，但全局变量初始化为0？"   >
+          <a href="#局部变量在定义时不初始化则初始值是不确定的，但全局变量初始化为0？" class="heading-link"><i class="fas fa-link"></i></a><a href="#局部变量在定义时不初始化则初始值是不确定的，但全局变量初始化为0？" class="headerlink" title="局部变量在定义时不初始化则初始值是不确定的，但全局变量初始化为0？"></a>局部变量在定义时不初始化则初始值是不确定的，但全局变量初始化为0？</h3>
+      <p>定义局部变量,其实就是在栈中通过移动栈指针,来给程序提供一个内存空间和这个局部变量名绑定。因为这段内存空间在栈上,而栈内存是反复使用的(脏的,上次用完没清零的) ,所以说使用栈来实现的局部变量定义时如果不初始化,里面的值就是一个垃圾值。由此我们扩展一下,其实不仅仅是局部变量,所有的变量在定义时只是在内存中分配一块空间,并没有对这块空间进行任何的初始化。如果这块内存以前被用过,里面的数据还在,那它对于我们来说是没有任何意义的垃圾值。</p>
+<p>全局变量是定义在堆中的，为静态存储。变量定义的时候,分配了一定的内存单元,在整个程序中,内存单元都不变.只能初始化一次,可以多次赋值,静态存储变量不初始化则初始为0.由堆进行初始化和收回，因此在定义时会默认初始化为0</p>
+
+        <h3 id="如何求圆周率？"   >
+          <a href="#如何求圆周率？" class="heading-link"><i class="fas fa-link"></i></a><a href="#如何求圆周率？" class="headerlink" title="如何求圆周率？"></a>如何求圆周率？</h3>
+      <p>①基于蒙特卡洛来计算，比如构造一个半径为1的圆和它的外切正方形，然后向其中去随机大量的点，计算落在圆中的概率应该是等于π&#x2F;4,当随机量足够多时可以认为这个比例就是概率即可计算。</p>
+<p>②圆周率定义为一个圆形的周长和直径的比值。构造一个圆，然后用一个软绳去算出圆的周长去除于直径即可得到。</p>
+
+        <h3 id="多个点拟合使用什么算法？"   >
+          <a href="#多个点拟合使用什么算法？" class="heading-link"><i class="fas fa-link"></i></a><a href="#多个点拟合使用什么算法？" class="headerlink" title="多个点拟合使用什么算法？"></a>多个点拟合使用什么算法？</h3>
+      <p>首先通过观察这些点，如果能够发现明显的线性关系，则去尝试使用多元线性回归。比如可以明显的看出他们可以拟合为一条直线，则可以使用最小二乘法去求解最合适的k和b。然后去计算拟合优度$R^2$去判断拟合的效果。</p>
+<p>除此之外也可以针对我们研究的问题去查阅文献，尝试去获取具有科学性的模型，然后将我们的实际问题赋予此去求出相应的参数。</p>
+<p>如果没有其他办法则可以尝试使用神经网络去进行预测，比如在数学建模美赛中我就尝试使用XGboost去针对过去十年的比特币价格进行合理预测，得到的不错的拟合度。</p>
+
+        <h3 id="面向过程和面向对象的区别，面向对象的性质？"   >
+          <a href="#面向过程和面向对象的区别，面向对象的性质？" class="heading-link"><i class="fas fa-link"></i></a><a href="#面向过程和面向对象的区别，面向对象的性质？" class="headerlink" title="面向过程和面向对象的区别，面向对象的性质？"></a>面向过程和面向对象的区别，面向对象的性质？</h3>
+      <p>区别：①首先他们都是软件开发的思想，先有的面向过程再有的面向对象。面向对象是为了弥补在大型项目中面向过程的不足。②面向过程可以抽象为程序&#x3D;数据结构+算法，但在面向对象的编程中是对象&#x3D;数据结构+算法，程序&#x3D;对象+对象，具有更好的迁移性，控制和复用③编程思想不同，面向过程是专注于涉及功能函数，面向对象编程则是抽象出类、属性、方法等元素，然后进行封装实现④他们都具有封装性，但是面向对象的对象具有多态、继承等特点。</p>
+<p>性质：三大特性</p>
+<p>a)封装：将对象中的属性、方法进行隐藏，仅对外提供公共访问方法，使得外部无法获取其中的实现过程，易于复用同时提高安全性。</p>
+<p>b)继承:使用目前已经定义好的类来作为基础建立新类的技术，在基础类上添加新的数据和函数，是多态的基础。</p>
+<p>c)多态:一个已经定义好的引用变量只有在程序运行时才能确定指向的是哪个类的实例对象，调用的是哪个类的实现方法。</p>
+
+        <h3 id="你是怎么理解类和对象的？"   >
+          <a href="#你是怎么理解类和对象的？" class="heading-link"><i class="fas fa-link"></i></a><a href="#你是怎么理解类和对象的？" class="headerlink" title="你是怎么理解类和对象的？"></a>你是怎么理解类和对象的？</h3>
+      <p>类是一个概念，是一类具有相同特性对象的抽象，是一个模板。代表的是一类事物，当我们遇到多个对象具有相同的特性时我们便可以进行类的抽象。</p>
+<p>对象是类的实例化，是实际存在的个体。</p>
+<p>他们之间的关系就是类时对象的抽象，对象是类的实例化。</p>
+
+        <h3 id="介绍一下c-的多态"   >
+          <a href="#介绍一下c-的多态" class="heading-link"><i class="fas fa-link"></i></a><a href="#介绍一下c-的多态" class="headerlink" title="介绍一下c++的多态"></a>介绍一下c++的多态</h3>
+      <p>主要包括两种，静态多态和动态多态。</p>
+<p>静态多态是指在编译的时候实现函数的多个状态，比如通过修改函数的参数数量、参数类型来实现函数重载。这个的实现原理是通过编译器在编译c++函数时函数名会发生变化，包含参数的数量以及类型等信息，依次来区分不同的函数调用。</p>
+<p>静态多态是指在程序运行才确定调用的是哪个函数，是一种动态绑定。比如具有虚函数的基类和实现了虚函数的子类，我们可以通过基类指针来调用子类中的虚函数。实现原理是通过虚函数指针以及虚函数表。当一个有虚函数的类在实例化的时候编译器会为其分配一个指向虚函数表的指针vptr,通过函数指针来调用虚函数时只会根据所指向对象类型来执行相对应的虚函数。</p>
+
+        <h3 id="C语言中-局部变量和全局变量都是存储在什么区"   >
+          <a href="#C语言中-局部变量和全局变量都是存储在什么区" class="heading-link"><i class="fas fa-link"></i></a><a href="#C语言中-局部变量和全局变量都是存储在什么区" class="headerlink" title="C语言中 局部变量和全局变量都是存储在什么区"></a>C语言中 局部变量和全局变量都是存储在什么区</h3>
+      <p>局部变量是分配在栈中的，也可以手动分配在堆上不过需要记得手动回收。这个局部变量所在的函数被多次调用时，每次调用这个局部变量在栈上的位置都不一定相同 </p>
+<p>全局变量分布在堆上，也就是静态存储器。在程序开始执行时给全局变量分配存储区，程序行完毕就释放。在程序执行过程中它们占据固定的存储单元，而不动态地进行分配和释放； </p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/10/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">保研复习之计算机与网络安全</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-10-05</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-10-05</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="信息安全的基本属性"   >
+          <a href="#信息安全的基本属性" class="heading-link"><i class="fas fa-link"></i></a><a href="#信息安全的基本属性" class="headerlink" title="信息安全的基本属性"></a>信息安全的基本属性</h3>
+      <ul>
+<li><strong>保密性（Confidentiality）</strong>：保证信息不泄露给未经授权的用户。</li>
+<li><strong>完整性（Integrity）</strong>：保证信息从真实的发信者传送到真实的收信者手中，传送过程中没有被非法用户添加、删除、替换等。</li>
+<li><strong>可用性（Availability）</strong>：保证授权用户能对数据进行及时可靠的访问。</li>
+</ul>
+
+        <h3 id="防范缓冲区溢出的手段"   >
+          <a href="#防范缓冲区溢出的手段" class="heading-link"><i class="fas fa-link"></i></a><a href="#防范缓冲区溢出的手段" class="headerlink" title="防范缓冲区溢出的手段"></a>防范缓冲区溢出的手段</h3>
+      <p>1.使用更安全的函数，比如scanf_s()、gets_s() </p>
+<p>2.使用更加安全的语言，比如Java等安全的语言编写程序 </p>
+<p>3.改进编译器，它的主要思想是在编译器中增加边界检查以及保护堆栈的功能 </p>
+
+        <h3 id="防火墙技术"   >
+          <a href="#防火墙技术" class="heading-link"><i class="fas fa-link"></i></a><a href="#防火墙技术" class="headerlink" title="防火墙技术"></a>防火墙技术</h3>
+      <p>计算机网络中的<strong>边境检查站</strong>，保护内部网络，无法抵御网络中的内部攻击。</p>
+<p>有三种类型：包过滤防火墙、状态监测防火墙、代理服务器防火墙</p>
+<p>包过滤防火墙在网络中的适当位置对数据包按照规则进行过滤，状态监测防火墙是通过检测模块在不影响网络正常工作的前提下，抽取部分数据，即状态信息动态地保存起来作为以后指定安全决策的参考，代理服务器防火墙运行在两个网络之间，从站点取回所需信息再转发给客户。</p>
+<p>防火墙并非单纯的软件或硬件，它实质是软件和硬件加上一组安全策略的集合。 </p>
+
+        <h3 id="入侵检测技术"   >
+          <a href="#入侵检测技术" class="heading-link"><i class="fas fa-link"></i></a><a href="#入侵检测技术" class="headerlink" title="入侵检测技术"></a>入侵检测技术</h3>
+      <p>对周围正在进行的各种活动进行监视以此来判断系统的安全性</p>
+<p>有两种模型：基于主机的IDS和基于网络的IDS</p>
+<p>核心部件都是通信流收集器，分析引擎以及特征数据库</p>
+<p>基于主机的IDS搜集本机的日志文件和其他关键文件，基于网络的IDS搜集的是流经本网段的所有数据包。 分析引擎获得数据之后与特征数据库中的记录进行模式匹配，从而觉得哪些行为是好的，哪些行为是坏的。 </p>
+
+        <h3 id="身份认证技术"   >
+          <a href="#身份认证技术" class="heading-link"><i class="fas fa-link"></i></a><a href="#身份认证技术" class="headerlink" title="身份认证技术"></a>身份认证技术</h3>
+      <p>身份认证技术用来确定用户的合法身份。 </p>
+<p>基于口令认证技术：通过口令来验证用户的合法有效性（账号密码）</p>
+<p>双因素身份认证技术：添加了额外的身份验证令牌，而不仅仅是静态口令 </p>
+<p>数字证书的身份认证技术：通过CA认证机构发放的数字证书来对用户身份进行证明，常用在网络协议</p>
+<p>基于生物特征的身份认证技术：采用独一无二的生物特征来认证用户身份的技术 ，比如指纹识别、虹膜识别、行为识别等。</p>
+
+        <h3 id="网络层安全问题"   >
+          <a href="#网络层安全问题" class="heading-link"><i class="fas fa-link"></i></a><a href="#网络层安全问题" class="headerlink" title="网络层安全问题"></a>网络层安全问题</h3>
+      <p>关于<strong>ARP协议</strong>，由于计算机会对收到的每个ARP应答报文作出响应，并更新自己的ARP缓冲表，攻击者利用这个漏洞可以发起中间人攻击，或者用地址冲突使得目标主机不能联网 </p>
+<p>关于<strong>ip协议</strong>，由于ip的源地址不可靠，攻击者可以利用这个漏洞发起盲目飞行攻击以及利用源路由机制发起<strong>中间人攻击</strong>，针对这个漏洞可以采用单播反向验证进行预防。 </p>
+<p>关于<strong>ICMP协议</strong>，利用回送报文可以发起smurf攻击，利用路由重定向报文可以改变主机的路由。 </p>
+<p>介绍下SYN扫描、FIN扫描、idle扫描</p>
+
+        <h3 id="传输层的安全问题"   >
+          <a href="#传输层的安全问题" class="heading-link"><i class="fas fa-link"></i></a><a href="#传输层的安全问题" class="headerlink" title="传输层的安全问题"></a>传输层的安全问题</h3>
+      <p><strong>1.SYN泛洪攻击</strong><br>漏洞：服务器端的资源是在第二次握手之后分配的，客户端资源是在第三次握手之后分配的。攻击者发送大量第一次握手的数据包，对服务器回复的ACK不予确认。导致服务器所有的连接处于挂起状态，消耗服务器资源。</p>
+<p>防御：限制一台计算机向服务器发起SYN包的次数；先用代理服务器过滤掉可以的SYN包。</p>
+<p><strong>2.RST复位攻击</strong><br>漏洞：TCP释放连接有两种方式，友好终止（FIN）和突然终止（RST）。RST&#x3D;1说明连接中出现严重差错，丢弃缓冲区中的包，立刻断开TCP连接。</p>
+<p>手段：攻击者创建tcp复位数据报，将数据报发送给受害者和服务器，终止两者的连接。复位数据报的伪造要求【源IP、源端口、目标IP、目标端口、序号】都要正确，而且序号要落在窗口内，因此窗口越大，越容易发起复位攻击。</p>
+<p><strong>3.会话劫持</strong><br>基本思想：扰乱客户和服务器之间的同步状态，改写客户与服务器之间的会话</p>
+<p>过程：</p>
+<p>攻击者等待客户与服务器之间的TCP连接正常开启<br>攻击者伪装成客户向服务器发送RST包，使服务器的TCP连接关闭<br>攻击者伪装成客户向服务器发送TCP连接请求，序列号与客户最初选择的不同<br>服务器与攻击者建立TCP连接，它为自己选择的序列号也与之前的不同<br>客户并不知道这些，它仍然保持着之前双方的序列号<br>这样，客户与服务器之间的序列号就被扰乱了，它们之间传输的报文不被对方接受<br>攻击者作为中间人，通过改写收到的数据包，来维持客户与服务器之间的数据传输<br><strong>4.ACK风暴</strong><br>漏洞：主机会在接收到一个它不期望的报文后，向对方返回一个ACK报文，告知对方它想接收什么报文，希望重新与对方同步。而对方在收到报文之后，也发现报文的序号不对，它又会向主机发送ACK报文。这样就构成死循环，使网络上充满ACK报文，导致网络拥塞。</p>
+<p><strong>5.UDP Flood</strong></p>
+<p>UDP Flood是日渐猖厥的流量型DoS攻击，原理也很简单。常见的情况是利用大量UDP小包冲击<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="http://www.qycn.com/qydns/" >DNS</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>服务器或Radius认证服务器、流媒体视频服务器。</p>
+
+        <h3 id="应用层安全问题"   >
+          <a href="#应用层安全问题" class="heading-link"><i class="fas fa-link"></i></a><a href="#应用层安全问题" class="headerlink" title="应用层安全问题"></a>应用层安全问题</h3>
+      <p>针对<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=DHCP&spm=1001.2101.3001.7020" >DHCP</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>协议：</p>
+<p><strong>1.伪造发现报文：拒绝服务攻击</strong><br>攻击方法：攻击者向DHCP服务器发送大量伪造的DHCP发现报文（虚假的硬件地址）</p>
+<p>目的：消耗掉地址池中的所有IP地址</p>
+<p>注意：DHCP服务器会释放到期的IP，攻击者需持续发包</p>
+<p><strong>2.伪造释放报文：ip冲突</strong><br>攻击方法：伪装成客户端，向DHCP服务器发送释放报文</p>
+<p>目的：导致DHCP服务器向多台客户端提供同一个IP</p>
+<p>注意：需要知道DHCP分配过的IP</p>
+<p><strong>3.伪造提供报文：DHCP欺骗</strong><br>漏洞：客户不对收到的DHCP提供报文进行来源确认</p>
+<p>攻击方法：攻击者伪装成DHCP服务器向客户端回应恶意DHCP提供报文</p>
+<p>后果：给客户分配无效IP地址，造成客户无法使用网络，或将攻击者的IP作为默认网关提供给客户，嗅探客户流量</p>
+<p>防御方法：配置交换机的信任端口。连接真正DHCP服务器的端口被配置为信任端口，只有从信任端口接收到的DHCP提供包才能继续转发，其余一律丢弃。</p>
+<p>针对DNS协议:</p>
+<p><strong>1.伪造查询报文：拒绝服务</strong></p>
+<ul>
+<li>向受害者DNS服务器发送大量的DNS查询请求包，导致DNS服务器无法正常工作</li>
+</ul>
+<p><strong>2.伪造应答报文：DNS劫持</strong></p>
+<ul>
+<li>漏洞：客户端永远相信DNS应答是正确的</li>
+<li>攻击手段：直接向客户端发送恶意的DNS应答，或者将恶意条目插入到DNS服务器，修改域名和ip地址的对应项。</li>
+</ul>
+<p>针对HTTP协议：</p>
+<p>http存在sql注入的风险</p>
+
+        <h3 id="访问控制"   >
+          <a href="#访问控制" class="heading-link"><i class="fas fa-link"></i></a><a href="#访问控制" class="headerlink" title="访问控制"></a>访问控制</h3>
+      <p><strong>自主访问控制（DAC）</strong>的特点是客体的创建者可以授予其他主体对客体的访问权限，十分灵活，实现方式有访问控制矩阵，访问控制列表，访问控制能力列表。访问控制矩阵是一个三元组，包括主体，客体和访问权限；访问控制列表是以文件为中心创建的，而访问控制能力列表则是基于用户为中心创建的。 </p>
+<p>**强制访问控制(MAC)**，这是一种基于安全级别的访问控制，每一个主体和客体都被授予了不同的安全级别，通过判断主客体之间的安全级别进行访问控制。 </p>
+<p>**基于角色的访问控制(RBAC)**，与上面两种访问控制不同的是这种策略不直接对用户授予权限，而是给用户赋予不同的角色，每个角色有不同的权限。 </p>
+<p>**基于属性的访问控制(ABAC)**，每个用户携带自己的属性，包括主体属性，资源属性和环境属性来访问客体，授权引擎根据这些属性进行访问控制。 </p>
+
+        <h3 id="蠕虫-VS-木马-VS-病毒"   >
+          <a href="#蠕虫-VS-木马-VS-病毒" class="heading-link"><i class="fas fa-link"></i></a><a href="#蠕虫-VS-木马-VS-病毒" class="headerlink" title="蠕虫 VS 木马 VS 病毒"></a>蠕虫 VS 木马 VS 病毒</h3>
+      <p>蠕虫是一种可以独立运行，并能自动传播到其他计算机上的程序。<strong>利用缓冲区溢出漏洞使攻击代码自动运行</strong></p>
+<p>木马通过网络在用户未察觉的情况下窃取用户信息或控制用户主机的程序。<strong>可建立远程连接</strong> </p>
+<p>病毒是计算机程序中插入的破坏计算机功能或者数据的代码，能影响计算机使用，能自我复制的一组计算机指令或者程序代码。 </p>
+
+        <h3 id="防火墙的局限性"   >
+          <a href="#防火墙的局限性" class="heading-link"><i class="fas fa-link"></i></a><a href="#防火墙的局限性" class="headerlink" title="防火墙的局限性"></a>防火墙的局限性</h3>
+      <p>1.防火墙只是一种边界安全保护系统，如果攻击者在内网，那将无法进行防护</p>
+<p>2.防火墙是基于已有攻击知识制定的，无法对新的动机进行防护，难以防范零日漏洞</p>
+<p>3.防火墙对通信内容的控制很弱，因此其对病毒、蠕虫、木马等恶意代码的防护能力很弱</p>
+
+        <h3 id="什么是SQL-注入？"   >
+          <a href="#什么是SQL-注入？" class="heading-link"><i class="fas fa-link"></i></a><a href="#什么是SQL-注入？" class="headerlink" title="什么是SQL 注入？"></a>什么是SQL 注入？</h3>
+      <p>SQL注入就是通过把SQL命令插入到Web表单提交或输入域名或页面请求的查询字符串，最终达到欺骗服务器执行恶意的SQL命令。</p>
+<p>1). SQL注入攻击的总体思路</p>
+<p>　　(1). 寻找到SQL注入的位置<br>　　(2). 判断服务器类型和后台数据库类型<br>　　(3). 针对不同的服务器和数据库特点进行SQL注入攻击</p>
+
+        <h3 id="什么是匿名网络"   >
+          <a href="#什么是匿名网络" class="heading-link"><i class="fas fa-link"></i></a><a href="#什么是匿名网络" class="headerlink" title="什么是匿名网络?"></a>什么是匿名网络?</h3>
+      <ol>
+<li>匿名网络：暗网，使用洋葱路由，一层一层包裹数据包，网络节点都不知道目的端和起始端，所以匿名</li>
+</ol>
+<blockquote>
+<p>被称作洋葱路由的原因在于消息一层一层的加密包装成被称作洋葱数据包的<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84&spm=1001.2101.3001.7020" >数据结构</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>，层数取决于到目的地中间会经过的节点数，每经过一个节点层会将数据包的最外层解密，因此任一个节点都无法同时知晓这个消息最初与最终的目的地，使发送者达到匿名的效果。</p>
+</blockquote>
+
+        <h3 id="用户隐私泄露怎么看，怎样防止泄露："   >
+          <a href="#用户隐私泄露怎么看，怎样防止泄露：" class="heading-link"><i class="fas fa-link"></i></a><a href="#用户隐私泄露怎么看，怎样防止泄露：" class="headerlink" title="用户隐私泄露怎么看，怎样防止泄露："></a>用户隐私泄露怎么看，怎样防止泄露：</h3>
+      <p>用户隐私泄露，即用户在注册和使用相关网络应用上传的个人信息和数据被他人盗取，比如CSDN社区600万用户账号密码泄露，说明相关企业的网络安全意识淡薄，相关安全策略缺失。 在今天“数据为王”的当今社会,数据所给企业带来的收益，已远大于其它资产产生收益，数据泄露直接会给企业造成经济损失并影响其品牌形象。</p>
+<p>如何防止泄露：首先相关安全技术实施好，比如密码不要明文存储，采用MD5加密，页面数据交互部分后端处理不能采取简单的拼接，防止SQL注入等等，然后也是最重要的相关技术人员和管理人员的网络安全意识一定要有，不然即使安全技术再好，也抵不住社会工程学攻击。 网络安全三分靠技术七分靠管理 </p>
+
+        <h3 id="什么是漏洞扫描"   >
+          <a href="#什么是漏洞扫描" class="heading-link"><i class="fas fa-link"></i></a><a href="#什么是漏洞扫描" class="headerlink" title="什么是漏洞扫描"></a>什么是漏洞扫描</h3>
+      <ol>
+<li>漏洞扫描：漏洞扫描器包括网络漏扫、主机漏扫、数据库漏扫等不同种类。</li>
+</ol>
+<blockquote>
+<p>漏洞扫描是指基于漏洞数据库，通过扫描等手段对指定的远程或者本地计算机系统的安全脆弱性进行检测，发现可利用漏洞的一种安全检测（渗透攻击）行为。</p>
+</blockquote>
+
+        <h3 id="什么是XSS攻击"   >
+          <a href="#什么是XSS攻击" class="heading-link"><i class="fas fa-link"></i></a><a href="#什么是XSS攻击" class="headerlink" title="什么是XSS攻击"></a>什么是XSS攻击</h3>
+      <p>XSS（Cross-site scripting） 服务器对客户端的输入检测不严格 ，导致客户端输入的恶意JS代码被植入到HTML代码中，这些JavaScript代码得以执行，实现一些特殊的目的. 防御对策： 对输入内容中特殊字符进行转义 种类：持久型XSS、非持久型XSS 持久型XSS也叫存储型XSS 非持久性XSS分为反射型XSS和DOM型XSS </p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">非持久型xss攻击是一次性的，仅对当次的页面访问产生影响。</span><br><span class="line">非持久型xss攻击要求用户访问一个被攻击者篡改后的链接，用户访问该链接时，被植入的攻击脚本被用户浏览器执行，从而达到攻击目的。</span><br><span class="line">持久型xss，会把攻击者的数据存储在服务器端，攻击行为将伴随着攻击数据一直存在。</span><br><span class="line">DOM—based XSS漏洞是基于文档对象模型Document Objeet Model,DOM)的一种漏洞,dom - xss是通过url传入参数去控制触发的。</span><br></pre></td></tr></table></div></figure>
+
+
+
+
+        <h3 id="什么是CSRF攻击"   >
+          <a href="#什么是CSRF攻击" class="heading-link"><i class="fas fa-link"></i></a><a href="#什么是CSRF攻击" class="headerlink" title="什么是CSRF攻击"></a>什么是CSRF攻击</h3>
+      <p>跨站请求伪造，通常缩写为CSRF或者XSRF，是一种对网站的恶意利用。<br>通过伪装来自受信任用户的请求来利用受信任的网站。<br>防御对策：</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 阻止不明外域的访问：验证HTTP Referer字段</span><br><span class="line">   根据HTTP协议，在HTTP头中有一个字段叫Referer，它记录了该HTTP请求的来源地址。在通常情况下，访问一个安全受限页面的请求必须来自于同一个网站。比如某银行的转账是通过用户访问http://bank.test/test?page=10&amp;userID=101&amp;money=10000页面完成，用户必须先登录bank.test，然后通过点击页面上的按钮来触发转账事件。当用户提交请求时，该转账请求的Referer值就会是转账按钮所在页面的URL(本例中，通常是以bank. test域名开头的地址)。而如果攻击者要对银行网站实施CSRF攻击，他只能在自己的网站构造请求，当用户通过攻击者的网站发送请求到银行时，该请求的Referer是指向攻击者的网站。因此，要防御CSRF攻击，银行网站只需要对于每一个转账请求验证其Referer值，如果是以bank. test开头的域名，则说明该请求是来自银行网站自己的请求，是合法的。如果Referer是其他网站的话，就有可能是CSRF攻击，则拒绝该请求。</span><br><span class="line">2. 提交时要求附加本域才能获取的信息：在请求地址中添加token并验证</span><br><span class="line">   CSRF攻击之所以能够成功，是因为攻击者可以伪造用户的请求，该请求中所有的用户验证信息都存在于Cookie中，因此攻击者可以在不知道这些验证信息的情况下直接利用用户自己的Cookie来通过安全验证。由此可知，抵御CSRF攻击的关键在于：在请求中放入攻击者所不能伪造的信息，并且该信息不存在于Cookie之中。鉴于此，系统开发者可以在HTTP请求中以参数的形式加入一个随机产生的token，并在服务器端建立一个拦截器来验证这个token，如果请求中没有token或者token内容不正确，则认为可能是CSRF攻击而拒绝该请求。</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+
+
+
+        <h3 id="DES加密的大致过程"   >
+          <a href="#DES加密的大致过程" class="heading-link"><i class="fas fa-link"></i></a><a href="#DES加密的大致过程" class="headerlink" title="DES加密的大致过程"></a>DES加密的大致过程</h3>
+      <p>64位明文经过初始置换之后，然后进行16轮迭代，进行逆置换，生成64位密文。</p>
+<ul>
+<li>用56位密钥加密64位数据（8个奇偶校验）</li>
+<li>采用分组加密，feistel密码结构（feistel:简单地说Feistel结构就是顺序地执行两个或多个基本密码系统，使最后结果的密码强度高于每个密码系统的结果）</li>
+<li>对称算法：加密和解密除密钥编排不同外，使用同一算法</li>
+<li>密钥较短，加密处理简单，加解密速度快，适用于加密大量数据的场合</li>
+</ul>
+<p>流程：</p>
+<p><strong>1.ip置换（先是左边的明文<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%8A%A0%E5%AF%86&spm=1001.2101.3001.7020" >加密</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>部分）</strong></p>
+<p>给定明文，通过一个固定的初始置换IP来重排输入明文块P中的比特，得到比特串P0&#x3D;IP(P)&#x3D;L0R0，这里L0和R0分别是P0的前32比特和后32比特</p>
+<p><strong>2.将ip置换后的明文分成两组</strong> </p>
+<p><strong>3.右边进入分组密码的轮函数F</strong> </p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">轮函数包括E盒拓展、与轮密钥异或、S盒压缩、置换运算</span><br><span class="line">·右半部分继续进入E盒扩展</span><br><span class="line">	因为子密钥是48bit，所以将数据通过e盒扩展从32bit——&gt;48bit(注意e盒扩展的规律)</span><br><span class="line"></span><br><span class="line">·与子密钥异或后，再通过S盒压缩</span><br><span class="line">	48bit分成8组，通过8个s盒进行压缩恢复为32bit(注意压缩的方法：第一位与第六位组成行，中间四位组成列。最后查s盒得到的数据的二进制位压缩后的四位结果)</span><br><span class="line"></span><br><span class="line">·s盒的输出结果，通过p盒置换输出，轮函数F结束</span><br></pre></td></tr></table></div></figure>
+
+<p><strong>4.轮函数F的输出结果再与左半部分异或形成新的R,而原来的R则转为L本轮结束</strong> </p>
+<p>子密钥生成流程：密钥严格是64位，但是8位是奇偶校验位，因此是56位的</p>
+<p><strong>1.先减掉8奇偶校验位，再通过pc-1置换</strong> </p>
+<p><strong>2.分两组C0与D0进行循环左移位</strong> </p>
+<p><strong>3.再进行pc-2的置换。52bit——&gt;48bit，本轮子密钥生成结束，下一轮密钥靠C1、D1循环左移位后继续通过pc-2置换</strong> </p>
+
+        <h3 id="AES加密的大致过程"   >
+          <a href="#AES加密的大致过程" class="heading-link"><i class="fas fa-link"></i></a><a href="#AES加密的大致过程" class="headerlink" title="AES加密的大致过程"></a>AES加密的大致过程</h3>
+      <p>输入明文、子密钥，进行r轮迭代得到密文。 每一轮迭代过程为：明文先进行字节代替变换、行移位变换、列混合变换，再进行轮密钥加变换，得到下一轮输入  </p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/10/05/%E6%9C%BA%E7%BB%84/">保研复习之计算机组成原理</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-10-05</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-10-05</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h4 id="总线是什么？"   >
+          <a href="#总线是什么？" class="heading-link"><i class="fas fa-link"></i></a><a href="#总线是什么？" class="headerlink" title="总线是什么？"></a>总线是什么？</h4>
+      <p>1）总线是一组能功能部件之间分时共享的公共信息传送线路。分时、共享是它的两大特点。<br>2）分时是指同一时刻只能有一个部件向总线上发出信息。<br>3）总线分为三大类：片内总线、系统总线（数据总线+控制总线+地址总线）、通信总线。<br>4）通信方式分为：异步通信和并行通信。<br>5）一些特性：功能特性、电气特性、机械特性、时间特性。</p>
+
+        <h4 id="DMA是什么？"   >
+          <a href="#DMA是什么？" class="heading-link"><i class="fas fa-link"></i></a><a href="#DMA是什么？" class="headerlink" title="DMA是什么？"></a>DMA是什么？</h4>
+      <p>（1）CPU和外设之间数据传输的方式，外部设备发送DMA请求，CPU同意之后就让出总线控制权，DMA控制器接管总线控制权之后开始进行外部设备与内存之间的直接数据的，CPU不再作为中枢。比较适合大量数据的传输，跟中断相比减少了中断请求、相应、保存上下文（即环境）的时间，使得资源利用率以及吞吐量更大。<br>（2）DMA请求、DMA响应、数据传输、DMA结束<br>   （预处理–&gt;数据传输–&gt;后处理）</p>
+
+        <h4 id="说下五级流水CPU的各阶段"   >
+          <a href="#说下五级流水CPU的各阶段" class="heading-link"><i class="fas fa-link"></i></a><a href="#说下五级流水CPU的各阶段" class="headerlink" title="说下五级流水CPU的各阶段"></a>说下五级流水CPU的各阶段</h4>
+      <p>五级流水线指的是：取指、译码、执行、访存、写回五个操作。<br>1）取指：<br>指令取指（InstrucTIon Fetch）是指将指令从存储器中读取出来的过程。</p>
+<p>2）译码：<br>指令译码（InstrucTIon Decode）是指将存储器中取出的指令进行翻译的过程。经过译码之后得到指令需要的操作数寄存器索引，可以使用此索引从通用寄存器组（Register File，Regfile）中将操作数读出。</p>
+<p>3）执行：<br>指令译码之后所需要进行的计算类型都已得知，并且已经从通用寄存器组中读取出了所需的操作数，那么接下来便进行指令执行（InstrucTIon Execute）。指令执行是指对指令进行真正运算的过程。譬如，如果指令是一条加法运算指令，则对操作数进行加法操作；如果是减法运算指令，则进行减法操作。<br>在“执行”阶段的最常见部件为算术逻辑部件运算器（ArithmeTIc Logical Unit，ALU），作为实施具体运算的硬件功能单元。</p>
+<p>4）访存：<br>存储器访问指令往往是指令集中最重要的指令类型之一，访存（Memory Access）是指存储器访问指令将数据从存储器中读出，或者写入存储器的过程。</p>
+<p>5）写回：<br>写回（Write-Back）是指将指令执行的结果写回通用寄存器组的过程。如果是普通运算指令，该结果值来自于“执行”阶段计算的结果；如果是存储器读指令，该结果来自于“访存”阶段从存储器中读取出来的数据。</p>
+
+        <h4 id="执行单条指令时单周期CPU和五级流水CPU谁更快？为什么？"   >
+          <a href="#执行单条指令时单周期CPU和五级流水CPU谁更快？为什么？" class="heading-link"><i class="fas fa-link"></i></a><a href="#执行单条指令时单周期CPU和五级流水CPU谁更快？为什么？" class="headerlink" title="执行单条指令时单周期CPU和五级流水CPU谁更快？为什么？"></a>执行单条指令时单周期CPU和五级流水CPU谁更快？为什么？</h4>
+      <p>1）五级流水CPU就是在多周期CPU的基础上+流水线思想——–&gt;实现并行。<br>2）传统的单周期CPU是指指令在一个时钟周期（即时钟到来一次）内执行完成，包括所有的操作。但这里存在的确定就是时钟周期的时间是固定的，所以时钟周期的时间应该是最长的指令所需要的时间，对于那种很短的指令，就会造成浪费。引入多周期，这时就可以减少浪费的时间。<br>3）单周期CPU（是指在一个时钟周期内完成这五个阶段的处理）。因为五级流水CPU中每一个操作的流水时间是一样的，取得是这五步中的最大执行时间，那么就是最大操作时间*需要执行的操作数目（取指、译码、、、）。<br>4）因为只有一条指令嘛，所以单周期最快，多条指令是考虑流水线比较好。</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/10/05/%E6%A6%82%E7%8E%87%E8%AE%BA/">保研复习之概率论</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-10-05</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-10-05</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h3 id="什么是最大似然估计？"   >
+          <a href="#什么是最大似然估计？" class="heading-link"><i class="fas fa-link"></i></a><a href="#什么是最大似然估计？" class="headerlink" title="什么是最大似然估计？"></a>什么是最大似然估计？</h3>
+      <p>基本介绍：在所有θ 可能的取值中，寻找一个值使得这个采样的可能性最大化，可以通过使得似然函数的一阶导数等于零，使得这个函数取到最大值。这个使得可能性最大的值称为最大似然估计</p>
+<p>定义：设  $X 1, X 2, \ldots, X n  $为来自总体$  X  $的简单随机样本，$  x 1, x 2, \ldots, x n  $为样本观测值称</p>
+<p>$L(\theta)&#x3D;\prod_{i&#x3D;1}^{n} p\left(x_{i}, \theta\right)$为参数θ的似然函数,通过使得这个似然函数取得最大值，得到的对应参数值就是最大似然估计。</p>
+<p><strong>⚠️注意：</strong>1）这里的似然函数是指 x1,x2,…,xn 不变时，关于 θ 的一个函数。</p>
+<p>2）最大似然估计不一定存在，也不一定唯一。</p>
+
+        <h3 id="什么是中心极限定理？"   >
+          <a href="#什么是中心极限定理？" class="heading-link"><i class="fas fa-link"></i></a><a href="#什么是中心极限定理？" class="headerlink" title="什么是中心极限定理？"></a>什么是中心极限定理？</h3>
+      <p>定义：如果样本量足够大，则变量均值的采样分布将近似于正态分布，而与该变量在总体中的分布无关。</p>
+<p>说明：中心极限定理意味着即使数据分布不是正态的，从中抽取的样本均值的分布也是正态的。 </p>
+<p>核心：独立同分布随机变量的均值呈正态分布。</p>
+
+        <h3 id="什么是大数定理？"   >
+          <a href="#什么是大数定理？" class="heading-link"><i class="fas fa-link"></i></a><a href="#什么是大数定理？" class="headerlink" title="什么是大数定理？"></a>什么是大数定理？</h3>
+      <p>沟通概率论和统计的桥梁。</p>
+<p>样本容量极大时，样本的均值必然趋近于总体的期望。</p>
+<p><strong>大数定律告诉我们当样本量很大时能用频率近似代替概率；能用样本均值近似代替总体均值。</strong> </p>
+
+        <h3 id="一句话概括假设检验"   >
+          <a href="#一句话概括假设检验" class="heading-link"><i class="fas fa-link"></i></a><a href="#一句话概括假设检验" class="headerlink" title="一句话概括假设检验"></a>一句话概括假设检验</h3>
+      <ul>
+<li><p><strong>假设检验</strong>：</p>
+</li>
+<li><ul>
+<li>你提出假设：说你的硬币是公平的</li>
+<li>我提出要检验你的假设：扔十次，看实验的结果是不是和你的假设相符</li>
+</ul>
+</li>
+<li><p><strong>P值</strong></p>
+</li>
+<li><ul>
+<li>一般认为<br>p−value≤0.05<br>就可以认为假设是不正确的。0.05这个标准就是<strong>显著水平</strong>，当然选择多少作为显著水平也是主观的。</li>
+</ul>
+</li>
+<li></li>
+</ul>
+
+        <h3 id="概率和统计的区别"   >
+          <a href="#概率和统计的区别" class="heading-link"><i class="fas fa-link"></i></a><a href="#概率和统计的区别" class="headerlink" title="概率和统计的区别"></a>概率和统计的区别</h3>
+      <p><strong>概率是已知模型和参数，推数据。统计是已知数据，推模型和参数。</strong> </p>
+<p>概率一般是个确定的值，统计得到的具有一定的随机性</p>
+
+        <h3 id="概率和似然的区别"   >
+          <a href="#概率和似然的区别" class="heading-link"><i class="fas fa-link"></i></a><a href="#概率和似然的区别" class="headerlink" title="概率和似然的区别"></a>概率和似然的区别</h3>
+      <ul>
+<li><p>P(x|θ)<br>输入有两个：x表示某一个具体的数据；θ表示模型的参数。</p>
+</li>
+<li><ul>
+<li><strong>如果θ是已知确定的，x是变量</strong>，这个函数叫做概率函数(probability function)，它描述对于不同的样本点x，其出现概率是多少。</li>
+<li><strong>如果x是已知确定的，θ是变量</strong>，这个函数叫做似然函数(<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=likelihood+function&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22article%22,%22sourceId%22:%22268007494%22%7D" >likelihood function</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>), 它描述对于不同的模型参数，出现x这个样本点的概率是多少。</li>
+</ul>
+</li>
+</ul>
+
+        <h3 id="介绍一下欧拉公式"   >
+          <a href="#介绍一下欧拉公式" class="heading-link"><i class="fas fa-link"></i></a><a href="#介绍一下欧拉公式" class="headerlink" title="介绍一下欧拉公式"></a>介绍一下欧拉公式</h3>
+      <p>公式：$e^{i \theta}&#x3D;\cos (\theta)+i \sin (\theta)$</p>
+<p>指数函数的定义域扩大到了复数域 </p>
+<p>建立和三角函数和指数函数的关系 </p>
+<p>在傅里叶变换中用到了欧拉函数</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/10/05/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">保研复习之操作系统</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-10-05</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-10-05</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>[TOC]</p>
+
+        <h3 id="操作系统的功能"   >
+          <a href="#操作系统的功能" class="heading-link"><i class="fas fa-link"></i></a><a href="#操作系统的功能" class="headerlink" title="操作系统的功能"></a>操作系统的功能</h3>
+      <p>作为资源的管理者</p>
+<ul>
+<li><code>进程管理</code>: 进程管理的主要作用就是任务调度，在单核处理器下，操作系统会为每个进程分配一个任务，进程管理的工作十分简单；而在多核处理器下，操作系统除了要为进程分配任务外，还要解决处理器的调度、分配和回收等问题</li>
+<li><code>内存管理</code>：内存管理主要是操作系统负责管理内存的分配、回收，在进程需要时分配内存以及在进程完成时回收内存，协调内存资源，通过合理的页面置换算法进行页面的换入换出</li>
+<li><code>设备管理</code>：根据确定的设备分配原则对设备进行分配，使设备与主机能够并行工作，为用户提供良好的设备使用界面。</li>
+<li><code>文件管理</code>：有效地管理文件的存储空间，合理地组织和管理文件系统，为文件访问和文件保护提供更有效的方法及手段。</li>
+<li><code>提供用户接口</code>：操作系统提供了访问应用程序和硬件的接口，使用户能够通过应用程序发起系统调用从而操纵硬件，实现想要的功能。</li>
+</ul>
+
+        <h3 id="操作系统的特征"   >
+          <a href="#操作系统的特征" class="heading-link"><i class="fas fa-link"></i></a><a href="#操作系统的特征" class="headerlink" title="操作系统的特征"></a>操作系统的特征</h3>
+      <p>并发性：是在计算机系统中同时存在多个程序，宏观上看，这些程序是同时向前推进的。 在单CPU上，这些并发执行的程序是交替在CPU上运行的。 </p>
+<p>共享性：资源共享是操作系统程序和多个用户程序共用系统中的资源。</p>
+<p>异步性：即不确定性。同一程序和数据的多次运行可能得到不同的结果；程序的运行时间、运行顺序也具有不确定性；外部输入的请求、运行故障发生的时间难以预测。这些都是不确定性的表现</p>
+<p>虚拟：是指通过技术将一个物理实体变成若干个逻辑上的对应物。在操作系统中虚拟的实现主要是通过分时的使用方法。显然，如果n是某一个物理设备所对应的虚拟逻辑设备数，则虚拟设备的速度必然是物理设备速度的1&#x2F;n。</p>
+
+        <h3 id="处理器的三级调度"   >
+          <a href="#处理器的三级调度" class="heading-link"><i class="fas fa-link"></i></a><a href="#处理器的三级调度" class="headerlink" title="处理器的三级调度"></a><strong>处理器的三级调度</strong></h3>
+      <p>高级调度（作业调度）：作业从磁盘调入内存所采取的调度算法，先来先服务调度算法、短作业优先调度算法 </p>
+<p>中级调度：外存对换区的具备运行条件的进程调入内存，并将其状态修改为就绪状态，挂在就绪队列上等待。内存中暂时不能运行的进程对换到外存兑换区，此时状态为挂起状态。 </p>
+<p>进程调度：采用什么样的算法将处理器分配给进程 </p>
+
+        <h3 id="线程、进程、管程的区别？"   >
+          <a href="#线程、进程、管程的区别？" class="heading-link"><i class="fas fa-link"></i></a><a href="#线程、进程、管程的区别？" class="headerlink" title="线程、进程、管程的区别？"></a>线程、进程、管程的区别？</h3>
+      <p>进程：是系统进行资源分配的基本单位，创建一个进程，系统会为其分配相应的内存空间等资源。（我们平时用的exe类型的就是一个进程，比如WeChat和QQ以及浏览器）。一个进程可以拥有一个或者多个线程，线程的引入增加了并发度。 </p>
+<p>线程：是轻量型进程，由进程创建，是系统进行独立调度和分配的基本单位，线程会与同属于一个进程的其他线程共享该进程所具备的资源，但是线程本身也具备一些自己特有的信息，比如程序寄存器等。 </p>
+<p>管程：定义了一个<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84&spm=1001.2101.3001.7020" >数据结构</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>和能为并发进程所执行(在该数据结构上)的一组操作，这组操作能同步进程和改变管程中的数据。面向对象思想，表征共享资源的数据结构及其对数据结构操作的一组过程，包括同步机制，都集中并封装在一个对象内部，隐藏了实现细节。 </p>
+<p>进程定义的是私有数据结构PCB，管程定义的是公共数据结构 </p>
+
+        <h3 id="什么是死锁？死锁产生的条件？如何处理死锁问题"   >
+          <a href="#什么是死锁？死锁产生的条件？如何处理死锁问题" class="heading-link"><i class="fas fa-link"></i></a><a href="#什么是死锁？死锁产生的条件？如何处理死锁问题" class="headerlink" title="什么是死锁？死锁产生的条件？如何处理死锁问题"></a>什么是<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E6%AD%BB%E9%94%81&spm=1001.2101.3001.7020" >死锁</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>？死锁产生的条件？<strong>如何处理死锁问题</strong></h3>
+      <p>死锁，是指多个进程在运行过程中因争夺资源而造成的一种僵局，当进程处于这种僵持状态时，若无外力作用，它们都将无法再向前推进。 如下图所示：如果此时有一个线程 A，已经持有了锁 A，但是试图获取锁 B，线程 B 持有锁 B，而试图获取锁 A，这种情况下就会产生死锁。</p>
+<p><img src="https://shuaidi-picture-1257337429.cos.ap-guangzhou.myqcloud.com/img/image-20210607160841587.png" alt="image-20210607160841587"></p>
+<p>在两个或者多个并发进程中，如果每个进程持有某种资源而又等待其它进程释放它或它们现在保持着的资源，在未改变这种状态之前都不能向前推进，称这一组进程产生了死锁。通俗的讲就是两个或多个进程无限期的阻塞、相互等待的一种状态。 </p>
+
+        <h3 id="死锁产生的四个必要条件：（有一个条件不成立，则不会产生死锁）"   >
+          <a href="#死锁产生的四个必要条件：（有一个条件不成立，则不会产生死锁）" class="heading-link"><i class="fas fa-link"></i></a><a href="#死锁产生的四个必要条件：（有一个条件不成立，则不会产生死锁）" class="headerlink" title="死锁产生的四个必要条件：（有一个条件不成立，则不会产生死锁）"></a><strong>死锁产生的四个必要条件：（有一个条件不成立，则不会产生死锁）</strong></h3>
+      <p>互斥条件：一个资源一次只能被一个进程使用</p>
+<p>不剥夺条件：进程获得的资源，在未完全使用完之前，不能强行剥夺</p>
+<p>请求与保持条件：一个进程因请求资源而阻塞时，对已获得资源保持不放</p>
+<p>循环等待条件：若干进程之间形成一种头尾相接的环形等待资源关系</p>
+<p>常用的处理死锁的方法有：死锁预防、死锁避免、死锁检测、死锁解除、鸵鸟策略 </p>
+
+        <h3 id="解决死锁的基本方法？"   >
+          <a href="#解决死锁的基本方法？" class="heading-link"><i class="fas fa-link"></i></a><a href="#解决死锁的基本方法？" class="headerlink" title="解决死锁的基本方法？"></a>解决死锁的基本方法？</h3>
+      <ol>
+<li>预防死锁</li>
+<li>避免死锁</li>
+<li>检测死锁</li>
+<li>解除死锁</li>
+</ol>
+
+        <h3 id="怎么预防死锁？"   >
+          <a href="#怎么预防死锁？" class="heading-link"><i class="fas fa-link"></i></a><a href="#怎么预防死锁？" class="headerlink" title="怎么预防死锁？"></a>怎么预防死锁？</h3>
+      <ol>
+<li>破坏请求条件：一次性分配所有资源，这样就不会再有请求了；</li>
+<li>破坏请保持条件：只要有一个资源得不到分配，也不给这个进程分配其他的资源：</li>
+<li>破坏不可剥夺条件：当某进程获得了部分资源，但得不到其它资源，则释放已占有的资源；</li>
+<li>破坏环路等待条件：系统给每类资源赋予一个编号，每一个进程按编号递增的顺序请求资源，释放则相反。</li>
+</ol>
+
+        <h3 id="怎么避免死锁？"   >
+          <a href="#怎么避免死锁？" class="heading-link"><i class="fas fa-link"></i></a><a href="#怎么避免死锁？" class="headerlink" title="怎么避免死锁？"></a>怎么避免死锁？</h3>
+      <p><strong>1. 安全状态</strong></p>
+<p><img src="https://image.iamshuaidi.com/picture/ed523051-608f-4c3f-b343-383e2d194470.png" alt="img"></p>
+<p>图 a 的第二列 Has 表示已拥有的资源数，第三列 Max 表示总共需要的资源数，Free 表示还有可以使用的资源数。从图 a 开始出发，先让 B 拥有所需的所有资源（图 b），运行结束后释放 B，此时 Free 变为 5（图 c）；接着以同样的方式运行 C 和 A，使得所有进程都能成功运行，因此可以称图 a 所示的状态时安全的。</p>
+<p>定义：如果没有死锁发生，并且即使所有进程突然请求对资源的最大需求，也仍然存在某种调度次序能够使得每一个进程运行完毕，则称该状态是安全的。</p>
+<p>安全状态的检测与死锁的检测类似，因为安全状态必须要求不能发生死锁。下面的银行家算法与死锁检测算法非常类似，可以结合着做参考对比。</p>
+<p><strong>2. 单个资源的银行家算法</strong></p>
+<p>一个小城镇的银行家，他向一群客户分别承诺了一定的贷款额度，算法要做的是判断对请求的满足是否会进入不安全状态，如果是，就拒绝请求；否则予以分配。</p>
+<p><img src="https://image.iamshuaidi.com/picture/d160ec2e-cfe2-4640-bda7-62f53e58b8c0.png" alt="img"></p>
+<p>上图 c 为不安全状态，因此算法会拒绝之前的请求，从而避免进入图 c 中的状态。</p>
+<p><strong>3. 多个资源的银行家算法</strong></p>
+<p><img src="https://image.iamshuaidi.com/picture/62e0dd4f-44c3-43ee-bb6e-fedb9e068519.png" alt="img"></p>
+<p>上图中有五个进程，四个资源。左边的图表示已经分配的资源，右边的图表示还需要分配的资源。最右边的 E、P 以及 A 分别表示：总资源、已分配资源以及可用资源，注意这三个为向量，而不是具体数值，例如 A&#x3D;(1020)，表示 4 个资源分别还剩下 1&#x2F;0&#x2F;2&#x2F;0。</p>
+<p>检查一个状态是否安全的算法如下：</p>
+<ul>
+<li>查找右边的矩阵是否存在一行小于等于向量 A。如果不存在这样的行，那么系统将会发生死锁，状态是不安全的。</li>
+<li>假若找到这样一行，将该进程标记为终止，并将其已分配资源加到 A 中。</li>
+<li>重复以上两步，直到所有进程都标记为终止，则状态时安全的。</li>
+</ul>
+<p>如果一个状态不是安全的，需要拒绝进入这个状态。</p>
+
+        <h3 id="怎么解除死锁？"   >
+          <a href="#怎么解除死锁？" class="heading-link"><i class="fas fa-link"></i></a><a href="#怎么解除死锁？" class="headerlink" title="怎么解除死锁？"></a>怎么解除死锁？</h3>
+      <ol>
+<li>资源剥夺：挂起某些死锁进程，并抢占它的资源，将这些资源分配给其他死锁进程（但应该防止被挂起的进程长时间得不到资源）；</li>
+<li>撤销进程：强制撤销部分、甚至全部死锁进程并剥夺这些进程的资源（撤销的原则可以按进程优先级和撤销进程代价的高低进行）；</li>
+<li>进程回退：让一个或多个进程回退到足以避免死锁的地步。进程回退时自愿释放资源而不是被剥夺。要求系统保持进程的历史信息，设置还原点。</li>
+</ol>
+
+        <h3 id="windows和linux系统有什么区别"   >
+          <a href="#windows和linux系统有什么区别" class="heading-link"><i class="fas fa-link"></i></a><a href="#windows和linux系统有什么区别" class="headerlink" title="windows和linux系统有什么区别?"></a>windows和linux系统有什么区别?</h3>
+      <p>linux是免费开源的，windows是微软开发需要付费且用户无法修改的。</p>
+<p>软件的兼容性windows更好，比较的丰富。</p>
+<p>linux有很多的发行版本，易用性没有windows那么好。</p>
+<p>因为用的更加普及，在windows平台的病毒更多。</p>
+<p>linux比较的稳定，因此很多服务器都是用linux</p>
+
+        <h3 id="如何创建进程，如何创建线程？"   >
+          <a href="#如何创建进程，如何创建线程？" class="heading-link"><i class="fas fa-link"></i></a><a href="#如何创建进程，如何创建线程？" class="headerlink" title="如何创建进程，如何创建线程？"></a>如何创建进程，如何创建线程？</h3>
+      <p>linux使用fork()和thread()来创建</p>
+<p>windows使用clone()来创建</p>
+
+        <h3 id="单线程进程一定比多线程进行慢吗？"   >
+          <a href="#单线程进程一定比多线程进行慢吗？" class="heading-link"><i class="fas fa-link"></i></a><a href="#单线程进程一定比多线程进行慢吗？" class="headerlink" title="单线程进程一定比多线程进行慢吗？"></a>单线程进程一定比多线程进行慢吗？</h3>
+      <p>不一定，多线程存在上下文切换。</p>
+<p>分配cpu资源的单位是进程。一个进程所获得到的cpu资源是一定的。程序在执行的过程中消耗的是cpu，比如一个单核cpu，多个线程同时执行工作时，需要不断切换执行(上下文切换)，单个线程时间耗费更多了，而单线程只是一个线程跑。 </p>
+
+        <h3 id="进程之间的通信方式"   >
+          <a href="#进程之间的通信方式" class="heading-link"><i class="fas fa-link"></i></a><a href="#进程之间的通信方式" class="headerlink" title="进程之间的通信方式"></a><strong>进程之间的通信方式</strong></h3>
+      <p>进程间通信（IPC，InterProcess Communication）是指在不同进程之间传播或交换信息。IPC 的方式通常有管道（包括无名管道和命名管道）、消息队列、信号量、共享存储、Socket、Streams 等。其中 Socket 和 Streams 支持不同主机上的两个进程 IPC。 </p>
+<p><strong>管道</strong></p>
+<p>它是半双工的，具有固定的读端和写端；<br>它只能用于父子进程或者兄弟进程之间的进程的通信；</p>
+<p>它可以看成是一种特殊的文件，对于它的读写也可以使用普通的 read、write 等函数。但是它不是普通的文件，并不属于其他任何文件系统，并且只存在于内存中。</p>
+<p><strong>命名管道</strong></p>
+<p>FIFO 可以在无关的进程之间交换数据，与无名管道不同；<br>FIFO 有路径名与之相关联，它以一种特殊设备文件形式存在于文件系统中。</p>
+<p><strong>消息队列</strong></p>
+<p>消息队列，是消息的链接表，存放在内核中。一个消息队列由一个标识符 ID 来标识；<br>消息队列是面向记录的，其中的消息具有特定的格式以及特定的优先级；</p>
+<p>消息队列独立于发送与接收进程。进程终止时，消息队列及其内容并不会被删除；</p>
+<p>消息队列可以实现消息的随机查询，消息不一定要以先进先出的次序读取，也可以按消息的类型读取。</p>
+<p><strong>信号量</strong></p>
+<p>信号量（semaphore）是一个计数器。用于实现进程间的互斥与同步，而不是用于存储进程间通信数据；<br>信号量用于进程间同步，若要在进程间传递数据需要结合共享内存；</p>
+<p>信号量基于操作系统的 PV 操作，程序对信号量的操作都是原子操作；</p>
+<p>每次对信号量的 PV 操作不仅限于对信号量值加 1 或减 1，而且可以加减任意正整数；</p>
+<p>支持信号量组。</p>
+<p><strong>共享内存</strong></p>
+<p>共享内存（Shared Memory），指两个或多个进程共享一个给定的存储区；</p>
+<p>共享内存是最快的一种 IPC，因为进程是直接对内存进行存取。</p>
+
+        <h3 id="进程同步应遵循的原则"   >
+          <a href="#进程同步应遵循的原则" class="heading-link"><i class="fas fa-link"></i></a><a href="#进程同步应遵循的原则" class="headerlink" title="进程同步应遵循的原则"></a><strong>进程同步应遵循的原则</strong></h3>
+      <p>空闲让进：当无进程进入临界区时，相应的临界资源处于空闲状态，因而允许一个请求进入临界区的进程立即进入自己的临界区。所以基本上不存在等待进程为n的情况。</p>
+<p>忙则等待：当已有进程进入自己的临界区时，即相应的临界资源正被访问，因而其它试图进入临界区的进程必须等待，以保证进程互斥地访问临界资源。</p>
+<p>有限等待：对要求访问临界资源的进程，应保证进程能在有限时间进入临界区，以免陷入“饥饿”状态。</p>
+<p>让权等待：当进程不能进入自己的临界区时，应立即释放处理机，以免进程陷入忙等</p>
+
+        <h3 id="分页和分段有什么区别"   >
+          <a href="#分页和分段有什么区别" class="heading-link"><i class="fas fa-link"></i></a><a href="#分页和分段有什么区别" class="headerlink" title="分页和分段有什么区别"></a>分页和分段有什么区别</h3>
+      <ol>
+<li>段是信息的逻辑单位，它是根据用户的需要划分的，因此段对用户是可见的 ；页是信息的物理单位，是为了管理主存的方便而划分的，对用户是透明的；</li>
+<li>段的大小不固定，有它所完成的功能决定；页大大小固定，由系统决定；</li>
+<li>段向用户提供二维地址空间；页向用户提供的是一维地址空间；</li>
+<li>段是信息的逻辑单位，便于存储保护和信息的共享，页的保护和共享受到限制。</li>
+</ol>
+<p>段页式：先分段、再分页</p>
+
+        <h3 id="临界区？"   >
+          <a href="#临界区？" class="heading-link"><i class="fas fa-link"></i></a><a href="#临界区？" class="headerlink" title="临界区？"></a>临界区？</h3>
+      <p>每个进程中访问临界资源的那段代码称为临界区 </p>
+<p>每次只允许一个进程进入临界区 </p>
+<p>通过互斥进入来实现对临界资源的互斥访问</p>
+
+        <h3 id="文件管理系统管理的对象"   >
+          <a href="#文件管理系统管理的对象" class="heading-link"><i class="fas fa-link"></i></a><a href="#文件管理系统管理的对象" class="headerlink" title="文件管理系统管理的对象"></a>文件管理系统管理的对象</h3>
+      <ol>
+<li><strong>文件</strong>。在文件系统中有着各种不同类型的文件，它们都作为文件管理的直接对象。</li>
+<li><strong>目录</strong>。为了方便用户对文件的存取和检索，在文件系统中必须配置目录，在目录的每个目录项中，必须含有文件名、对文件属性的说明，以及该文件所在的物理地址（或指针）。对目录的组织和管理，是方便用户和提高对文件存取速度的关键。</li>
+<li><strong>磁盘（磁带）存储空间</strong>。文件和目录必定占用存储空间，对这部分空间的有效管理，不仅能提高外存的利用率，而且能提高对文件的存取速度。</li>
+</ol>
+
+        <h3 id="简单说下你对并发和并行的理解？"   >
+          <a href="#简单说下你对并发和并行的理解？" class="heading-link"><i class="fas fa-link"></i></a><a href="#简单说下你对并发和并行的理解？" class="headerlink" title="简单说下你对并发和并行的理解？"></a>简单说下你对并发和并行的理解？</h3>
+      <ol>
+<li>并行是指两个或者多个事件在同一时刻发生；而并发是指两个或多个事件在同一时间间隔发生；</li>
+<li>并行是在不同实体上的多个事件，并发是在同一实体上的多个事件；</li>
+</ol>
+
+        <h3 id="同步、异步、阻塞、非阻塞的概念"   >
+          <a href="#同步、异步、阻塞、非阻塞的概念" class="heading-link"><i class="fas fa-link"></i></a><a href="#同步、异步、阻塞、非阻塞的概念" class="headerlink" title="同步、异步、阻塞、非阻塞的概念"></a>同步、异步、阻塞、非阻塞的概念</h3>
+      <p><strong>同步</strong>：当一个同步调用发出后，调用者要一直等待返回结果。通知后，才能进行后续的执行。</p>
+<p><strong>异步</strong>：当一个异步过程调用发出后，调用者不能立刻得到返回结果。实际处理这个调用的部件在完成后，通过状态、通知和回调来通知调用者。</p>
+<p><strong>阻塞</strong>：是指调用结果返回前，当前线程会被挂起，即阻塞。</p>
+<p><strong>非阻塞</strong>：是指即使调用结果没返回，也不会阻塞当前线程。</p>
+
+        <h3 id="为什么有了进程，还要有线程呢？"   >
+          <a href="#为什么有了进程，还要有线程呢？" class="heading-link"><i class="fas fa-link"></i></a><a href="#为什么有了进程，还要有线程呢？" class="headerlink" title="为什么有了进程，还要有线程呢？"></a>为什么有了进程，还要有线程呢？</h3>
+      <p>进程可以使多个程序并发执行，以提高资源的利用率和系统的吞吐量，但是其带来了一些缺点：</p>
+<p>进程在同一时间只能干一件事情；<br>进程在执行的过程中如果阻塞，整个进程就会被挂起，即使进程中有些工作不依赖与等待的资源，仍然不会执行。</p>
+<p>基于以上的缺点，操作系统引入了比进程粒度更小的线程，作为并发执行的基本单位，从而减少程序在并发执行时所付出的时间和空间开销，提高并发性能。</p>
+
+        <h3 id="进程的状态转换"   >
+          <a href="#进程的状态转换" class="heading-link"><i class="fas fa-link"></i></a><a href="#进程的状态转换" class="headerlink" title="进程的状态转换"></a>进程的状态转换</h3>
+      <p>进程包括三种状态：就绪态、运行态和阻塞态。</p>
+<p><img src="https://image.iamshuaidi.com/picture/image-20210907124303344.png" alt="image-20210907124303344"></p>
+<ol>
+<li><p>就绪 —&gt; 执行：对就绪状态的进程，当进程调度程序按一种选定的策略从中选中一个就绪进程，为之分配了处理机后，该进程便由就绪状态变为执行状态；</p>
+</li>
+<li><p>执行 —&gt; 阻塞：正在执行的进程因发生某等待事件而无法执行，则进程由执行状态变为阻塞状态，如进程提出输入&#x2F;输出请求而变成等待外部设备传输信息的状态，进程申请资源（主存空间或外部设备）得不到满足时变成等待资源状态，进程运行中出现了故障（程序出错或主存储器读写错等）变成等待干预状态等等；</p>
+</li>
+<li><p>阻塞 —&gt; 就绪：处于阻塞状态的进程，在其等待的事件已经发生，如输入&#x2F;输出完成，资源得到满足或错误处理完毕时，处于等待状态的进程并不马上转入执行状态，而是先转入就绪状态，然后再由系统进程调度程序在适当的时候将该进程转为执行状态；</p>
+</li>
+<li><p>执行 —&gt; 就绪：正在执行的进程，因时间片用完而被暂停执行，或在采用抢先式优先级调度算法的系统中,当有更高优先级的进程要运行而被迫让出处理机时，该进程便由执行状态转变为就绪状态。</p>
+</li>
+</ol>
+
+        <h3 id="什么是缓冲区溢出？有什么危害？"   >
+          <a href="#什么是缓冲区溢出？有什么危害？" class="heading-link"><i class="fas fa-link"></i></a><a href="#什么是缓冲区溢出？有什么危害？" class="headerlink" title="什么是缓冲区溢出？有什么危害？"></a>什么是缓冲区溢出？有什么危害？</h3>
+      <p>缓冲区为暂时置放输出或输入资料的内存。缓冲区溢出是指当计算机向缓冲区填充数据时超出了缓冲区本身的容量，溢出的数据覆盖在合法数据上。造成缓冲区溢出的主要原因是程序中没有仔细检查用户输入是否合理。计算机中，缓冲区溢出会造成的危害主要有以下两点：程序崩溃导致拒绝服务和跳转并且执行一段恶意代码。 </p>
+
+        <h3 id="物理地址、逻辑地址、虚拟内存的概念"   >
+          <a href="#物理地址、逻辑地址、虚拟内存的概念" class="heading-link"><i class="fas fa-link"></i></a><a href="#物理地址、逻辑地址、虚拟内存的概念" class="headerlink" title="物理地址、逻辑地址、虚拟内存的概念"></a>物理地址、逻辑地址、虚拟内存的概念</h3>
+      <ol>
+<li>物理地址：它是地址转换的最终地址，进程在运行时执行指令和访问数据最后都要通过物理地址从主存中存取，是内存单元真正的地址。</li>
+<li>逻辑地址：是指计算机用户看到的地址。例如：当创建一个长度为 100 的整型数组时，操作系统返回一个逻辑上的连续空间：指针指向数组第一个元素的内存地址。由于整型元素的大小为 4 个字节，故第二个元素的地址时起始地址加 4，以此类推。事实上，逻辑地址并不一定是元素存储的真实地址，即数组元素的物理地址（在内存条中所处的位置），并非是连续的，只是操作系统通过地址映射，将逻辑地址映射成连续的，这样更符合人们的直观思维。</li>
+<li>虚拟内存：是计算机系统内存管理的一种技术。它使得应用程序认为它拥有连续的可用的内存（一个连续完整的地址空间），而实际上，它通常是被分隔成多个物理内存碎片，还有部分暂时存储在外部磁盘存储器上，在需要时进行数据交换。</li>
+</ol>
+
+        <h3 id="页面置换算法有哪些？"   >
+          <a href="#页面置换算法有哪些？" class="heading-link"><i class="fas fa-link"></i></a><a href="#页面置换算法有哪些？" class="headerlink" title="页面置换算法有哪些？"></a>页面置换算法有哪些？</h3>
+      <p>请求调页，也称按需调页，即对不在内存中的“页”，当进程执行时要用时才调入，否则有可能到程序结束时也不会调入。而内存中给页面留的位置是有限的，在内存中以帧为单位放置页面。为了防止请求调页的过程出现过多的内存页面错误（即需要的页面当前不在内存中，需要从硬盘中读数据，也即需要做页面的替换）而使得程序执行效率下降，我们需要设计一些页面置换算法，页面按照这些算法进行相互替换时，可以尽量达到较低的错误率。常用的页面置换算法如下：</p>
+<ul>
+<li><strong>先进先出置换算法（FIFO）</strong></li>
+</ul>
+<p>先进先出，即淘汰最早调入的页面。</p>
+<ul>
+<li><strong>最佳置换算法（OPT）</strong></li>
+</ul>
+<p>选未来最远将使用的页淘汰，是一种最优的方案，可以证明缺页数最小。</p>
+<ul>
+<li><strong>最近最久未使用（LRU）算法</strong></li>
+</ul>
+<p>即选择最近最久未使用的页面予以淘汰</p>
+<ul>
+<li><strong>时钟（Clock）置换算法</strong></li>
+</ul>
+<p>时钟置换算法也叫最近未用算法 NRU（Not RecentlyUsed）。该算法为每个页面设置一位访问位，将内存中的所有页面都通过链接指针链成一个循环队列。</p>
+
+        <h3 id="谈谈你对动态链接库和静态链接库的理解？"   >
+          <a href="#谈谈你对动态链接库和静态链接库的理解？" class="heading-link"><i class="fas fa-link"></i></a><a href="#谈谈你对动态链接库和静态链接库的理解？" class="headerlink" title="谈谈你对动态链接库和静态链接库的理解？"></a>谈谈你对动态链接库和静态链接库的理解？</h3>
+      <p>静态链接就是在编译链接时直接将需要的执行代码拷贝到调用处，优点就是在程序发布的时候就不需要的依赖库，也就是不再需要带着库一块发布，程序可以独立执行，但是体积可能会相对大一些。</p>
+<p>动态链接就是在编译的时候不直接拷贝可执行代码，而是通过记录一系列符号和参数，在程序运行或加载时将这些信息传递给操作系统，操作系统负责将需要的动态库加载到内存中，然后程序在运行到指定的代码时，去共享执行内存中已经加载的动态库可执行代码，最终达到运行时连接的目的。优点是多个程序可以共享同一段代码，而不需要在磁盘上存储多个拷贝，缺点是由于是运行时加载，可能会影响程序的前期执行性能</p>
+
+        <h3 id="外中断和异常有什么区别？"   >
+          <a href="#外中断和异常有什么区别？" class="heading-link"><i class="fas fa-link"></i></a><a href="#外中断和异常有什么区别？" class="headerlink" title="外中断和异常有什么区别？"></a>外中断和异常有什么区别？</h3>
+      <p>外中断是指由 CPU 执行指令以外的事件引起，如 I&#x2F;O 完成中断，表示设备输入&#x2F;输出处理已经完成，处理器能够发送下一个输入&#x2F;输出请求。此外还有时钟中断、控制台中断等。</p>
+<p>而异常时由 CPU 执行指令的内部事件引起，如非法操作码、地址越界、算术溢出等。</p>
+
+        <h3 id="一个程序从开始运行到结束的完整过程，你能说出来多少？"   >
+          <a href="#一个程序从开始运行到结束的完整过程，你能说出来多少？" class="heading-link"><i class="fas fa-link"></i></a><a href="#一个程序从开始运行到结束的完整过程，你能说出来多少？" class="headerlink" title="一个程序从开始运行到结束的完整过程，你能说出来多少？"></a>一个程序从开始运行到结束的完整过程，你能说出来多少？</h3>
+      <p>四个过程：</p>
+<p><strong>（1）预编译</strong> 主要处理源代码文件中的以“#”开头的预编译指令。处理规则见下</p>
+<p><strong>（2）编译</strong> 把预编译之后生成的xxx.i或xxx.ii文件，进行一系列词法分析、语法分析、语义分析及优化后，生成相应的汇编代码文件。</p>
+<p><strong>（3）汇编</strong></p>
+<p>将汇编代码转变成机器可以执行的指令(机器码文件)。 汇编器的汇编过程相对于编译器来说更简单，没有复杂的语法，也没有语义，更不需要做指令优化，只是根据汇编指令和机器指令的对照表一一翻译过来，汇编过程有汇编器as完成。</p>
+<p><strong>（4）链接</strong></p>
+<p>将不同的源文件产生的目标文件进行链接，从而形成一个可以执行的程序。链接分为静态链接和动态链接：</p>
+<p><strong>1、静态链接：</strong> 函数和数据被编译进一个二进制文件。在使用静态库的情况下，在编译链接可执行文件时，链接器从库中复制这些函数和数据并把它们和应用程序的其它模块组合起来创建最终的可执行文件。 空间浪费：因为每个可执行程序中对所有需要的目标文件都要有一份副本，所以如果多个程序对同一个目标文件都有依赖，会出现同一个目标文件都在内存存在多个副本； 更新困难：每当库函数的代码修改了，这个时候就需要重新进行编译链接形成可执行程序。</p>
+<p>运行速度快：但是静态链接的优点就是，在可执行程序中已经具备了所有执行程序所需要的任何东西，在执行的时候运行速度快。</p>
+<p><strong>2、动态链接：</strong> 动态链接的基本思想是把程序按照模块拆分成各个相对独立部分，在程序运行时才将它们链接在一起形成一个完整的程序，而不是像静态链接一样把所有程序模块都链接成一个单独的可执行文件。</p>
+<p>共享库：就是即使需要每个程序都依赖同一个库，但是该库不会像静态链接那样在内存中存在多份副本，而是这多个程序在执行时共享同一份副本；</p>
+<p>更新方便：更新时只需要替换原来的目标文件，而无需将所有的程序再重新链接一遍。当程序下一次运行时，新版本的目标文件会被自动加载到内存并且链接起来，程序就完成了升级的目标。</p>
+<p>性能损耗：因为把链接推迟到了程序运行时，所以每次执行程序都需要进行链接，所以性能会有一定损失。</p>
+
+        <h3 id="什么是用户态和内核态"   >
+          <a href="#什么是用户态和内核态" class="heading-link"><i class="fas fa-link"></i></a><a href="#什么是用户态和内核态" class="headerlink" title="什么是用户态和内核态"></a>什么是用户态和内核态</h3>
+      <p>用户态和内核态是操作系统的两种运行状态。</p>
+<ul>
+<li><code>内核态</code>：处于内核态的 CPU 可以访问任意的数据，包括外围设备，比如网卡、硬盘等，处于内核态的 CPU 可以从一个程序切换到另外一个程序，并且占用 CPU 不会发生抢占情况，一般处于特权级 0 的状态我们称之为内核态。</li>
+<li><code>用户态</code>：处于用户态的 CPU 只能受限的访问内存，并且不允许访问外围设备，用户态下的 CPU 不允许独占，也就是说 CPU 能够被其他程序获取。</li>
+</ul>
+<blockquote>
+<p>那么为什么要有用户态和内核态呢？</p>
+</blockquote>
+<p>这个主要是访问能力的限制的考量，计算机中有一些比较危险的操作，比如设置时钟、内存清理，这些都需要在内核态下完成，如果随意进行这些操作，那你的系统得崩溃多少次。</p>
+
+        <h3 id="用户态和内核态是如何切换的？"   >
+          <a href="#用户态和内核态是如何切换的？" class="heading-link"><i class="fas fa-link"></i></a><a href="#用户态和内核态是如何切换的？" class="headerlink" title="用户态和内核态是如何切换的？"></a>用户态和内核态是如何切换的？</h3>
+      <p>所有的用户进程都是运行在用户态的，但是我们上面也说了，用户程序的访问能力有限，一些比较重要的比如从硬盘读取数据，从键盘获取数据的操作则是内核态才能做的事情，而这些数据却又对用户程序来说非常重要。所以就涉及到两种模式下的转换，即<strong>用户态 -&gt; 内核态 -&gt; 用户态</strong>，而唯一能够做这些操作的只有 <code>系统调用</code>，而能够执行系统调用的就只有 <code>操作系统</code>。</p>
+<p>一般用户态 -&gt; 内核态的转换我们都称之为 trap 进内核，也被称之为 <code>陷阱指令(trap instruction)</code>。</p>
+<p>他们的工作流程如下：</p>
+<p><img src="https://image.iamshuaidi.com/picture/v2-1dfd23c107cca552b4e511ed526f75c4_720w.jpg" alt="img"></p>
+<ul>
+<li>首先用户程序会调用 <code>glibc</code> 库，glibc 是一个标准库，同时也是一套核心库，库中定义了很多关键 API。</li>
+<li>glibc 库知道针对不同体系结构调用<code>系统调用</code>的正确方法，它会根据体系结构应用程序的二进制接口设置用户进程传递的参数，来准备系统调用。</li>
+<li>然后，glibc 库调用<code>软件中断指令(SWI)</code> ，这个指令通过更新 <code>CPSR</code> 寄存器将模式改为超级用户模式，然后跳转到地址 <code>0x08</code> 处。</li>
+<li>到目前为止，整个过程仍处于用户态下，在执行 SWI 指令后，允许进程执行内核代码，MMU 现在允许内核虚拟内存访问</li>
+<li>从地址 0x08 开始，进程执行加载并跳转到中断处理程序，这个程序就是 ARM 中的 <code>vector_swi()</code>。</li>
+<li>在 vector_swi() 处，从 SWI 指令中提取系统调用号 SCNO，然后使用 SCNO 作为系统调用表 <code>sys_call_table</code> 的索引，调转到系统调用函数。</li>
+<li>执行系统调用完成后，将还原用户模式寄存器，然后再以用户模式执行。</li>
+</ul>
+
+        <h3 id="进程终止的方式"   >
+          <a href="#进程终止的方式" class="heading-link"><i class="fas fa-link"></i></a><a href="#进程终止的方式" class="headerlink" title="进程终止的方式"></a>进程终止的方式</h3>
+      <p><strong>进程的终止</strong></p>
+<p>进程在创建之后，它就开始运行并做完成任务。然而，没有什么事儿是永不停歇的，包括进程也一样。进程早晚会发生终止，但是通常是由于以下情况触发的</p>
+<ul>
+<li><code>正常退出(自愿的)</code></li>
+<li><code>错误退出(自愿的)</code></li>
+<li><code>严重错误退出(非自愿的)</code></li>
+<li><code>被其他进程杀死(非自愿的)</code></li>
+</ul>
+<p><strong>正常退出</strong></p>
+<p>多数进程是由于完成了工作而终止。当编译器完成了所给定程序的编译之后，编译器会执行一个系统调用告诉操作系统它完成了工作。这个调用在 UNIX 中是 <code>exit</code> ，在 Windows 中是 <code>ExitProcess</code>。面向屏幕中的软件也支持自愿终止操作。字处理软件、Internet 浏览器和类似的程序中总有一个供用户点击的图标或菜单项，用来通知进程删除它所打开的任何临时文件，然后终止。</p>
+<p><strong>错误退出</strong></p>
+<p>进程发生终止的第二个原因是发现严重错误，例如，如果用户执行如下命令</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cc foo.c</span><br></pre></td></tr></table></div></figure>
+
+<p>Text</p>
+<p>Copy</p>
+<p>为了能够编译 foo.c 但是该文件不存在，于是编译器就会发出声明并退出。在给出了错误参数时，面向屏幕的交互式进程通常并不会直接退出，因为这从用户的角度来说并不合理，用户需要知道发生了什么并想要进行重试，所以这时候应用程序通常会弹出一个对话框告知用户发生了系统错误，是需要重试还是退出。</p>
+<p><strong>严重错误退出</strong></p>
+<p>进程终止的第三个原因是由进程引起的错误，通常是由于程序中的错误所导致的。例如，执行了一条非法指令，引用不存在的内存，或者除数是 0 等。在有些系统比如 UNIX 中，进程可以通知操作系统，它希望自行处理某种类型的错误，在这类错误中，进程会收到信号（中断），而不是在这类错误出现时直接终止进程。</p>
+<p><strong>被其他进程杀死</strong></p>
+<p>第四个终止进程的原因是，某个进程执行系统调用告诉操作系统杀死某个进程。在 UNIX 中，这个系统调用是 kill。在 Win32 中对应的函数是 <code>TerminateProcess</code>（注意不是系统调用）。</p>
+
+        <h3 id="守护进程、僵尸进程和孤儿进程"   >
+          <a href="#守护进程、僵尸进程和孤儿进程" class="heading-link"><i class="fas fa-link"></i></a><a href="#守护进程、僵尸进程和孤儿进程" class="headerlink" title="守护进程、僵尸进程和孤儿进程"></a>守护进程、僵尸进程和孤儿进程</h3>
+      
+        <h5 id="守护进程"   >
+          <a href="#守护进程" class="heading-link"><i class="fas fa-link"></i></a><a href="#守护进程" class="headerlink" title="守护进程"></a>守护进程</h5>
+      <p>指在后台运行的，没有控制终端与之相连的进程。它独立于控制终端，周期性地执行某种任务。Linux的大多数服务器就是用守护进程的方式实现的，如web服务器进程http等</p>
+
+        <h5 id="孤儿进程"   >
+          <a href="#孤儿进程" class="heading-link"><i class="fas fa-link"></i></a><a href="#孤儿进程" class="headerlink" title="孤儿进程"></a>孤儿进程</h5>
+      <p>如果父进程先退出，子进程还没退出，那么子进程的父进程将变为init进程。（注：任何一个进程都必须有父进程）。</p>
+<p>一个父进程退出，而它的一个或多个子进程还在运行，那么那些子进程将成为孤儿进程。孤儿进程将被init进程(进程号为1)所收养，并由init进程对它们完成状态收集工作。</p>
+
+        <h5 id="僵尸进程"   >
+          <a href="#僵尸进程" class="heading-link"><i class="fas fa-link"></i></a><a href="#僵尸进程" class="headerlink" title="僵尸进程"></a>僵尸进程</h5>
+      <p>如果子进程先退出，父进程还没退出，那么子进程必须等到父进程捕获到了子进程的退出状态才真正结束，否则这个时候子进程就成为僵尸进程。</p>
+<p>设置<strong>僵尸进程的目</strong>的是维护子进程的信息，以便父进程在以后某个时候获取。这些信息至少包括进程ID，进程的终止状态，以及该进程使用的CPU时间，所以当终止子进程的父进程调用wait或waitpid时就可以得到这些信息。如果一个进程终止，而该进程有子进程处于僵尸状态，那么它的所有僵尸子进程的父进程ID将被重置为1（init进程）。继承这些子进程的init进程将清理它们（也就是说init进程将wait它们，从而去除它们的僵尸状态）。</p>
+
+        <h3 id="如何避免僵尸进程？"   >
+          <a href="#如何避免僵尸进程？" class="heading-link"><i class="fas fa-link"></i></a><a href="#如何避免僵尸进程？" class="headerlink" title="如何避免僵尸进程？"></a>如何避免僵尸进程？</h3>
+      <ul>
+<li>通过signal(SIGCHLD, SIG_IGN)通知内核对子进程的结束不关心，由内核回收。如果不想让父进程挂起，可以在父进程中加入一条语句：signal(SIGCHLD,SIG_IGN);表示父进程忽略SIGCHLD信号，该信号是子进程退出的时候向父进程发送的。</li>
+<li>父进程调用wait&#x2F;waitpid等函数等待子进程结束，如果尚无子进程退出wait会导致父进程阻塞。waitpid可以通过传递WNOHANG使父进程不阻塞立即返回。</li>
+<li>如果父进程很忙可以用signal注册信号处理函数，在信号处理函数调用wait&#x2F;waitpid等待子进程退出。</li>
+<li>通过两次调用fork。父进程首先调用fork创建一个子进程然后waitpid等待子进程退出，子进程再fork一个孙进程后退出。这样子进程退出后会被父进程等待回收，而对于孙子进程其父进程已经退出所以孙进程成为一个孤儿进程，孤儿进程由init进程接管，孙进程结束后，init会等待回收。</li>
+</ul>
+<p>第一种方法忽略SIGCHLD信号，这常用于并发服务器的性能的一个技巧因为并发服务器常常fork很多子进程，子进程终结之后需要服务器进程去wait清理资源。如果将此信号的处理方式设为忽略，可让内核把僵尸子进程转交给init进程去处理，省去了大量僵尸进程占用系统资源。</p>
+
+        <h3 id="介绍一下几种典型的锁？"   >
+          <a href="#介绍一下几种典型的锁？" class="heading-link"><i class="fas fa-link"></i></a><a href="#介绍一下几种典型的锁？" class="headerlink" title="介绍一下几种典型的锁？"></a>介绍一下几种典型的锁？</h3>
+      
+        <h5 id="读写锁"   >
+          <a href="#读写锁" class="heading-link"><i class="fas fa-link"></i></a><a href="#读写锁" class="headerlink" title="读写锁"></a>读写锁</h5>
+      <ul>
+<li>多个读者可以同时进行读</li>
+<li>写者必须互斥（只允许一个写者写，也不能读者写者同时进行）</li>
+<li>写者优先于读者（一旦有写者，则后续读者必须等待，唤醒时优先考虑写者）</li>
+</ul>
+
+        <h5 id="互斥锁"   >
+          <a href="#互斥锁" class="heading-link"><i class="fas fa-link"></i></a><a href="#互斥锁" class="headerlink" title="互斥锁"></a>互斥锁</h5>
+      <p>一次只能一个线程拥有互斥锁，其他线程只有等待</p>
+<p>互斥锁是在抢锁失败的情况下主动放弃CPU进入睡眠状态直到锁的状态改变时再唤醒，而操作系统负责线程调度，为了实现锁的状态发生改变时唤醒阻塞的线程或者进程，需要把锁交给操作系统管理，所以互斥锁在加锁操作时涉及上下文的切换。互斥锁实际的效率还是可以让人接受的，加锁的时间大概100ns左右，而实际上互斥锁的一种可能的实现是先自旋一段时间，当自旋的时间超过阀值之后再将线程投入睡眠中，因此在并发运算中使用互斥锁（每次占用锁的时间很短）的效果可能不亚于使用自旋锁</p>
+
+        <h5 id="条件变量"   >
+          <a href="#条件变量" class="heading-link"><i class="fas fa-link"></i></a><a href="#条件变量" class="headerlink" title="条件变量"></a>条件变量</h5>
+      <p>互斥锁一个明显的缺点是他只有两种状态：锁定和非锁定。而条件变量通过允许线程阻塞和等待另一个线程发送信号的方法弥补了互斥锁的不足，他常和互斥锁一起使用，以免出现竞态条件。当条件不满足时，线程往往解开相应的互斥锁并阻塞线程然后等待条件发生变化。一旦其他的某个线程改变了条件变量，他将通知相应的条件变量唤醒一个或多个正被此条件变量阻塞的线程。总的来说<strong>互斥锁是线程间互斥的机制，条件变量则是同步机制。</strong></p>
+
+        <h5 id="自旋锁"   >
+          <a href="#自旋锁" class="heading-link"><i class="fas fa-link"></i></a><a href="#自旋锁" class="headerlink" title="自旋锁"></a>自旋锁</h5>
+      <p>如果进线程无法取得锁，进线程不会立刻放弃CPU时间片，而是一直循环尝试获取锁，直到获取为止。如果别的线程长时期占有锁，那么自旋就是在浪费CPU做无用功，但是自旋锁一般应用于加锁时间很短的场景，这个时候效率比较高。</p>
+
+        <h3 id="常见内存分配内存错误"   >
+          <a href="#常见内存分配内存错误" class="heading-link"><i class="fas fa-link"></i></a><a href="#常见内存分配内存错误" class="headerlink" title="常见内存分配内存错误"></a>常见内存分配内存错误</h3>
+      <p>（1）内存分配未成功，却使用了它。</p>
+<p>（2）内存分配虽然成功，但是尚未初始化就引用它。</p>
+<p>（3）内存分配成功并且已经初始化，但操作越过了内存的边界。</p>
+<p>（4）忘记了释放内存，造成内存泄露。</p>
+<p>（5）释放了内存却继续使用它。常见于以下有三种情况：</p>
+
+        <h3 id="内存交换中，被换出的进程保存在哪里？"   >
+          <a href="#内存交换中，被换出的进程保存在哪里？" class="heading-link"><i class="fas fa-link"></i></a><a href="#内存交换中，被换出的进程保存在哪里？" class="headerlink" title="内存交换中，被换出的进程保存在哪里？"></a>内存交换中，被换出的进程保存在哪里？</h3>
+      <p>保存在磁盘中，也就是外存中。具有对换功能的操作系统中，通常把磁盘空间分为文件区和对换区两部分。文件区主要用于存放文件，主要追求存储空间的利用率，因此对文件区空间的管理采用离散分配方式;对换区空间只占磁盘空间的小部分，被换出的进程数据就存放在对换区。由于对换的速度直接影响到系统的整体速度，因此对换区空间的管理主要追求换入换出速度，因此通常对换区采用连续分配方式(学过文件管理章节后即可理解)。总之，对换区的I&#x2F;O速度比文件区的更快。 </p>
+
+        <h3 id="原子操作的是如何实现的"   >
+          <a href="#原子操作的是如何实现的" class="heading-link"><i class="fas fa-link"></i></a><a href="#原子操作的是如何实现的" class="headerlink" title="原子操作的是如何实现的"></a>原子操作的是如何实现的</h3>
+      <p><strong>处理器使用基于对缓存加锁或总线加锁的方式来实现多处理器之间的原子操作。</strong></p>
+<p>首先处理器会自动保证基本的内存操作的原子性。处理器保证从系统内存中读取或者写入一个字节是原子的，意思是当一个处理器读取一个字节时，其他处理器不能访问这个字节的内存地址。处理器提供总线锁定和缓存锁定两个机制来保证复杂内存操作的原子性。</p>
+<p>（1）使用总线锁保证原子性 第一个机制是通过总线锁保证原子性。</p>
+<p>处理器使用总线锁就是来解决这个问题的。<strong>所谓总线锁就是使用处理器提供的一个LOCK＃信号，当一个处理器在总线上输出此信号时，其他处理器的请求将被阻塞住，那么该处理器可以独占共享内存。</strong></p>
+<p>（2）使用缓存锁保证原子性 第二个机制是通过缓存锁定来保证原子性。在同一时刻，我们只需保证对某个内存地址的操作是原子性即可，但<strong>总线锁定把CPU和内存之间的通信锁住了</strong>，这使得锁定期间，其他处理器不能操作其他内存地址的数据，所以总线锁定的开销比较大，目前处理器在某些场合下使用缓存锁定代替总线锁定来进行优化。</p>
+
+        <h3 id="什么是虚拟内存"   >
+          <a href="#什么是虚拟内存" class="heading-link"><i class="fas fa-link"></i></a><a href="#什么是虚拟内存" class="headerlink" title="什么是虚拟内存"></a>什么是虚拟内存</h3>
+      <p>传统的内存空间分配方式需要将作业一次性调入内存，太占空间，而程序运行的时候是有局部性的，可以将需要的调入内存，不需要的调出内存。</p>
+<p>局部性原理：</p>
+<p>①时间局部性：一条指令运行后，不久可能再次运行；数据被访问后，不久可能再次访问（因程序中有大量循环）</p>
+<p>②空间局部性：程序访问了某个存储单元，与这个存储单元相邻的可能被再次访问（因为指令按顺序存放；数据是簇聚存储的）</p>
+<p>实现方式：在非连续分配管理的基础上 引入了中断机制        一条指令执行期间可能产生多次缺页中断</p>
+<p>1）请求分页存储管理        2）请求分段存储管理        3）段页式存储管理</p>
+<p>在发生缺页后 发送缺页中断调入所缺页 若内存已满 要进行页面置换</p>
+
+        <h3 id="I-x2F-O控制方式："   >
+          <a href="#I-x2F-O控制方式：" class="heading-link"><i class="fas fa-link"></i></a><a href="#I-x2F-O控制方式：" class="headerlink" title="I&#x2F;O控制方式："></a><strong>I&#x2F;O控制方式：</strong></h3>
+      <p>1）程序控制方式：CPU不断查询I&#x2F;O设备是否已经做好准备               </p>
+<p>2）中断驱动方式（程序中断方式）：I&#x2F;O准备好数据 才发生中断通知CPU传数据</p>
+<p>3）DMA方式：主存和I&#x2F;O之间有一条数据通路，传输数据由DMA负责，传完一个或多个数据块 通知CPU                    </p>
+<p>4）通道控制方式：将数据传到哪 以及数据的传输都交给通道</p>
+
+        <h3 id="介绍下假脱机-Spooling-技术"   >
+          <a href="#介绍下假脱机-Spooling-技术" class="heading-link"><i class="fas fa-link"></i></a><a href="#介绍下假脱机-Spooling-技术" class="headerlink" title="介绍下假脱机(Spooling)技术"></a>介绍下<strong>假脱机(Spooling)技术</strong></h3>
+      <p>通俗的讲，为了将独占的设备转化为逻辑上共享的设备，就是设备被占用，往设备发送的数据就先在磁盘暂存一下，等设备空闲再输入设备</p>
+<p>组成：输入&#x2F; 出设备 输入&#x2F;出缓冲区 输入&#x2F;出井</p>
+<p>常见应用：共享打印机</p>
+
+        <h3 id="DMA和中断方式的主要区别"   >
+          <a href="#DMA和中断方式的主要区别" class="heading-link"><i class="fas fa-link"></i></a><a href="#DMA和中断方式的主要区别" class="headerlink" title="DMA和中断方式的主要区别"></a><strong>DMA和中断方式的主要区别</strong></h3>
+      <p>1）谁控制数据传输：DMA方式是由DMA控制；中断方式是CPU控制</p>
+<p>2）优先级：DMA中断优先级大于普通I&#x2F;O中断</p>
+<p>3）中断相应的时机：DMA方式可以在每个机器周期结束时候响应；中断方式只能在指令执行周期结束后响应</p>
+<p>4）DMA方式在结束一个数据块传送后才发中断；中断方式每传输一个字就要中断</p>
+
+        <h3 id="程序中断和子程序调用的区别"   >
+          <a href="#程序中断和子程序调用的区别" class="heading-link"><i class="fas fa-link"></i></a><a href="#程序中断和子程序调用的区别" class="headerlink" title="程序中断和子程序调用的区别"></a><strong>程序中断和子程序调用的区别</strong></h3>
+      <p>1）调用子程序的CALL指令的时机是固定的；中断是随机发生的</p>
+<p>2）子程序的调用只涉及到软件；中断是软硬结合的过程</p>
+<p>3）子程序由调用指令直接给出目标地址；中断要通过中断隐指令得到中断向量</p>
+
+        <h3 id="什么是上下文切换"   >
+          <a href="#什么是上下文切换" class="heading-link"><i class="fas fa-link"></i></a><a href="#什么是上下文切换" class="headerlink" title="什么是上下文切换"></a>什么是上下文切换</h3>
+      <p>对于单核单线程 CPU 而言，在某一时刻只能执行一条 CPU 指令。上下文切换 (Context Switch) 是一种 <strong>将 CPU 资源从一个进程分配给另一个进程的机制</strong>。从用户角度看，计算机能够并行运行多个进程，这恰恰是操作系统通过快速上下文切换造成的结果。在切换的过程中，操作系统需要先存储当前进程的状态 (包括内存空间的指针，当前执行完的指令等等)，再读入下一个进程的状态，然后执行此进程。 </p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/10/05/%E4%B8%93%E4%B8%9A%E8%8B%B1%E8%AF%AD/">保研复习之英语单词</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-10-05</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-10-05</span></span></div></header><div class="post-body"><div class="post-excerpt"><ul>
+<li><p>abstraction layer，抽象层</p>
+</li>
+<li><p>access，获取，存取</p>
+</li>
+<li><p>Active Directory，活动目录</p>
+</li>
+<li><p>acyclic digraph，有向无环图</p>
+</li>
+<li><p>Parameter ,参数</p>
+</li>
+<li><p>affinity，绑定</p>
+</li>
+<li><p>Aggregate，聚合</p>
+</li>
+<li><p>analog，模拟的</p>
+</li>
+<li><p>architecture，体系机构，结构</p>
+</li>
+<li><p>margin [ˈmɑ:dʒin] n. 余量，边缘，边际</p>
+</li>
+<li><p>deep neural network (DNN) 深度神经网络 </p>
+</li>
+<li><p>Linear Regression 线性回归 </p>
+</li>
+<li><p>Max-Pooling 最大池化 </p>
+</li>
+<li><p>Reinforcement Learning (RL) 强化学习</p>
+</li>
+<li><p>gradient descent 梯度下降</p>
+</li>
+<li><p>Threhold 阈值 </p>
+</li>
+<li><p>exploding gradient  [ˈɡreɪdiənt]梯度爆炸 </p>
+</li>
+<li><p>mometum 动量</p>
+</li>
+<li><p>hyperparameter 超参数</p>
+</li>
+<li><p>Activation Function 激活函数</p>
+</li>
+<li><p>Convolutional Neural Network (CNN) 卷积神经网络 </p>
+</li>
+<li><p>Backpropagation 反向传播 </p>
+</li>
+<li><p>bias units 激活值 </p>
+</li>
+<li><p>hidden (layer) units 隐藏层&#x2F;隐藏单元 </p>
+</li>
+<li><p>forward pass 前向传播 </p>
+</li>
+<li><p>correlation 相关系数 </p>
+</li>
+<li><p>dataset augmentation 数据增强 </p>
+</li>
+<li><p>derivative 导数 </p>
+</li>
+<li><p>Normalization 归一化 </p>
+</li>
+<li><p>Objective function 目标函数</p>
+</li>
+<li><p>Generalization 泛化 </p>
+</li>
+<li><p>Global Optimization 全局优化 </p>
+</li>
+<li><p>directed 有向 </p>
+</li>
+<li><p>dot product 点积 </p>
+</li>
+<li><p>embedding 嵌入 </p>
+</li>
+<li><p>determinant 行列式 </p>
+</li>
+<li><p>infinite 无穷 </p>
+</li>
+<li><p>integral 积分 </p>
+</li>
+<li><p>atomicity，原子性</p>
+</li>
+<li><p>attribute，特性</p>
+</li>
+<li><p>autonomous，独立性</p>
+</li>
+<li><p>baud，波特</p>
+</li>
+<li><p>block，阻断</p>
+</li>
+<li><p>Central Processing Unit，中央处理器（CPU）</p>
+</li>
+<li><p>channel，信道，频道</p>
+</li>
+<li><p>compatibility，兼容性</p>
+</li>
+<li><p>properties  特性</p>
+</li>
+<li><p>emergence 出现</p>
+<hr>
+</li>
+<li><p>convolutional  卷积</p>
+</li>
+<li><p>spectral domain  谱域</p>
+</li>
+<li><p>implemented by  实现</p>
+</li>
+<li><p>supplemented  补充</p>
+</li>
+<li><p>comprehensively summarizes   全面总结</p>
+</li>
+<li><p>prospected  勘测</p>
+</li>
+<li><p>systematically review  系统回顾</p>
+</li>
+<li><p>Furthermore  进而</p>
+</li>
+<li><p>hybrid attention mechanism 混合注意力机制</p>
+</li>
+<li><p>namely  也即是</p>
+</li>
+<li><p>mitigate the interference  减轻干扰</p>
+</li>
+<li><p>cognitive intelligence 认知智能</p>
+</li>
+<li><p>knowledge graphs 知识图谱</p>
+</li>
+<li><p>distantly supervised training samples 远程监督训练样本</p>
+</li>
+<li><p>intelligent recommendation 智能推荐</p>
+</li>
+<li><p>conversation system 对话系统</p>
+</li>
+<li><p>Internet of things 物联网</p>
+</li>
+<li><p>secure multiparty computation 安全多方计算</p>
+</li>
+<li><p>jointly  共同地</p>
+</li>
+<li><p>cryptographic technology  密码技术</p>
+</li>
+<li><p>implementation framework 实施框架</p>
+</li>
+<li><p>oblivious transfer 不经意传输</p>
+</li>
+<li><p>threshold  阈值</p>
+</li>
+<li><p>adversary model 对抗型模式</p>
+</li>
+<li><p>security proof  安全证明</p>
+</li>
+<li><p>overview  概述；概况 </p>
+</li>
+<li><p>distribution statistics 分布统计</p>
+</li>
+<li><p>evaluations  定值，估计</p>
+</li>
+<li><p>prospected 勘测</p>
+</li>
+<li><p>corresponding to 对应的</p>
+</li>
+<li><p>Federated learning 联邦学习</p>
+</li>
+<li><p>model convergence rate 模型收敛速度</p>
+</li>
+<li><p>resource coordination 资源协调</p>
+</li>
+<li><p>expounded 阐述；说明； </p>
+</li>
+<li><p>adaptive learning 自适应学习</p>
+</li>
+<li><p>incentive mechanisms 激励机制</p>
+</li>
+<li><p>deploys  部署</p>
+</li>
+<li><p>Specifically 具体地;特别是</p>
+</li>
+<li><p>heterogeneous  各种各样的</p>
+</li>
+<li><p>innovation points 创新点</p>
+</li>
+<li><p>small perturbation 扰动</p>
+</li>
+<li><p>clean examples  自然样本</p>
+</li>
+<li><p>input dissociation 输入解离 </p>
+</li>
+<li><p>survey researches 调查研究 </p>
+</li>
+<li><p>evolution  演变</p>
+</li>
+<li><p>analyzes  分析 </p>
+</li>
+<li><p>selective redundancy 选择性冗余</p>
+</li>
+<li><p>adopts  采用</p>
+</li>
+<li><p>linear approximation[əˌprɑːksɪˈmeɪʃn] 线性逼近</p>
+</li>
+<li><p>data suite 数据集</p>
+</li>
+<li><p>subjoins  添加</p>
+</li>
+<li><p>predicate slice 谓词片 </p>
+</li>
+<li><p>adverse influence 负作用</p>
+</li>
+<li><p>distribution  分布</p>
+</li>
+<li><p>incrementally   增量的；迭代的</p>
+</li>
+<li><p>decimal[ˈdesɪml]  places 小数位</p>
+</li>
+<li><p>critical  临界的；危急的；关键的 </p>
+</li>
+<li><p>deviations  偏差</p>
+</li>
+<li><p>emerge in 出现在</p>
+</li>
+<li><p>representation 表示</p>
+</li>
+<li><p>intensity 强烈;紧张;</p>
+</li>
+<li><p>nominal model 标称模型</p>
+</li>
+<li><p>invalidation [ɪnˌvælɪˈdeɪʃn] 失效</p>
+</li>
+<li><p>Reversible  可逆的</p>
+</li>
+<li><p>error-free 无损</p>
+</li>
+<li><p>pixel 像素</p>
+</li>
+<li><p>preprocessing step 预处理阶段</p>
+</li>
+<li><p>non-overlapping blocks 非重叠；不重叠的； </p>
+</li>
+<li><p>compressed  压缩</p>
+</li>
+<li><p>corresponding key 对应的密钥</p>
+</li>
+<li><p>arithmetic coding 算数编码</p>
+</li>
+<li><p>pseudo-random 伪随机</p>
+</li>
+<li><p>domestic and foreign 国内外</p>
+</li>
+<li><p>temporal correlation 时间相关性</p>
+</li>
+<li><p>literatures  文献</p>
+</li>
+<li><p>so as to  为了</p>
+</li>
+</ul>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2022/10/05/hello-world/">Hello World</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2022-10-05</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2022-10-05</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>Welcome to <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://hexo.io/" >Hexo</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>! This is your very first post. Check <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://hexo.io/docs/" >documentation</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> for more info. If you get any problems when using Hexo, you can find the answer in <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html" >troubleshooting</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> or you can ask me on <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues" >GitHub</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span>.</p>
+
+        <h2 id="Quick-Start"   >
+          <a href="#Quick-Start" class="heading-link"><i class="fas fa-link"></i></a><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2>
+      
+        <h3 id="Create-a-new-post"   >
+          <a href="#Create-a-new-post" class="heading-link"><i class="fas fa-link"></i></a><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></div></figure>
+
+<p>More info: <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html" >Writing</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+
+        <h3 id="Run-server"   >
+          <a href="#Run-server" class="heading-link"><i class="fas fa-link"></i></a><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></div></figure>
+
+<p>More info: <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://hexo.io/docs/server.html" >Server</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+
+        <h3 id="Generate-static-files"   >
+          <a href="#Generate-static-files" class="heading-link"><i class="fas fa-link"></i></a><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></div></figure>
+
+<p>More info: <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html" >Generating</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+
+        <h3 id="Deploy-to-remote-sites"   >
+          <a href="#Deploy-to-remote-sites" class="heading-link"><i class="fas fa-link"></i></a><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3>
+      <figure class="highlight bash"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></div></figure>
+
+<p>More info: <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html" >Deployment</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
+</div></div></article></section><nav class="paginator"><div class="paginator-inner"><a class="extend prev" rel="prev" href="/"><i class="fas fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/头像.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">time_cool</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/timecool-cpu" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://www.zhihu.com/people/shi-guang-85-73-85" target="_blank" rel="noopener" data-popover="知乎" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">知</span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">17</div><div class="sidebar-ov-state-item__name">归档</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2022</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>水水水</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v6.3.0</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.7.0</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/quicklink@1.0.1/dist/quicklink.umd.js"></script><script>function initQuicklink() {
+  quicklink({
+    timeout: '10000',
+    priority: true,
+    ignores: [uri => uri.includes('#'), uri => uri === 'http://example.com/page/2/', /\/api\/?/,uri => uri.includes('.xml'),uri => uri.includes('.zip'),(uri, el) => el.hasAttribute('nofollow'),(uri, el) => el.hasAttribute('noprefetch')]
+  });
+}
+
+if (false || false) {
+  initQuicklink();
+} else {
+  window.addEventListener('DOMContentLoaded', initQuicklink, false);
+}</script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>
