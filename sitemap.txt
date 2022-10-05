@@ -1,4 +1,6 @@
-http://example.com/2022/10/05/%E5%8A%9B%E6%89%A310.5/
+http://example.com/2022/10/05/%E5%89%91%E6%8C%87offer/
+http://example.com/tags/index.html
+http://example.com/categories/index.html
 http://example.com/2022/10/05/%E5%AF%86%E7%A0%81%E5%AD%A6/
 http://example.com/2022/10/05/%E8%AE%A1%E7%BD%91/
 http://example.com/2022/10/05/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9F%A5%E8%AF%86/
