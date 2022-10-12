@@ -316,6 +316,8 @@ Stun.utils = Stun.$u = {
       .not(':hidden')
       .each(function () {
         var $img = $(this)
+		//next
+		if ($(this).hasClass('nofancybox')) return;
         var imgTitle = $img.attr('title') || $img.attr('alt')
         var $imgWrap = $img.parent('a')
         var imgSource = ['data-src', 'data-original', 'src']
